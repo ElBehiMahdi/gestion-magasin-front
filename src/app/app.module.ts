@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AddProductsComponent } from './products/add-products/add-products.component';
 import { EditProductsComponent } from './products/edit-products/edit-products.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 
 
@@ -30,7 +31,8 @@ const routes: Routes = [
     NavbarComponent,
     FooterComponent,
     AboutusComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
