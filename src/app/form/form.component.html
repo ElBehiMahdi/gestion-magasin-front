@@ -1,0 +1,23 @@
+<form [formGroup]='f' [hidden]="loading">
+    <div>
+        <label>code</label><br>
+        <input type="text" formControlName="code"> 
+        <div *ngIf="getcode()?.invalid && getcode()?.touched">Required</div>
+    </div>
+    <div>
+        <label>libelle</label><br>
+        <input type="text" formControlName="libelle"> 
+        <div *ngIf="getlibelle()?.invalid && getlibelle()?.touched">Required</div>
+    </div>
+    <div>
+        <label>prix</label><br>
+        <input type="text" formControlName="prix"> 
+        <div *ngIf="getprix()?.errors?.required && getprix()?.touched">Required</div>
+        <div *ngIf="getprix()?.errors?.pattern && getprix()?.touched">Does that look like a price to you?? -_-</div>
+    </div>
+    <input type="submit" value="send" [disabled]="f.invalid" (click)="submit()">
+</form>
+<div *ngIf="loading">
+    ajouter avec succes!!! 
+</div>
+
