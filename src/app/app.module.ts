@@ -32,10 +32,7 @@ const routes: Routes = [
     FooterComponent,
     AboutusComponent,
     PageNotFoundComponent,
-<<<<<<< Updated upstream
-=======
     FormComponent
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

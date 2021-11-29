@@ -7,7 +7,7 @@ export class Product{
     code !:string;
     libelle !:string;
     prixUnitaire !:number;
-    categorieProduit !: categorieProduit;
+    categorieProduit !: string;
     detailProduit !: detailProduit;
     rayon !: Rayon;
     stock !: Stock;
