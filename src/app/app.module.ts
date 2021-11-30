@@ -12,6 +12,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AddProductsComponent } from './products/add-products/add-products.component';
 import { EditProductsComponent } from './products/edit-products/edit-products.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
+import { FactureComponent } from './facture/facture.component';
+import { DetailFactureComponent } from './detail-facture/detail-facture.component';
 
 
 
@@ -30,7 +32,9 @@ const routes: Routes = [
     NavbarComponent,
     FooterComponent,
     AboutusComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FactureComponent,
+    DetailFactureComponent
   ],
   imports: [
     BrowserModule,
