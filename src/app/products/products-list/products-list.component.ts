@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/model/Products';
 
 @Component({
@@ -9,12 +10,13 @@ import { Product } from 'src/model/Products';
 export class ProductsListComponent implements OnInit {
 
   //List of emplyee objects created, initilaized to EMpty.
-  product!: Product[];
-  constructor() { }
+  productList!: Product[];
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.product = [];
-
+    this.productService.getProductList().subscribe((data)=>{
+      this.productList = data;
+    })
   }
 
 }

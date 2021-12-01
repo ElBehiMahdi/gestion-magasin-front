@@ -14,6 +14,7 @@ import { EditProductsComponent } from './products/edit-products/edit-products.co
 import { ProductsListComponent } from './products/products-list/products-list.component';
 import { FormComponent } from './form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
     FormComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
