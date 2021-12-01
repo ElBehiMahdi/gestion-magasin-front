@@ -12,15 +12,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AddProductsComponent } from './products/add-products/add-products.component';
 import { EditProductsComponent } from './products/edit-products/edit-products.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
-import { FactureComponent } from './facture/facture.component';
-import { DetailFactureComponent } from './detail-facture/detail-facture.component';
-
+import { FormComponent } from './form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
-  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 
 ]
@@ -33,12 +32,13 @@ const routes: Routes = [
     FooterComponent,
     AboutusComponent,
     PageNotFoundComponent,
-    FactureComponent,
-    DetailFactureComponent
+    FormComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
