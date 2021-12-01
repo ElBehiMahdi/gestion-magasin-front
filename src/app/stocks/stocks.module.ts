@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { StocksComponent } from './stocks.component';
+import { StocksListComponent } from './stocks-list/stocks-list.component';
+import { StocksAddComponent } from './stocks-add/stocks-add.component';
+import { StocksEditComponent } from './stocks-edit/stocks-edit.component';
+import { StocksDeleteComponent } from './stocks-delete/stocks-delete.component';
 
 
 const routes: Routes = [
@@ -10,7 +14,11 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    StocksComponent
+    StocksComponent,
+    StocksListComponent,
+    StocksAddComponent,
+    StocksEditComponent,
+    StocksDeleteComponent
   ],
   imports: [
     CommonModule,
