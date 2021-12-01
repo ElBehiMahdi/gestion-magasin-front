@@ -5,6 +5,7 @@ import { ProductsComponent } from './products.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { EditProductsComponent } from './edit-products/edit-products.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 const routesp: Routes = [
@@ -31,10 +32,11 @@ const routesp: Routes = [
     ProductsComponent,
     AddProductsComponent,
     ProductsListComponent,
-    EditProductsComponent
+    EditProductsComponent,
   ],
   imports: [
     CommonModule,
+    FontAwesomeModule,
     RouterModule.forChild(routesp)
   ],
   exports: [RouterModule]

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  gateway: 'http://localhost:8089/SpringMVC/',
+  gateway: 'http://localhost:8089/SpringMVC',
 };
 
 /*

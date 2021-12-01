@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductService {
 
-  proxy = environment.gateway + "produit";
+  proxy = environment.gateway + "/produit";
 
   constructor(private httpClient: HttpClient) { }
 
