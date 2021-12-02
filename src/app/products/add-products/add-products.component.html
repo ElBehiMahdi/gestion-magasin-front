@@ -48,11 +48,23 @@
       <mat-form-field appearance="fill" required>
         <mat-label>Rayon</mat-label>
         <mat-select>
-          <mat-option *ngFor="let product of productList">
-            {{product.idProduit}}
+          <mat-option *ngFor="let rayon of rayonList">
+            {{rayon.idRayon}}
+            <button mat-raised-button color="primary" (click)="onSelectRayon(rayon.idRayon)">Assign Rayon</button>
           </mat-option>
         </mat-select>
       </mat-form-field>
+
+      <mat-form-field appearance="fill" required>
+        <mat-label>Stock</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let stock of stockList">
+            {{stock.idStock}}
+            <button mat-raised-button color="primary" (click)="onSelectStock(stock.idStock)">Assign Stock</button>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
     </mat-card-content>
     
     
