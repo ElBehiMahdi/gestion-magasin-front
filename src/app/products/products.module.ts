@@ -13,6 +13,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {FlexModule} from "@angular/flex-layout";
+import {MatSelectModule} from '@angular/material/select';
 
 
 const routesp: Routes = [
@@ -51,7 +52,8 @@ const routesp: Routes = [
     MatRadioModule,
     MatInputModule,
     MatButtonModule,
-    FlexModule
+    FlexModule,
+    MatSelectModule
 
   ],
   exports: [RouterModule]
