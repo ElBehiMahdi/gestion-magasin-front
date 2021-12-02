@@ -1,1 +1,49 @@
-<p>add-products works!</p>
+<div>
+  <form [formGroup]="createProductForm" (ngSubmit)="onSubmit()" autocomplete="off" novalidate fxLayout="column wrap"
+        fxLayoutGap="10px">
+
+    <br>
+
+    <mat-card-content fxLayout="column" fxLayoutAlign="space-between center" >
+      <mat-card-title>Créer Produit</mat-card-title>
+
+      <!--Name-->
+      <mat-form-field>
+        <mat-label>code :</mat-label>
+        <input matInput type="text" id="code" required
+               name="code" formControlName="code">
+        <mat-hint align="end"></mat-hint>
+        <mat-error *ngIf="hasError('code', 'required')">Required field</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>libelle :</mat-label>
+        <input matInput type="text" id="libelle" required
+               formControlName="libelle">
+        <mat-error *ngIf="hasError('libelle', 'required')">Required field</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>prixUnitaire :</mat-label>
+        <input matInput type="Number" placeholder="prixUnitaire" required
+               formControlName="prixUnitaire">
+        <mat-error *ngIf="hasError('prixUnitaire', 'required')">Required field</mat-error>
+      </mat-form-field>
+
+
+      <!--roles-->
+      <mat-radio-group aria-label="Select an option" name="categorieProduit" id="categorieProduit" required
+                      formControlName="categorieProduit" fxLayout="column wrap">
+        <mat-radio-button value="Electromenager">Electromenager</mat-radio-button>
+        <mat-radio-button value="Alimentaire">Alimentaire</mat-radio-button>
+        <mat-radio-button value="Quincaillerie">Quincaillerie</mat-radio-button>
+
+      </mat-radio-group>
+    </mat-card-content>
+
+    <mat-card-actions fxLayoutAlign="center" fxLayoutGap="10px">
+      <button type="submit" mat-raised-button color="primary">Add product</button>
+      <button type="button" mat-raised-button color="warn" (click)="onClose()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</div>
