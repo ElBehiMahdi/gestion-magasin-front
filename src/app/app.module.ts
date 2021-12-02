@@ -21,13 +21,12 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatRadioModule} from "@angular/material/radio";
 
-
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'stocks', loadChildren: () => import('./stocks/stocks.module').then(m => m.StocksModule) },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
-
 ]
 
 @NgModule({
