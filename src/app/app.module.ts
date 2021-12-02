@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ]
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -9,8 +9,21 @@ import { StocksDeleteComponent } from './stocks-delete/stocks-delete.component';
 
 
 const routes: Routes = [
-  { path: '', component: StocksComponent }
+  { path: '', 
+  component: StocksComponent,
+  },
+  { path: 'adds', 
+    component: StocksAddComponent,
+  },
+  { path: 'edits', 
+    component: StocksEditComponent,
+  },
+  { path: 'lists', 
+    component: StocksListComponent,
+  }
 ];
+
+
 
 @NgModule({
   declarations: [
