@@ -11,6 +11,9 @@ import {Product} from "../../../model/Products";
 })
 export class AddProductsComponent implements OnInit {
 
+
+  productList!: Product[];
+
   private idRayon!: number;
   private idStock!: number;
   public createProductForm!: FormGroup;
@@ -28,6 +31,9 @@ export class AddProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.initProductForm();
+    this.productService.getProductList().subscribe((data)=>{
+      this.productList = data;
+    })
   }
 
   initProductForm() {
@@ -53,6 +59,10 @@ export class AddProductsComponent implements OnInit {
     this.productService.createProduct(this.product, idRayon, idStock).subscribe(data => {
       this.router.navigate(['/products/listp'])
     })
+  }
+
+  onSelectRayon() {
+    this.idRayon
   }
 
 
