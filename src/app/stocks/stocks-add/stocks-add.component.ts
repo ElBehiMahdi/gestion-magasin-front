@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { StocksService } from 'src/app/services/stocks.service';
 import { Stock } from 'src/model/Stock';
 
 @Component({
@@ -8,11 +9,12 @@ import { Stock } from 'src/model/Stock';
   styleUrls: ['./stocks-add.component.css']
 })
 export class StocksAddComponent implements OnInit {
-
+  submit = false;
   stockList !: Stock[];
-  private stockForm !: FormGroup;
+  stockForm !: FormGroup;
+  stock !: Stock;
   
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private stockService: StocksService) { }
 
   ngOnInit(): void {
     this.initStockForm();
@@ -23,5 +25,22 @@ export class StocksAddComponent implements OnInit {
       code: new FormControl('',Validators.required),
       libelle:  new FormControl('', Validators.required)
     })
+  }
+
+  save(){
+    this.stockService.createStock(this.stock).subscribe();
+  }
+
+  getcode(){
+    return this.stockForm.get('code');
+  }
+
+  getlibelle(){
+    return this.stockForm.get('libelle');
+  }
+
+  Submit(){
+    this.submit = true;
+    this.save();
   }
 }

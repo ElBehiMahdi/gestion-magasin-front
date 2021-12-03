@@ -1,1 +1,31 @@
-
+<div>
+    <form [formGroup]="stockForm" (ngSubmit)="Submit()" autocomplete="off" novalidate fxLayout="column wrap"
+          fxLayoutGap="10px">
+  
+      <br>
+  
+      <mat-card-content fxLayout="column" fxLayoutAlign="space-between center" >
+        <mat-card-title>Créer Stock</mat-card-title>
+  
+        <mat-form-field>
+          <mat-label>code :</mat-label>
+          <input matInput type="text" id="code" required
+                 name="code" formControlName="code">
+          <mat-hint align="end"></mat-hint>
+          <mat-error *ngIf="stockForm.invalid">Required field</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>libelle :</mat-label>
+          <input matInput type="text" id="libelle" required
+                 formControlName="libelle">
+          <mat-error *ngIf="stockForm.invalid">Required field</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      
+      <mat-card-actions fxLayoutAlign="center" fxLayoutGap="10px">
+        <button type="submit" mat-raised-button color="primary" [disabled]="stockForm.invalid">Ajouter</button>
+      </mat-card-actions>
+  
+    </form>
+  </div>
