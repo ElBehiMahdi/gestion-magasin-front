@@ -1,11 +1,15 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FactureComponent } from './facture.component';
 import { RouterModule, Routes } from '@angular/router';
-import { AddFactureComponent } from '../add-facture/add-facture.component';
-import { EditFactureComponent } from '../edit-facture/edit-facture.component';
-import { FactureListComponent } from '../facture-list/facture-list.component';
-import { FactureComponent } from '../facture.component';
 
+import { AddFactureComponent } from './add-facture/add-facture.component';
+import { FactureListComponent } from './facture-list/facture-list.component';
+import { EditFactureComponent } from './edit-facture/edit-facture.component';
+
+import { from } from 'rxjs';
+
+ 
 const routes: Routes = [
   {path :'',component:FactureComponent},
   {
@@ -22,10 +26,18 @@ const routes: Routes = [
   },
 
 ];
-
 @NgModule({
-  imports: [CommonModule,
+  declarations: [
+    FactureComponent,
+    AddFactureComponent,
+    FactureListComponent,
+    EditFactureComponent
+  ],
+  imports: [
+    CommonModule,
     RouterModule.forChild(routes)],
+     
+ 
   exports: [RouterModule]
 })
-export class FactureRoutingModule { }
+export class FactureModule { }

@@ -24,13 +24,13 @@ import {MatRadioModule} from "@angular/material/radio";
 import { AddFactureComponent } from './facture/add-facture/add-facture.component';
 import { EditFactureComponent } from './facture/edit-facture/edit-facture.component';
 import { FactureListComponent } from './facture/facture-list/facture-list.component';
-import { FactureModule } from './facture/facture/facture.module';
+import { FactureModule } from './facture/facture.module';
 
 
 const routesf: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
-  { path: 'facture', loadChildren: () => import('./facture/facture/facture.module').then(m => m.FactureModule) },
+  { path: 'facture', loadChildren: () => import('./facture/facture.module').then(m => m.FactureModule) },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'stocks', loadChildren: () => import('./stocks/stocks.module').then(m => m.StocksModule) },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
