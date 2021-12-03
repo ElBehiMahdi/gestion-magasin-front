@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ProductsComponent } from './products/products.component';
+import { FactureComponent } from './facture/facture.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AddProductsComponent } from './products/add-products/add-products.component';
 import { EditProductsComponent } from './products/edit-products/edit-products.component';
@@ -20,10 +21,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatRadioModule} from "@angular/material/radio";
+import { AddFactureComponent } from './facture/add-facture/add-facture.component';
+import { EditFactureComponent } from './facture/edit-facture/edit-facture.component';
+import { FactureListComponent } from './facture/facture-list/facture-list.component';
+import { FactureModule } from './facture/facture/facture.module';
 
-const routes: Routes = [
+
+const routesf: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
+  { path: 'facture', loadChildren: () => import('./facture/facture/facture.module').then(m => m.FactureModule) },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'stocks', loadChildren: () => import('./stocks/stocks.module').then(m => m.StocksModule) },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
@@ -43,7 +50,7 @@ const routes: Routes = [
   imports: [
     HttpClientModule,
     BrowserModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routesf),
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
@@ -52,6 +59,7 @@ const routes: Routes = [
     MatCardModule,
     MatFormFieldModule,
     MatRadioModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
