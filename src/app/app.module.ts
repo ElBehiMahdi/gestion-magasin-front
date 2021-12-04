@@ -25,7 +25,8 @@ import { AddFactureComponent } from './facture/add-facture/add-facture.component
 import { EditFactureComponent } from './facture/edit-facture/edit-facture.component';
 import { FactureListComponent } from './facture/facture-list/facture-list.component';
 import { FactureModule } from './facture/facture.module';
-
+ import { FormBuilder } from '@angular/forms'; 
+ import{ToastrModule} from 'ngx-toastr';
 
 const routesf: Routes = [
   { path: 'home', component: HomeComponent },
@@ -58,7 +59,8 @@ const routesf: Routes = [
     ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
-    MatRadioModule
+    MatRadioModule,
+    ToastrModule.forRoot()
     
   ],
   providers: [],

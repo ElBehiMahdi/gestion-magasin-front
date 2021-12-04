@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddFactureComponent } from './add-facture/add-facture.component';
 import { FactureListComponent } from './facture-list/facture-list.component';
 import { EditFactureComponent } from './edit-facture/edit-facture.component';
+import { FormsModule,FormBuilder,ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { from } from 'rxjs';
 
@@ -35,8 +37,12 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)],
-     
+    RouterModule.forChild(routes),
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    /*FormBuilder,*/
+  ],
  
   exports: [RouterModule]
 })

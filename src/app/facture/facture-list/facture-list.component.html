@@ -1,1 +1,95 @@
-<p>facture-list works!</p>
+ <h1 text-center>Ma liste de  facture</h1>
+<!---------div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by id"
+          
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchId()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Facture List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let f of facturelist; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveFacture(f, i)"
+        >
+          {{ f.id }}
+        </li>
+      </ul>
+  
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllFacture()">
+        Remove All
+      </button>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentfacture">
+        <h4>Facture</h4>
+        <div>
+          <label><strong>id:</strong></label> -------{{ currentfacture.id }}--->
+        <!--------/div>
+        <div>
+          <label><strong>Description:</strong></label>
+          ----{{ currentfacture.description }}---->
+        <!-------/div>
+         
+  
+        <a class="badge badge-warning" href=" ">
+          Edit
+        </a>
+      </div>
+  
+      <div *ngIf="!currentfacture">
+        <br />
+        <p>Please enter  a bill...</p>
+      </div>
+    </div>
+  </div>----------->
+  <div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">active</th>
+        <th scope="col">Date_facture</th>
+        <th scope="col">montant_facture </th>
+        <th scope="col">montant_remise </th>
+        <th scope="col">clien-fnb</th>
+        <th scope="col">Action </th>
+  
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let af of listfacture ">
+        <td>{{af.idFActure}}</td>
+        <td>{{af.active}}</td>
+        <td>{{af.dateFacture}}</td>
+        <td>{{af.montantFacture}}</td>
+        <td>{{af.montantRemise}}</td>
+        <td>{{af.clientFacture.idClient}}</td>
+        <td>
+          <button   class="btn btn-primary"> Modifier</button>
+          <button  class="btn btn-outline-danger">Supprimer</button>
+          <button  class="btn btn-outline-warning">Cancel</button>
+  
+  
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  

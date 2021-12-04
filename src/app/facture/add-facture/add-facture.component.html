@@ -1,1 +1,91 @@
-<p>add-facture works!</p>
+ 
+<!-------h1 style="background-color: pink;"><i> Facture</i></h1>
+<div class="submit-form" style="background-color: cadetblue; border: black; bottom: yellow;">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Facture id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          
+          name="title"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Montant Remise</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+           
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Montant Facture</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+           
+          name="description"
+        />
+      </div>
+  
+      <button (click)="savefacture()" class="btn btn-success">Submit</button>
+    </div>
+  
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newfacture()">Add</button>
+    </div>
+  </div>
+  --------->
+  <!----<div class="row">
+    <div class="col-md-12 col-md-offset-2">
+      <h1>Facture</h1>
+      <form  (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Id Produit</label>
+          <input type="number" class='form-control'formControlName="Id" id="id">
+        </div>
+
+        <div class="form-group">
+          <label>Pourcentage</label>
+          <input type="text" class='form-control'formControlName="Pourcentage" id="Pourcentage">
+        </div>
+
+        <div class="form-group">
+          <label>Quantité</label>
+          <input type="text" class='form-control'formControlName="Quantité" id="Quantité">
+        </div>
+
+        <div class="form-group">
+          <label>Montant Facture</label>
+          <input type="text" class='form-control'formControlName="MontantFact" id="MontantFact">
+        </div>
+
+        <div class="form-group">
+          <label>Reduction</label>
+          <input type="text" class='form-control'formControlName="Reduction" id="Reduction">
+        </div>
+        <button class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>---->
+  <form [formGroup]="form">
+    <label>idClient</label>
+    <input type="text" formControlName="idClient"> <br>
+  
+    <label>pourcentageRemise</label>
+    <input type="text" formControlName="pourcentageRemise"><br>
+    <label>qte</label>
+    <input type="text" formControlName="qte"><br>
+    <label>idProduit</label>
+    <input type="text" formControlName="idProduit"><br>
+  <button (click)="save()"> add</button>
+  </form>
