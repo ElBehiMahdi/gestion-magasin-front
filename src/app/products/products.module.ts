@@ -17,6 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { DetailProductsComponent } from './detail-products/detail-products.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
+import { ProductsAdminListComponent } from './products-admin-list/products-admin-list.component';
 
 
 const routesp: Routes = [
@@ -37,6 +38,10 @@ const routesp: Routes = [
     component: ProductsListComponent, // another child route component that the router renders
   },
   {
+    path: 'admin-listp',
+    component: ProductsAdminListComponent, // another child route component that the router renders
+  },
+  {
     path: 'detailp',
     component: DetailProductsComponent, // another child route component that the router renders
   },
@@ -49,6 +54,7 @@ const routesp: Routes = [
     ProductsListComponent,
     EditProductsComponent,
     DetailProductsComponent,
+    ProductsAdminListComponent,
   ],
   imports: [
     CommonModule,
