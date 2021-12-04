@@ -2,3 +2,86 @@
     flex: 1 1 auto;
     color: aliceblue;
   }
+  body {
+    overflow-x: hidden;
+    color: #505962;
+  }
+  
+  .service-wrap {
+    z-index: -999 !important;
+  }
+  
+  .service-background {
+    padding: 5rem 0;
+    z-index: 1000 !important;
+    
+  }
+  
+  #contact {
+    z-index: 1000;
+  }
+  
+  .caption{
+    top:35%;
+  }
+  
+  
+  /*============= FOOTER =============*/
+  
+  
+  /*===== FIXED BACKGROUND IMG =====*/
+  .fixed {
+    position: fixed;
+    /* The element is positioned relative to the viewport which means it always stays in the same place even if the page is scrolled.*/
+    display: block;
+    /* An element starts on a new line and takes the whole width. */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* The background image covers the entire container even if it's stretched or croped */
+    background-position: center center;
+  }
+  
+  .fixed-background {
+    position: relative;
+    /* The element is positioned relative to its normal position + set the top, bottom... properties to adjust the position */
+    width: 100%;
+  }
+  
+  .fixed-wrap {
+    clip: rect(0, auto, auto, 0);
+    /*clip-path: inset(10%, 10%, 10%, 10%);*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /*============= MEDIA QUERIES =============*/
+  
+  /* Devices under 1199px (xl) */
+  @media (min-width: 1200px) {
+  }
+  /* Devices under 992px (lg) */
+  @media (max-width: 992px) {
+    
+  }
+  /* Devices under 768px (md) */
+  @media (max-width: 768px) {
+    
+  }
+  /* Devices under 576px (sm) */
+  @media (max-width: 576px) {
+    
+  }
+  footer li{
+    list-style-type: none;
+  }
+  footer a{
+    color: red;
+  }
+  
+  

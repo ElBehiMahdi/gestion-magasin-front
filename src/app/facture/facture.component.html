@@ -2,23 +2,108 @@
 
 
 
-<div class='spacer'>
-    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgb(23, 231, 169);">
-        <a offset-3 class="navbar-brand" href="#" style="color: white;"><b> Espace Facture</b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-             
-            <a class="nav-item nav-link" href="#" routerLink="/facture/listf"><b>Ma Liste</b></a>
-            <a class="nav-item nav-link" href="#"routerLink="/facture/addf"><b> Ajouter</b></a>
-             
-          </div>
+ <div id="home">
+    <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top" id="navbarResponsive">
+        <a href="#" class="navbar-brand">
+            <img src="facture1.png" alt="" class="img-fluid w-25"></a>
+
+            <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ms-3">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" routerLink="/home">Home</a></li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link"routerLink="/facture/addf">Ajouter</a></li>
+                <li class="nav-item">
+                    <a href="#service" class="nav-link"routerLink="/facture/listf">Liste</a></li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link"></a></li>
+            </ul>
         </div>
-      </nav>
-  
-    <div class="container mt-3">
-      <router-outlet></router-outlet>
+    </nav>
+    <img src="assets/facture1.jpg" alt="esprit" class="img-fluid">
+    
+    <div class="caption text-center position-absolute d-flex flex-column align-items-center w-100">
+        <h1 style="color: black;"><b>Bienvenu dans notre Espace  </b></h1>
+         
+        <a href="#" class="btn btn-outline-dark btn-lg" routerLink="/home">Back To Home</a>
     </div>
-  </div>
+
+</div>
+<!-- End Home section -->
+
+<!-- Start About section-->
+
+    <div class="border-top border-dark w-100 my-3"></div>
+    <div class="row mx-3 mt-3">
+        <h1><b>Nos Mode de paiement</b></h1>
+
+        <div class="col-8 col-md-4 card">
+            <img src="assets/espece.jpg" alt="" class="img-fluid w-80">
+            <h4 class=""></h4>
+             
+            <a href="#" class="btn btn-outline-dark"> >Vous pouvez effectuer votre paiement en espece</a>
+        </div>
+
+        <div class="col-8 col-md-4 card">
+            <img src="assets/cheque2.jpg" alt="" class="img-fluid w-80">
+            <h4 class=""></h4>
+             
+            <a href="#" class="btn btn-outline-dark"> >Vous pouvez effectuer votre paiement par cheque</a>
+        </div>
+
+        <div class="col-8 col-md-4 card">
+            <img src="assets/online.jpg" alt="" class="img-fluid w-80">
+            <h4 class=""> </h4>
+             
+            <a href="#" class="btn btn-outline-dark"> >Vous pouvez effectuer votre paiement en ligne</a>
+        </div>
+
+    </div>
+
+    <div class=""></div>
+
+
+<!-- End About section -->
+
+
+<div class="fixed-background" id="service">
+    <div class="services">
+        <div class="service-text">
+            <h1>Advance to the next level</h1>
+            <h3 class="">
+                 
+            </h3>
+            <a href="#" class="">.</a>
+            <a href="#" class="">.</a>
+
+        </div>
+    </div>
+    <div class="fixed-wrap service-wrap">
+        <div class="fixed service-inner">
+            <img src="assets/yes.jpg" alt="" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+ 
+
+<div id="contact" class="">
+    <div class="text-center mx-5 mt-3 ">
+        <div class="border-top border-dark w-25 wx-auto"></div>
+        <h1 class=""> <b>N'hesitez pas de nous contacter !</b></h1>
+        <div class=""></div>
+        <p class="">   </p>
+        <p class=""> </p>
+        <a href="#" class="btn btn-outline-dark">Contact Us</a>
+    </div>
+</div>
+
+
+  
+    
+      <router-outlet></router-outlet>
+     
