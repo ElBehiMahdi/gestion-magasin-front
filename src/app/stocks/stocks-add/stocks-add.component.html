@@ -8,11 +8,19 @@
         <mat-card-title>Créer Stock</mat-card-title>
   
         <mat-form-field>
-          <mat-label>code :</mat-label>
-          <input matInput type="text" id="code" required
-                 name="code" formControlName="code">
+          <mat-label>Quantite minimale :</mat-label>
+          <input matInput type="text" id="qteMin" required
+                 name="code" formControlName="qteMin">
           <mat-hint align="end"></mat-hint>
-          <mat-error *ngIf="stockForm.invalid">Required field</mat-error>
+          <mat-error *ngIf="stockForm.errors?.invalid">Required field</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Quantite :</mat-label>
+          <input matInput type="text" id="qte" required
+                 name="code" formControlName="qte">
+          <mat-hint align="end"></mat-hint>
+          <mat-error *ngIf="stockForm.errors?.invalid">Required field</mat-error>
         </mat-form-field>
   
         <mat-form-field>

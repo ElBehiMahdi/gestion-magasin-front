@@ -51,7 +51,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
-    MatRadioModule
+    MatRadioModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

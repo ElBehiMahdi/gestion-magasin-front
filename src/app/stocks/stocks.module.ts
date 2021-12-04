@@ -55,7 +55,8 @@ const routes: Routes = [
     MatInputModule,
     MatButtonModule,
     FlexModule,
-    MatSelectModule
+    MatSelectModule,
+    RouterModule.forChild(routes)
   ]
 })
 export class StocksModule { }

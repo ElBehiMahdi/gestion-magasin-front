@@ -1,1 +1,32 @@
-<p>stocks-list works!</p>
+<div class="card">
+    <div class="card-body">
+      <div class="col-10 mx-auto">
+        <h2 class="text-center">Stocks</h2>
+        <!-- <p> </p> -->
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-10 mx-auto">
+          <table id="example" class="table table-striped table-bordered" style="width: 100%">
+            <thead>
+              <tr>
+                <th scope="col">libelle</th>
+                <th scope="col">Quantite minimale</th>
+              </tr>
+            </thead>
+            <tbody>
+  
+              <tr *ngFor="let s of stockList">
+                <td>{{s.libelle}}  </td>
+                <td>{{s.qteMin}}  </td>
+                <td>
+                  <button class="btn btn-primary"><fa-icon ></fa-icon> </button> <span>&nbsp;</span>
+                </td>
+              </tr>
+  
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

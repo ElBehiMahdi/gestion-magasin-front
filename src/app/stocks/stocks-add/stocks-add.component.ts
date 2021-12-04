@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { StocksService } from 'src/app/services/stocks.service';
 import { Stock } from 'src/model/Stock';
 
@@ -14,7 +15,7 @@ export class StocksAddComponent implements OnInit {
   stockForm !: FormGroup;
   stock !: Stock;
   
-  constructor(private fb: FormBuilder, private stockService: StocksService) { }
+  constructor(private fb: FormBuilder, private stockService: StocksService,private router: Router) { }
 
   ngOnInit(): void {
     this.initStockForm();
@@ -22,8 +23,9 @@ export class StocksAddComponent implements OnInit {
 
   initStockForm(){
     this.stockForm = new FormGroup({
-      code: new FormControl('',Validators.required),
-      libelle:  new FormControl('', Validators.required)
+      qteMin: new FormControl('',[Validators.required,Validators.pattern("[0-9]")]),
+      libelle:  new FormControl('', Validators.required),
+      qte: new FormControl('',[Validators.required,Validators.pattern("[0-9]")])
     })
   }
 
@@ -31,16 +33,26 @@ export class StocksAddComponent implements OnInit {
     this.stockService.createStock(this.stock).subscribe();
   }
 
-  getcode(){
-    return this.stockForm.get('code');
+  getQteMin(){
+    return this.stockForm.get('qteMin');
+  }
+
+  getQte(){
+    return this.stockForm.get('qte');
   }
 
   getlibelle(){
     return this.stockForm.get('libelle');
   }
 
+  afficheList(){
+    this.router.navigate(['/stocks/lists']);
+  }
+
   Submit(){
     this.submit = true;
-    this.save();
+    
+    console.log(this.stock.libelle);
+    this.afficheList();
   }
 }
