@@ -16,6 +16,7 @@ import { FlexModule } from "@angular/flex-layout";
 import { MatSelectModule } from '@angular/material/select';
 import { DetailProductsComponent } from './detail-products/detail-products.component';
 import { MatIconModule } from '@angular/material/icon';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 const routesp: Routes = [
@@ -61,8 +62,8 @@ const routesp: Routes = [
     MatButtonModule,
     FlexModule,
     MatSelectModule,
-    MatIconModule
-
+    MatIconModule,
+    MatChipsModule
   ],
   exports: [RouterModule]
 })
