@@ -38,13 +38,14 @@ export class AddProductsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.initProductForm();
     this.rayonService.getRayonList().subscribe((data)=>{
       this.rayonList = data;
     })
     this.stockService.getStockList().subscribe((data)=>{
       this.stockList = data;
     })
+    this.initProductForm();
+
   }
 
   initProductForm() {
@@ -68,7 +69,7 @@ export class AddProductsComponent implements OnInit {
 
   save(idRayon: number, idStock: number) {
     this.productService.createProduct(this.product, idRayon, idStock).subscribe(data => {
-      console.log(data)
+      console.log(data, idRayon, idStock)
     })
   }
 

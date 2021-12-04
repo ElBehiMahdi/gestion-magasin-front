@@ -6,15 +6,16 @@ import { AddProductsComponent } from './add-products/add-products.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { EditProductsComponent } from './edit-products/edit-products.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {ReactiveFormsModule} from "@angular/forms";
-import {MatCardModule} from "@angular/material/card";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatRadioModule} from "@angular/material/radio";
-import {MatInputModule} from "@angular/material/input";
-import {MatButtonModule} from "@angular/material/button";
-import {FlexModule} from "@angular/flex-layout";
-import {MatSelectModule} from '@angular/material/select';
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatCardModule } from "@angular/material/card";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatRadioModule } from "@angular/material/radio";
+import { MatInputModule } from "@angular/material/input";
+import { MatButtonModule } from "@angular/material/button";
+import { FlexModule } from "@angular/flex-layout";
+import { MatSelectModule } from '@angular/material/select';
 import { DetailProductsComponent } from './detail-products/detail-products.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 const routesp: Routes = [
@@ -59,7 +60,8 @@ const routesp: Routes = [
     MatInputModule,
     MatButtonModule,
     FlexModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
 
   ],
   exports: [RouterModule]
