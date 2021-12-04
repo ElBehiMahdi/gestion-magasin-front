@@ -14,6 +14,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {FlexModule} from "@angular/flex-layout";
 import {MatSelectModule} from '@angular/material/select';
+import { DetailProductsComponent } from './detail-products/detail-products.component';
 
 
 const routesp: Routes = [
@@ -33,6 +34,10 @@ const routesp: Routes = [
     path: 'listp',
     component: ProductsListComponent, // another child route component that the router renders
   },
+  {
+    path: 'detailp',
+    component: DetailProductsComponent, // another child route component that the router renders
+  },
 ];
 
 @NgModule({
@@ -41,6 +46,7 @@ const routesp: Routes = [
     AddProductsComponent,
     ProductsListComponent,
     EditProductsComponent,
+    DetailProductsComponent,
   ],
   imports: [
     CommonModule,

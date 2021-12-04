@@ -18,16 +18,25 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from "@angular/material/card";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatRadioModule} from "@angular/material/radio";
+import { MatCardModule } from "@angular/material/card";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatRadioModule } from "@angular/material/radio";
 import { AddFactureComponent } from './facture/add-facture/add-facture.component';
 import { EditFactureComponent } from './facture/edit-facture/edit-facture.component';
 import { FactureListComponent } from './facture/facture-list/facture-list.component';
 import { FactureModule } from './facture/facture.module';
+ 
  import { FormBuilder } from '@angular/forms'; 
  import{ToastrModule} from 'ngx-toastr';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider'
+import { MatMenuModule } from '@angular/material/menu';
+import { ResponsiveToolbarComponent } from './responsive-toolbar/responsive-toolbar.component'
+import { FlexLayoutModule } from '@angular/flex-layout';
+ 
 const routesf: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
@@ -46,7 +55,8 @@ const routesf: Routes = [
     FooterComponent,
     AboutusComponent,
     PageNotFoundComponent,
-    FormComponent
+    FormComponent,
+    ResponsiveToolbarComponent
   ],
   imports: [
     HttpClientModule,
@@ -60,8 +70,17 @@ const routesf: Routes = [
     MatCardModule,
     MatFormFieldModule,
     MatRadioModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
     
+
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatMenuModule,
+    FlexLayoutModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
