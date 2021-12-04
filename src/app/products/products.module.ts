@@ -30,7 +30,7 @@ const routesp: Routes = [
     component: AddProductsComponent, // child route component that the router renders
   },
   {
-    path: 'editp',
+    path: 'editp/:id',
     component: EditProductsComponent, // another child route component that the router renders
   },
   {
@@ -42,7 +42,7 @@ const routesp: Routes = [
     component: ProductsAdminListComponent, // another child route component that the router renders
   },
   {
-    path: 'detailp',
+    path: 'detailp/:id',
     component: DetailProductsComponent, // another child route component that the router renders
   },
 ];
