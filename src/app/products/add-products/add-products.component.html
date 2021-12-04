@@ -9,24 +9,24 @@
 
       <!--Name-->
       <mat-form-field>
-        <mat-label>code :</mat-label>
+        <mat-label>Code :</mat-label>
         <input matInput type="text" id="code" required
-               name="code" formControlName="code">
+               name="code" formControlName="code" [(ngModel)]="product.code">
         <mat-hint align="end"></mat-hint>
         <mat-error *ngIf="hasError('code', 'required')">Required field</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label>libelle :</mat-label>
+        <mat-label>Libelle :</mat-label>
         <input matInput type="text" id="libelle" required
-               formControlName="libelle">
+               formControlName="libelle" [(ngModel)]="product.libelle">
         <mat-error *ngIf="hasError('libelle', 'required')">Required field</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label>prixUnitaire :</mat-label>
+        <mat-label>Price :</mat-label>
         <input matInput type="Number" placeholder="prixUnitaire" required
-               formControlName="prixUnitaire">
+               formControlName="prixUnitaire" [(ngModel)]="product.prixUnitaire">
         <mat-error *ngIf="hasError('prixUnitaire', 'required')">Required field</mat-error>
       </mat-form-field>
 
@@ -38,7 +38,7 @@
 
       <!--roles-->
       <mat-radio-group aria-label="Select an option" name="categorieProduit" id="categorieProduit" required
-                      formControlName="categorieProduit" fxLayout="column wrap">
+                      formControlName="categorieProduit" fxLayout="column wrap" [(ngModel)]="product.categorieProduit">
         <mat-radio-button value="Electromenager">Electromenager</mat-radio-button>
         <mat-radio-button value="Alimentaire">Alimentaire</mat-radio-button>
         <mat-radio-button value="Quincaillerie">Quincaillerie</mat-radio-button>

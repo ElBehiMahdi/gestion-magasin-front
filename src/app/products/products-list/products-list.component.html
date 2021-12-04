@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-body">
     <div class="col-10 mx-auto">
-      <h2 class="text-center">Employees List</h2>
+      <h2 class="text-center">Product List</h2>
       <!-- <p> </p> -->
     </div>
     <br />
@@ -19,12 +19,19 @@
           <tbody>
 
             <tr *ngFor="let product of productList">
-              <td>{{product.code}}  </td>
-              <td>{{product.libelle}}  </td>
-              <td>{{product.prixUnitaire}}  </td>
-              <td>{{product.categorieProduit}}  </td>
+              <td>{{product.code}} </td>
+              <td>{{product.libelle}} </td>
+              <td>{{product.prixUnitaire}} </td>
+              <td>{{product.categorieProduit}} </td>
               <td>
-                <button class="btn btn-primary"><fa-icon [icon]="faEye"></fa-icon> </button> <span>&nbsp;</span>
+                <button mat-icon-button (click)="updateProduit(product.idProduit)">
+                  <mat-icon>launch</mat-icon>
+                </button>
+              </td>
+              <td>
+                <button mat-icon-button (click)="deleteProduit(product.idProduit)" color="warn">
+                  <mat-icon>delete_outline</mat-icon>
+                </button>
               </td>
             </tr>
 
