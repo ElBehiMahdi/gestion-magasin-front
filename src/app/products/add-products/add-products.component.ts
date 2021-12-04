@@ -81,14 +81,13 @@ export class AddProductsComponent implements OnInit {
     this.idStock = id
   }
 
-
-  // @ts-ignore
   onSubmit() {
     this.submitted = true;
     if (this.createProductForm.invalid) {
       console.log("invalid");
       return 'invlalid credentials';
     } else {
+      return 'success'
       console.log(this.idRayon , this.idStock)
       this.save(this.idRayon,this.idStock);
       this.goToList();

@@ -62,6 +62,7 @@ const routesf: Routes = [
     HttpClientModule,
     BrowserModule,
     RouterModule.forRoot(routesf),
+    ToastrModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
@@ -70,9 +71,6 @@ const routesf: Routes = [
     MatCardModule,
     MatFormFieldModule,
     MatRadioModule,
-    ToastrModule.forRoot(),
-    
-
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,

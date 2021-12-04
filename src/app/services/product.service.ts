@@ -30,8 +30,8 @@ export class ProductService {
     return this.httpClient.delete(this.proxy + '/remove-produit/' + id);
   }
 
-  updateProduct(id: number, value: any): Observable<Object> {
-    return this.httpClient.put(this.proxy + '/modify-produit' + id, value);
+  updateProduct(value: any): Observable<Object> {
+    return this.httpClient.put(this.proxy + '/modify-produit', value);
   }
 
 }
