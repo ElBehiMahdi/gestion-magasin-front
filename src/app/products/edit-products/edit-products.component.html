@@ -1,1 +1,62 @@
-<p>edit-products works!</p>
+<div>
+  <form [formGroup]="updateProductForm" (ngSubmit)="onSubmit()" autocomplete="off" novalidate fxLayout="column wrap"
+    fxLayoutGap="10px">
+
+    <br>
+
+    <mat-card-content fxLayout="column" fxLayoutAlign="space-between center">
+      <mat-card-title>Detail Produit</mat-card-title>
+
+      <mat-form-field>
+        <mat-label>id :</mat-label>
+        <input matInput type="text" id="idProduit" required name="idProduit" formControlName="idProduit" [(ngModel)]="product.idProduit">
+        <mat-hint align="end"></mat-hint>
+        <mat-error *ngIf="hasError('idProduit', 'required')">Required field</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Code :</mat-label>
+        <input matInput type="text" id="code" required name="code" formControlName="code" [(ngModel)]="product.code">
+        <mat-hint align="end"></mat-hint>
+        <mat-error *ngIf="hasError('code', 'required')">Required field</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Libelle :</mat-label>
+        <input matInput type="text" id="libelle" required formControlName="libelle" [(ngModel)]="product.libelle">
+        <mat-error *ngIf="hasError('libelle', 'required')">Required field</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Price :</mat-label>
+        <input matInput type="Number" placeholder="prixUnitaire" required formControlName="prixUnitaire"
+          [(ngModel)]="product.prixUnitaire">
+        <mat-error *ngIf="hasError('prixUnitaire', 'required')">Required field</mat-error>
+      </mat-form-field>
+
+
+
+
+
+
+
+      <mat-radio-group aria-label="Select an option" name="categorieProduit" id="categorieProduit" required
+        formControlName="categorieProduit" fxLayout="column wrap" [(ngModel)]="product.categorieProduit">
+        <mat-radio-button value="Electromenager">Electromenager</mat-radio-button>
+        <mat-radio-button value="Alimentaire">Alimentaire</mat-radio-button>
+        <mat-radio-button value="Quincaillerie">Quincaillerie</mat-radio-button>
+
+      </mat-radio-group>
+
+    </mat-card-content>
+
+
+
+    <mat-card-actions fxLayoutAlign="center" fxLayoutGap="10px">
+      <button type="button" mat-raised-button color="warn" (click)="onClose()">Cancel</button>
+      <button type="button" mat-raised-button color="primary" (click)="updateProduct()">Update</button>
+    </mat-card-actions>
+
+
+  </form>
+</div>

@@ -6,14 +6,18 @@ import { AddProductsComponent } from './add-products/add-products.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { EditProductsComponent } from './edit-products/edit-products.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {ReactiveFormsModule} from "@angular/forms";
-import {MatCardModule} from "@angular/material/card";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatRadioModule} from "@angular/material/radio";
-import {MatInputModule} from "@angular/material/input";
-import {MatButtonModule} from "@angular/material/button";
-import {FlexModule} from "@angular/flex-layout";
-import {MatSelectModule} from '@angular/material/select';
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatCardModule } from "@angular/material/card";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatRadioModule } from "@angular/material/radio";
+import { MatInputModule } from "@angular/material/input";
+import { MatButtonModule } from "@angular/material/button";
+import { FlexModule } from "@angular/flex-layout";
+import { MatSelectModule } from '@angular/material/select';
+import { DetailProductsComponent } from './detail-products/detail-products.component';
+import { MatIconModule } from '@angular/material/icon';
+import {MatChipsModule} from '@angular/material/chips';
+import { ProductsAdminListComponent } from './products-admin-list/products-admin-list.component';
 
 
 const routesp: Routes = [
@@ -26,12 +30,20 @@ const routesp: Routes = [
     component: AddProductsComponent, // child route component that the router renders
   },
   {
-    path: 'editp',
+    path: 'editp/:id',
     component: EditProductsComponent, // another child route component that the router renders
   },
   {
     path: 'listp',
     component: ProductsListComponent, // another child route component that the router renders
+  },
+  {
+    path: 'admin-listp',
+    component: ProductsAdminListComponent, // another child route component that the router renders
+  },
+  {
+    path: 'detailp/:id',
+    component: DetailProductsComponent, // another child route component that the router renders
   },
 ];
 
@@ -41,6 +53,8 @@ const routesp: Routes = [
     AddProductsComponent,
     ProductsListComponent,
     EditProductsComponent,
+    DetailProductsComponent,
+    ProductsAdminListComponent,
   ],
   imports: [
     CommonModule,
@@ -53,8 +67,9 @@ const routesp: Routes = [
     MatInputModule,
     MatButtonModule,
     FlexModule,
-    MatSelectModule
-
+    MatSelectModule,
+    MatIconModule,
+    MatChipsModule
   ],
   exports: [RouterModule]
 })

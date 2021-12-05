@@ -1,0 +1,123 @@
+ <h1 text-center></h1>
+<!---------div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by id"
+          
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchId()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Facture List</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let f of facturelist; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveFacture(f, i)"
+        >
+          {{ f.id }}
+        </li>
+      </ul>
+  
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllFacture()">
+        Remove All
+      </button>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentfacture">
+        <h4>Facture</h4>
+        <div>
+          <label><strong>id:</strong></label> -------{{ currentfacture.id }}--->
+        <!--------/div>
+        <div>
+          <label><strong>Description:</strong></label>
+          ----{{ currentfacture.description }}---->
+        <!-------/div>
+         
+  
+        <a class="badge badge-warning" href=" ">
+          Edit
+        </a>
+      </div>
+  
+      <div *ngIf="!currentfacture">
+        <br />
+        <p>Please enter  a bill...</p>
+      </div>
+    </div>
+  </div>----------->
+  <nav class="navbar navbar-expand-md navbar-light bg-white" id="navbarResponsive">
+    <a href="#" class="navbar-brand">
+        <img src="facture1.png" alt="" class="img-fluid w-25"></a>
+
+        <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-3">
+            <li class="nav-item">
+                <a href="#home" class="nav-link" routerLink="/home">Home</a></li>
+            <li class="nav-item">
+                <a href="#about" class="nav-link"routerLink="/facture">Acceuil Facture</a></li>
+            <li class="nav-item">
+                <a href="#service" class="nav-link"routerLink="/facture/addf">Ajouter</a></li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link"></a></li>
+        </ul>
+    </div>
+</nav>
+  <div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">prenom</th>
+        <th scope="col">id Client</th>
+        <th scope="col">Date_facture</th>
+        <th scope="col">active</th>
+        <th scope="col">id produit</th>
+        <th scope="col">Quantité </th>
+        <th scope="col">montant_facture </th>
+        <th scope="col">montant_remise </th>
+         
+         
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let af of listfacture ">
+        <td>{{af.Nom}}</td>
+        <td>{{af.Prenom}}</td>
+        <td>{{af.idClient}}</td>
+        <td>{{af.dateFacture}}</td>
+        <td>{{af.active}}</td>
+        <td>{{af.idProduit}}</td>
+        <td>{{af.montantFacture}}</td>
+        <td>{{af.montantRemise}}</td>
+       
+        
+        <td>
+          <button   class="btn btn-primary"> Modifier</button>
+          <button  class="btn btn-outline-danger">Supprimer</button>
+          <button  class="btn btn-outline-warning">Cancel</button>
+  
+  
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  

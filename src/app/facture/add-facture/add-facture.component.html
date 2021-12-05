@@ -1,0 +1,197 @@
+ 
+<!-------h1 style="background-color: pink;"><i> Facture</i></h1>
+<div class="submit-form" style="background-color: cadetblue; border: black; bottom: yellow;">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Facture id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          
+          name="title"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Montant Remise</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+           
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Montant Facture</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+           
+          name="description"
+        />
+      </div>
+  
+      <button (click)="savefacture()" class="btn btn-success">Submit</button>
+    </div>
+  
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newfacture()">Add</button>
+    </div>
+  </div>
+  --------->
+  <!----<div class="row">
+    <div class="col-md-12 col-md-offset-2">
+      <h1>Facture</h1>
+      <form  (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Id Produit</label>
+          <input type="number" class='form-control'formControlName="Id" id="id">
+        </div>
+
+        <div class="form-group">
+          <label>Pourcentage</label>
+          <input type="text" class='form-control'formControlName="Pourcentage" id="Pourcentage">
+        </div>
+
+        <div class="form-group">
+          <label>Quantité</label>
+          <input type="text" class='form-control'formControlName="Quantité" id="Quantité">
+        </div>
+
+        <div class="form-group">
+          <label>Montant Facture</label>
+          <input type="text" class='form-control'formControlName="MontantFact" id="MontantFact">
+        </div>
+
+        <div class="form-group">
+          <label>Reduction</label>
+          <input type="text" class='form-control'formControlName="Reduction" id="Reduction">
+        </div>
+        <button class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>---->
+  <nav class="navbar navbar-expand-md navbar-light bg-white" id="navbarResponsive">
+    <a href="#" class="navbar-brand">
+        <img src="facture1.png" alt="" class="img-fluid w-25"></a>
+
+        <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-3">
+            <li class="nav-item">
+                <a href="#home" class="nav-link" routerLink="/home">Home</a></li>
+            <li class="nav-item">
+                <a href="#about" class="nav-link"routerLink="/facture">Acceuil Facture </a></li>
+            <li class="nav-item">
+                <a href="#service" class="nav-link"routerLink="/facture/listf">Liste</a></li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link"></a></li>
+        </ul>
+    </div>
+</nav>
+   
+  
+
+
+
+
+
+
+
+
+  <form class="row g-3 needs-validation" novalidate [formGroup]="form">
+    
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">Prenom</label>
+      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Nom</label>
+      <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">Id Client</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">#</span>
+        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">Date Facture</label>
+      <input type="text" class="form-control" id="validationCustom03" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">active</label>
+      <select class="form-select" id="validationCustom04" required>
+        <option selected disabled value="">Choose...</option>
+        <option>Oui</option>
+        <option>Non</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+    </div>
+     
+     
+    <div class="col-12">
+     
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Rib/Code IBAN</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Ces informations sont confidentiels</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Id Produit</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Quantité</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Montant Facture</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Montant Remise</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+          <label class="form-check-label" for="invalidCheck">
+            Agree to terms and conditions
+          </label>
+          <div class="invalid-feedback">
+            You must agree before submitting.
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit" (click)="save()">Submit </button>
+    </div>
+  </form>

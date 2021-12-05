@@ -1,0 +1,80 @@
+<div>
+    <form [formGroup]="updateProductForm" autocomplete="off" novalidate fxLayout="column wrap"
+          fxLayoutGap="10px">
+  
+      <br>
+  
+      <mat-card-content fxLayout="column" fxLayoutAlign="space-between center" >
+        <mat-card-title>Detail Produit</mat-card-title>
+  
+        <!--Name-->
+        <mat-form-field>
+          <mat-label>Code :</mat-label>
+          <input matInput type="text" id="code" required
+                 name="code" formControlName="code" [(ngModel)]="product.code">
+          <mat-hint align="end"></mat-hint>
+          <mat-error *ngIf="hasError('code', 'required')">Required field</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Libelle :</mat-label>
+          <input matInput type="text" id="libelle" required
+                 formControlName="libelle" [(ngModel)]="product.libelle">
+          <mat-error *ngIf="hasError('libelle', 'required')">Required field</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Price :</mat-label>
+          <input matInput type="Number" placeholder="prixUnitaire" required
+                 formControlName="prixUnitaire" [(ngModel)]="product.prixUnitaire">
+          <mat-error *ngIf="hasError('prixUnitaire', 'required')">Required field</mat-error>
+        </mat-form-field>
+  
+  
+  
+  
+        
+  
+  
+        <mat-radio-group aria-label="Select an option" name="categorieProduit" id="categorieProduit" required
+                        formControlName="categorieProduit" fxLayout="column wrap" [(ngModel)]="product.categorieProduit">
+          <mat-radio-button value="Electromenager">Electromenager</mat-radio-button>
+          <mat-radio-button value="Alimentaire">Alimentaire</mat-radio-button>
+          <mat-radio-button value="Quincaillerie">Quincaillerie</mat-radio-button>
+  
+        </mat-radio-group>
+  
+        <!--
+        <mat-form-field appearance="fill" required>
+          <mat-label>Rayon</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let rayon of rayonList">
+              {{rayon.idRayon}}
+              <button mat-raised-button color="primary" (click)="onSelectRayon(rayon.idRayon)">Assign Rayon</button>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" required>
+          <mat-label>Stock</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let stock of stockList">
+              {{stock.idStock}}
+              <button mat-raised-button color="primary" (click)="onSelectStock(stock.idStock)">Assign Stock</button>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        -->
+  
+      </mat-card-content>
+      
+      
+  
+      <mat-card-actions fxLayoutAlign="center" fxLayoutGap="10px">
+        <button type="button" mat-raised-button color="warn" (click)="onClose()">Cancel</button>
+      </mat-card-actions>
+  
+  
+    </form>
+  </div>
+  
