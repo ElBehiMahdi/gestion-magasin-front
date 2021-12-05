@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FactureService } from 'src/app/services/facture.service';
-import { Facture } from 'src/model/facture';
+import { Facture } from 'src/app/models/facture';
  
 @Component({
   selector: 'app-facture-list',

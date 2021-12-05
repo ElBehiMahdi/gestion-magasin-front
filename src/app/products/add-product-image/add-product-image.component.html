@@ -1,0 +1,15 @@
+<form [formGroup]="productImageForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="mb-3">
+      <label>idProduit</label>
+      <input type="number" formControlName="idProduit" class="form-control" required>
+    </div>
+  
+    <div class="mb-3">
+      <label>Link</label>
+      <input type="Link" formControlName="Link" class="form-control" required>
+    </div>
+  
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary" [disabled]="!productImageForm.valid">Create</button>
+    </div>
+  </form>

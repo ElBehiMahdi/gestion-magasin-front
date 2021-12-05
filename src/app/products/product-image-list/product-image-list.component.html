@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">idProduit</th>
+        <th scope="col">Links</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let productImage of productImage; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ productImage.idProduit }}</td>
+        <td>{{ productImage.Link }}</td>
+        <td>
+          <span (click)="removeProductImage(productImage)" class="text-danger">Delete</span> &nbsp;
+        </td>
+      </tr>
+    </tbody>
+  </table>

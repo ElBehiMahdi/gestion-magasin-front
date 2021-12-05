@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {Router} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Product} from "../../../model/Products";
+import {Product} from "src/app/models/Products";
 import { RayonsService } from 'src/app/services/rayons.service';
-import { Rayon } from 'src/model/Rayon';
-import { Stock } from 'src/model/Stock';
+import { Rayon } from 'src/app/models/Rayon';
+import { Stock } from 'src/app/models/Stock';
 import { StocksService } from 'src/app/services/stocks.service';
 
 @Component({

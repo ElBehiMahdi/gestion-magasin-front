@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FactureService } from 'src/app/services/facture.service';
  import{ToastrService} from 'ngx-toastr'
-import { Facture } from 'src/model/facture';
-import { detailFacture } from 'src/model/DetailFacture';
-import { Product } from 'src/model/Products';
+import { Facture } from 'src/app/models/facture';
+import { detailFacture } from 'src/app/models/detailFacture';
+import { Product } from 'src/app/models/Products';
 @Component({
   selector: 'app-add-facture',
   templateUrl: './add-facture.component.html',
