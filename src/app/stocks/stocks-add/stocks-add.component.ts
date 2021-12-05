@@ -39,7 +39,6 @@ export class StocksAddComponent implements OnInit {
     this.router.navigate(['/stocks/lists']);
   }
 
-
   Submit(){
     this.submit = true;
     this.save();

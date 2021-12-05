@@ -22,7 +22,12 @@
                 <td>{{s.qteMin}}  </td>
                 <td>{{s.qte}}  </td>
                 <td>
-                  <button class="btn btn-primary"><fa-icon ></fa-icon> </button> <span>&nbsp;</span>
+                  <button mat-icon-button (click)="deleteStock(s.idStock)" color="warn">
+                    <mat-icon>delete_outline</mat-icon>
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-primary" (click)="updateStock(s.idStock)">Modifier </button> <span>&nbsp;</span>
                 </td>
               </tr>
   

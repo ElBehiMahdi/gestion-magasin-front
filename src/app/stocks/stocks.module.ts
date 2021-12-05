@@ -15,6 +15,7 @@ import { FlexModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
 
 
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: 'adds', 
     component: StocksAddComponent,
   },
-  { path: 'edits', 
+  { path: 'edits/:id', 
     component: StocksEditComponent,
   },
   { path: 'lists', 
@@ -56,6 +57,7 @@ const routes: Routes = [
     MatButtonModule,
     FlexModule,
     MatSelectModule,
+    MatIconModule,
     RouterModule.forChild(routes)
   ]
 })

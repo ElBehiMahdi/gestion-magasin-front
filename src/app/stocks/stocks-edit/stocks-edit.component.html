@@ -1,1 +1,32 @@
-<p>stocks-edit works!</p>
+<div>
+    <form [formGroup]="stockForm"  autocomplete="off" novalidate fxLayout="column wrap"
+          fxLayoutGap="10px">
+      <br>
+  
+      <mat-card-content fxLayout="column" fxLayoutAlign="space-between center" >
+        <mat-card-title>Modifier Stock </mat-card-title>
+  
+        <mat-form-field>
+          <mat-label>Quantite minimale :</mat-label>
+          <input matInput type="text" id="qteMinEdit" required
+                 name="code" formControlName="qteMinEdit">
+          <mat-hint align="end"></mat-hint>
+          <mat-error *ngIf="stockForm.errors?.invalid">Required field</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>libelle :</mat-label>
+          <input matInput type="text" id="libelleEdit" required
+                 formControlName="libelleEdit">
+          <mat-error *ngIf="stockForm.invalid">Required field</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      
+      <mat-card-actions fxLayoutAlign="center" fxLayoutGap="10px">
+        <button type="button" mat-raised-button color="warn" (click)="cancel()">Annuler</button>
+        <button type="button" mat-raised-button color="primary" (click)="updateStock()">Modifier</button>
+      </mat-card-actions>
+  
+  
+    </form>
+  </div>

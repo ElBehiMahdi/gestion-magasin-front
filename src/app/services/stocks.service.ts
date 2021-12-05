@@ -23,4 +23,11 @@ export class StocksService {
       return this.httpClient.get(this.proxy + '/retrieve-stock/' + id);
     }
   
+    deleteStock(id: number): Observable<any> {
+      return this.httpClient.delete(this.proxy + '/remove-stock/' + id);
+    }
+  
+    updateStock(value: any): Observable<Object> {
+      return this.httpClient.put(this.proxy + '/modify-stock', value);
+    }
 }
