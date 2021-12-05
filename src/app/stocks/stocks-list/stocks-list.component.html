@@ -12,6 +12,7 @@
               <tr>
                 <th scope="col">libelle</th>
                 <th scope="col">Quantite minimale</th>
+                <th scope="col">Quantite </th>
               </tr>
             </thead>
             <tbody>
@@ -19,6 +20,7 @@
               <tr *ngFor="let s of stockList">
                 <td>{{s.libelle}}  </td>
                 <td>{{s.qteMin}}  </td>
+                <td>{{s.qte}}  </td>
                 <td>
                   <button class="btn btn-primary"><fa-icon ></fa-icon> </button> <span>&nbsp;</span>
                 </td>

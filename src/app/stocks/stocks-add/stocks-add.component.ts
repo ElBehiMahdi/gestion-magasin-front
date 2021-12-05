@@ -25,34 +25,24 @@ export class StocksAddComponent implements OnInit {
     this.stockForm = new FormGroup({
       qteMin: new FormControl('',[Validators.required,Validators.pattern("[0-9]")]),
       libelle:  new FormControl('', Validators.required),
-      qte: new FormControl('',[Validators.required,Validators.pattern("[0-9]")])
+      //qte: new FormControl('',[Validators.required,Validators.pattern("[0-9]")])
     })
   }
 
   save(){
-    this.stockService.createStock(this.stock).subscribe();
-  }
-
-  getQteMin(){
-    return this.stockForm.get('qteMin');
-  }
-
-  getQte(){
-    return this.stockForm.get('qte');
-  }
-
-  getlibelle(){
-    return this.stockForm.get('libelle');
+    this.stockService.createStock(this.stockForm.value).subscribe(data => {
+      console.log(data)
+    });
   }
 
   afficheList(){
     this.router.navigate(['/stocks/lists']);
   }
 
+
   Submit(){
     this.submit = true;
-    
-    console.log(this.stock.libelle);
+    this.save();
     this.afficheList();
   }
 }
