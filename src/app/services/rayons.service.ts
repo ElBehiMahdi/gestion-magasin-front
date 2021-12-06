@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Rayon } from 'src/model/Rayon';
+import { Rayon } from 'src/app/models/Rayon';
 
 @Injectable({
   providedIn: 'root'

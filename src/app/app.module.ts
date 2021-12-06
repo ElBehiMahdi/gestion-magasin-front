@@ -36,6 +36,12 @@ import { MatDividerModule } from '@angular/material/divider'
 import { MatMenuModule } from '@angular/material/menu';
 import { ResponsiveToolbarComponent } from './responsive-toolbar/responsive-toolbar.component'
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
  
 const routesf: Routes = [
   { path: 'home', component: HomeComponent },
@@ -78,7 +84,8 @@ const routesf: Routes = [
     MatDividerModule,
     MatMenuModule,
     FlexLayoutModule,
-
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

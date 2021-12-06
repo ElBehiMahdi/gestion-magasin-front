@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FactureService } from 'src/app/services/facture.service';
-import { Facture } from 'src/model/facture';
+ 
 import { FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { FactureModel } from './facture.model';
  import { ApiService } from '../sh/api.service';
  import { FactureSService } from 'src/app/services/api.service';
+import { Facture } from 'src/app/models/facture';
+ 
 @Component({
   selector: 'app-facture-list',
   templateUrl: './facture-list.component.html',

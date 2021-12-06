@@ -18,6 +18,9 @@ import { DetailProductsComponent } from './detail-products/detail-products.compo
 import { MatIconModule } from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
 import { ProductsAdminListComponent } from './products-admin-list/products-admin-list.component';
+import { AddProductImageComponent } from './add-product-image/add-product-image.component';
+import { ProductImageListComponent } from './product-image-list/product-image-list.component';
+import { ShowProductImageComponent } from './show-product-image/show-product-image.component';
 
 
 const routesp: Routes = [
@@ -45,6 +48,19 @@ const routesp: Routes = [
     path: 'detailp/:id',
     component: DetailProductsComponent, // another child route component that the router renders
   },
+  {
+    path: 'addip',
+    component: AddProductImageComponent, // another child route component that the router renders
+  },
+  {
+    path: 'listip',
+    component: ProductImageListComponent, // another child route component that the router renders
+  },
+  {
+    path: 'showip/:id',
+    component: ShowProductImageComponent, // another child route component that the router renders
+  },
+
 ];
 
 @NgModule({
@@ -55,6 +71,9 @@ const routesp: Routes = [
     EditProductsComponent,
     DetailProductsComponent,
     ProductsAdminListComponent,
+    AddProductImageComponent,
+    ProductImageListComponent,
+    ShowProductImageComponent,
   ],
   imports: [
     CommonModule,

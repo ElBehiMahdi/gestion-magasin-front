@@ -1,4 +1,4 @@
-import { detailFacture } from "./DetailFacture";
+import { detailFacture } from "./detailFacture";
 
 export class Facture {
     idFacture! : number;

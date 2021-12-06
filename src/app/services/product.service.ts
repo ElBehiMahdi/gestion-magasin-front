@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { Product } from 'src/model/Products';
+import { Product } from 'src/app/models/Products';
+import { productImage } from 'src/app/models/product-image'
 import { environment } from 'src/environments/environment';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Injectable({
@@ -12,7 +15,12 @@ export class ProductService {
 
   proxy = environment.gateway + "/produit";
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,
+  private angularFirestore: AngularFirestore) { }
+
+  
+
+
 
   getProductList(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.proxy + '/retrieve-all-produits')
@@ -32,6 +40,50 @@ export class ProductService {
 
   updateProduct(value: any): Observable<Object> {
     return this.httpClient.put(this.proxy + '/modify-produit', value);
+  }
+
+
+
+
+  //product-images
+  
+  createProductImage(data:any) {
+    return new Promise<any>((resolve, reject) =>{
+      this.angularFirestore
+        .collection("product-image-collection")
+        .add(data)
+        .then(response => { console.log(response) }, error => reject(error));
+    });
+  }
+
+  getProductImage(id : any){
+    return this.angularFirestore
+    .collection('product-image-collection')
+    .doc(id)
+    .valueChanges()
+  }
+
+  getProductImageList() { 
+    return this.angularFirestore
+    .collection("product-image-collection")
+    .snapshotChanges();
+  }
+
+  deleteProductImage(productImage: productImage) {
+    return this.angularFirestore
+      .collection("product-image-collection")
+      .doc(productImage.id)
+      .delete();
+  }
+
+  updateProductImage(productImage: productImage, id : any) {
+    return this.angularFirestore
+      .collection("product-image-collection")
+      .doc(id)
+      .update({
+        idProduit: productImage.idProduit,
+        Link: productImage.Link,
+      });
   }
 
 }
