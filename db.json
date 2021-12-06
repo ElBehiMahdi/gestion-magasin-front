@@ -1,0 +1,63 @@
+{
+  "posts": [
+    {
+      "id": 5,
+      "Nom": "sami bsl",
+      "idClient": 2565,
+      "dateFacture": "05/12/2021",
+      "active": "Oui",
+      "idProduit": 848455,
+      "Quantité": "",
+      "montantFacture": 4458585,
+      "montantRemise": "55666"
+    },
+    {
+      "id": 6,
+      "Nom": "firas",
+      "idClient": 56,
+      "dateFacture": "10/06/99",
+      "active": "Non",
+      "idProduit": 5668,
+      "Quantité": null,
+      "montantFacture": 57858,
+      "montantRemise": 6544
+    },
+    {
+      "id": 7,
+      "Nom": "mahdi behi",
+      "idClient": 125688,
+      "dateFacture": "10/02/99",
+      "active": "Non",
+      "idProduit": 578,
+      "Quantité": "",
+      "montantFacture": 20000,
+      "montantRemise": 105
+    },
+    {
+      "id": 8,
+      "Nom": "firas",
+      "idClient": 12336,
+      "dateFacture": "10/06/99",
+      "active": "Non",
+      "idProduit": 8545,
+      "Quantité": null,
+      "montantFacture": 57858,
+      "montantRemise": 8545
+    },
+    {
+      "id": 9,
+      "Nom": "rahma",
+      "idClient": 56,
+      "dateFacture": "10/09/06",
+      "active": "Oui",
+      "idProduit": 65,
+      "Quantité": null,
+      "montantFacture": 456,
+      "montantRemise": 50
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
