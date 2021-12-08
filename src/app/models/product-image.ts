@@ -1,5 +1,5 @@
-export interface productImage{
-    id?: string;
-    idProduit ?: string;
-    Link ?: string;   
+export class productImage{
+    id!: string;
+    idProduit !: string;
+    Link !: string;   
 } 

@@ -29,7 +29,7 @@ export class ShowProductImageComponent implements OnInit {
 
     this.ps.getProductImage(id).subscribe(res => {
       console.log(res)
-      this.imageRef = res;
+      this.imageRef = res.payload.data();
       this.productImageForm = this.fb.group({
         Link: [this.imageRef.Link],
       })      

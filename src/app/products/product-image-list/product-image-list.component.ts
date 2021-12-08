@@ -8,17 +8,17 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-image-list.component.css']
 })
 export class ProductImageListComponent implements OnInit {
-  productImage!: productImage[];
+  list?: productImage[];
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.productService.getProductImageList().subscribe(res => {
-      this.productImage = res.map(e => {
+    this.productService.getProductImageList().subscribe(actionArray => {
+      this.list =actionArray.map(item =>{
         return {
-        } as productImage;
+          id: item.payload.doc.id,
+          ...item.payload.doc.data() as {}} as productImage
       })
-
     });
   }
 

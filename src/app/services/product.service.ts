@@ -15,6 +15,8 @@ export class ProductService {
 
   proxy = environment.gateway + "/produit";
 
+  formData!: productImage;
+
   constructor(private httpClient: HttpClient,
   private angularFirestore: AngularFirestore) { }
 
@@ -45,7 +47,7 @@ export class ProductService {
 
 
 
-  //product-images
+  //product-images with firebase
   
   createProductImage(data:any) {
     return new Promise<any>((resolve, reject) =>{
@@ -60,7 +62,7 @@ export class ProductService {
     return this.angularFirestore
     .collection('product-image-collection')
     .doc(id)
-    .valueChanges()
+    .snapshotChanges();
   }
 
   getProductImageList() { 
@@ -68,6 +70,13 @@ export class ProductService {
     .collection("product-image-collection")
     .snapshotChanges();
   }
+
+  // getLinkByPID(id: number) {
+  //   return this.angularFirestore
+  //   .collection("product-image-collection")
+  //   .doc(id)    
+  //   .snapshotChanges();
+  // }
 
   deleteProductImage(productImage: productImage) {
     return this.angularFirestore
