@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/models/Products';
 
 @Component({
@@ -9,11 +10,16 @@ import { Product } from 'src/app/models/Products';
 export class ProductsComponent implements OnInit {
 
   productList!: Product[];
+  categorie!: string;
 
-  constructor() { }
+  constructor(private router: Router,
+  ) { }
 
   ngOnInit(): void {
-    
+
   }
 
+  goToList() {
+    this.router.navigate(['/products/listp']);
+  }
 }

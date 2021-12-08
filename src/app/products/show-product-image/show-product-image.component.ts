@@ -28,8 +28,8 @@ export class ShowProductImageComponent implements OnInit {
     const id = this.act.snapshot.paramMap.get('id');
 
     this.ps.getProductImage(id).subscribe(res => {
-      console.log(res)
       this.imageRef = res.payload.data();
+      console.log(this.imageRef)
       this.productImageForm = this.fb.group({
         Link: [this.imageRef.Link],
       })      
