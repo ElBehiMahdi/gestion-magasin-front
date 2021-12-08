@@ -5,7 +5,6 @@ import { StocksComponent } from './stocks.component';
 import { StocksListComponent } from './stocks-list/stocks-list.component';
 import { StocksAddComponent } from './stocks-add/stocks-add.component';
 import { StocksEditComponent } from './stocks-edit/stocks-edit.component';
-import { StocksDeleteComponent } from './stocks-delete/stocks-delete.component';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
@@ -41,7 +40,6 @@ const routes: Routes = [
     StocksListComponent,
     StocksAddComponent,
     StocksEditComponent,
-    StocksDeleteComponent,
     
   ],
   imports: [

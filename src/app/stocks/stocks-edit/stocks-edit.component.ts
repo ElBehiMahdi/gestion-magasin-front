@@ -29,6 +29,8 @@ export class StocksEditComponent implements OnInit {
       this.stock = data;
       }, error => console.log(error));
       this.initStockForm();
+
+      
   }
 
   initStockForm(){

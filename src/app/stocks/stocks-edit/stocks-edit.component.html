@@ -5,11 +5,12 @@
   
       <mat-card-content fxLayout="column" fxLayoutAlign="space-between center" >
         <mat-card-title>Modifier Stock </mat-card-title>
-  
+
+
         <mat-form-field>
           <mat-label>Quantite minimale :</mat-label>
           <input matInput type="text" id="qteMinEdit" required
-                 name="code" formControlName="qteMinEdit">
+                 name="code" formControlName="qteMinEdit" [(ngModel)]="stock.qteMin">
           <mat-hint align="end"></mat-hint>
           <mat-error *ngIf="stockForm.errors?.invalid">Required field</mat-error>
         </mat-form-field>
@@ -17,7 +18,7 @@
         <mat-form-field>
           <mat-label>libelle :</mat-label>
           <input matInput type="text" id="libelleEdit" required
-                 formControlName="libelleEdit">
+                 formControlName="libelleEdit" [(ngModel)]="stock.libelle">
           <mat-error *ngIf="stockForm.invalid">Required field</mat-error>
         </mat-form-field>
       </mat-card-content>
