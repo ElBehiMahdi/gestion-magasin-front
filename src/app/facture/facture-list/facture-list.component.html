@@ -59,19 +59,19 @@
       </div>
     </div>
   </div>----------->
+   
+ 
   <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top" id="navbarResponsive" style=" background-color: darkslategray;">
     <div class="container-fluid" style="background-color: burlywood;"> 
       <h1><b>Liste des Factures </b></h1>
-      
-   
-  <nav class="navbar navbar-expand-md navbar-light bg-white" id="navbarResponsive">
-    <a href="#" class="navbar-brand">
+      <nav class="navbar navbar-expand-md navbar-light bg-white" id="navbarResponsive">
+     <a href="#" class="navbar-brand">
         <img src="facture1.png" alt="" class="img-fluid w-25"></a>
 
         <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+ 
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ms-3">
             <li class="nav-item">
@@ -79,16 +79,18 @@
             <li class="nav-item">
                 <a href="#about" class="nav-link"routerLink="/facture"><b>Acceuil Facture</b></a></li>
             <li class="nav-item">
-                <a href="#service" class="nav-link"routerLink="/facture/addf"><b>Ajouter</b></a></li>
+                 
             <li class="nav-item">
                 <a href="#contact" class="nav-link"></a></li>
                 <li><div class="d-flex">
                   <button (click)="cliclAddFacture()"type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter Facture</button>
-                </div></li>
+                </div>
+              </li>
         </ul>
-
-    </div>
+   </div>
 </nav>
+    </div>
+  </nav>
     
     <table class="table mt-3">
       <thead>
@@ -118,11 +120,13 @@
 
         <td>
           <button  type='button' (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info"  > Edit</button>
-          <button  (click)=" deleteFacture(row)"class= "btn btn-danger ">Delete</button>
+          <button  (click)=" deleteFacture(row)"class= "btn btn-danger "   >Delete    </button>
+           
         </td>
       </tr>
       </tbody>
     </table>
+    <div id="myPaypalButtons"></div>
 
 
      
@@ -131,7 +135,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel"><b>Nouvelle Facture</b></h3>
+        <h3 class="modal-title" id="exampleModalLabel"  ><b>Nouvelle Facture</b></h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -140,18 +144,18 @@
         
         
         
-        <form class="row g-3 needs-validation mt-3" [formGroup]='formValue' >
+        <form class="row g-3 needs-validation mt-3" [formGroup]='formValue' style="color: darkcyan; background-color: #F0F0F0;" >
           <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Nom et Prenom</label>
+            <label for="validationCustom02" class="form-label"><b>Nom et Prenom</b></label>
             <input type="text" class="form-control" formControlName='Nom'id="validationCustom02" value="" required>
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Id Client</label>
+            <label for="validationCustomUsername" class="form-label"><b>Id Client</b></label>
             <div class="input-group has-validation">
-              <span class="input-group-text" id="inputGroupPrepend">#</span>
+              <span class="input-group-text" id="inputGroupPrepend"><b>#</b></span>
               <input type="number" class="form-control" formControlName='idClient' id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
               <div class="invalid-feedback">
                 Please choose a username.
@@ -159,14 +163,14 @@
             </div>
           </div>
           <div class="col-md-6">
-            <label for="validationCustom03" class="form-label">Date Facture</label>
+            <label for="validationCustom03" class="form-label"><b>Date Facture</b></label>
             <input type="text" class="form-control" formControlName='dateFacture'id="validationCustom03" required>
             <div class="invalid-feedback">
               Please provide a valid city.
             </div>
           </div>
           <div class="col-md-3">
-            <label for="validationCustom04" class="form-label">active</label>
+            <label for="validationCustom04" class="form-label"><b>active</b></label>
             <select class="form-select" formControlName='active'id="validationCustom04" required>
               <option selected disabled value="">Choose...</option>
               <option>Oui</option>
@@ -182,23 +186,23 @@
            
              
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Id Produit</label>
+              <label for="exampleInputPassword1" class="form-label"><b>Id Produit</b></label>
               <input type="number" formControlName='idProduit' class="form-control" id="exampleInputPassword1">
             </div>
              
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Montant Facture</label>
+              <label for="exampleInputPassword1" class="form-label"><b>Montant Facture</b></label>
               <input type="number" class="form-control" formControlName='montantFacture' id="exampleInputPassword1">
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Montant Remise</label>
+              <label for="exampleInputPassword1" class="form-label"><b>Montant Remise</b></label>
               <input type="number" class="form-control" formControlName='montantRemise' id="exampleInputPassword1">
             </div>
              
             
            
         </form>
-      
+        <div  id="myPaypalButtons"></div>
       </div>
       <div class="modal-footer">
         <button type="button" id="cancel" class="btn btn-secondary"data-bs-dismiss="modal">Close</button>
@@ -207,5 +211,12 @@
       </div>
     </div>
   </div>
-</div>  
+  
+</div>
+<div  id="myPaypalButtons"></div> 
+ 
+ 
+
+
+  
   

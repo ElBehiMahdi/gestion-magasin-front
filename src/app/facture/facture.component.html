@@ -13,9 +13,9 @@
         <li class="nav-item">
           <a href="#home" class="nav-link" routerLink="/home">Home</a></li>
         <li class="nav-item">
-          <a href="#about" class="nav-link" routerLink="/facture/addf">Ajouter</a></li>
+          <a href="#about" class="nav-link" routerLink="/facture/addf"></a></li>
         <li class="nav-item">
-          <a href="#service" class="nav-link" routerLink="/facture/listf">Liste</a></li>
+          <a href="#service" class="nav-link" routerLink="/facture/listf">Ma Liste</a></li>
         <li class="nav-item">
           <a href="#contact" class="nav-link"></a></li>
       </ul>
@@ -24,74 +24,25 @@
   <img src="assets/facture1.jpg" alt="esprit" class="img-fluid">
 
   <div class="caption text-center position-absolute d-flex flex-column align-items-center w-100">
-    <h1 style="color: black;"><b>Bienvenu dans notre Espace </b></h1>
+    <h1 style="color:dimgray" title=""><b>Bienvenu dans notre Espace </b></h1>
 
 
 
- <div id="home">
-    <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top" id="navbarResponsive">
-        <a href="#" class="navbar-brand">
-            <img src="facture1.png" alt="" class="img-fluid w-25"></a>
-
-            <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-        <div class="collapse navbar-collapse" id="navbarMenu">
-            <ul class="navbar-nav ms-3">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link" routerLink="/home"><b> Home</b></a></li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link"routerLink="/facture/addf"><b>Ajouter</b></a></li>
-                <li class="nav-item">
-                    <a href="#service" class="nav-link"routerLink="/facture/listf"><b>Liste</b></a></li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link"></a></li>
-            </ul>
-        </div>
-    </nav>
-    <img src="assets/facture1.jpg" alt="esprit" class="img-fluid">
-    
-    <div class="caption text-center position-absolute d-flex flex-column align-items-center w-100">
-        <h1 style="color: black;"><b>Bienvenu dans notre Espace  </b></h1>
+  
          
-        <a href="#" class="btn btn-outline-dark btn-lg" routerLink="/home">Back To Home</a>
+        <a href="#" class="btn btn-outline-dark btn-lg" style="background-color: yellow;" routerLink="/home">Back To Home</a>
     </div>
-    <a href="#" class="btn btn-outline-dark btn-lg" routerLink="/home">Back To Home</a>
-  </div>
+    
 
-</div>
+ 
 <!-- End Home section -->
 
 <!-- Start About section-->
 
-    <div class="border-top border-dark w-100 my-3"></div>
-    <div class="row mx-3 mt-3">
-        <h1><b>Nos Modes de paiement</b></h1>
-
-        <div class="col-8 col-md-4 card">
-            <img src="assets/espece.jpg" alt="" class="img-fluid w-80">
-            <h4 class=""></h4>
-             
-            <a href="#" class="btn btn-outline-dark"> >Vous pouvez effectuer votre paiement en espece</a>
-        </div>
-
-        <div class="col-8 col-md-4 card">
-            <img src="assets/cheque2.jpg" alt="" class="img-fluid w-80">
-            <h4 class=""></h4>
-             
-            <a href="#" class="btn btn-outline-dark"> >Vous pouvez effectuer votre paiement par cheque</a>
-        </div>
-
-        <div class="col-8 col-md-4 card">
-            <img src="assets/online.jpg" alt="" class="img-fluid w-80">
-            <h4 class=""> </h4>
-             
-            <a href="#" class="btn btn-outline-dark"> >Vous pouvez effectuer votre paiement en ligne</a>
-        </div>
-<div class="border-top border-dark w-100 my-3"></div>
+    
+<div class="border-top border-dark w-100 my-3">
 <div class="row mx-3 mt-3">
-  <h1><b>Nos Mode de paiement</b></h1>
+  <h1 class="text-center align-items-center"><b>Nos Modes de paiement</b></h1>
 
   <div class="col-8 col-md-4 card">
     <img src="assets/espece.jpg" alt="" class="img-fluid w-80">
@@ -112,11 +63,12 @@
     <h4 class=""> </h4>
 
     <a href="#" class="btn btn-outline-dark"> >Vous pouvez effectuer votre paiement en ligne</a>
+     
   </div>
 
 </div>
-
-<div class=""></div>
+<div id="myPaypalButtons"></div>
+ 
 
 
 <!-- End About section -->
@@ -158,3 +110,4 @@
 
 
 <router-outlet></router-outlet>
+   

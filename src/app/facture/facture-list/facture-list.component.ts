@@ -7,6 +7,7 @@ import { FactureModel } from './facture.model';
  import { ApiService } from '../sh/api.service';
  import { FactureSService } from 'src/app/services/api.service';
 import { Facture } from 'src/app/models/facture';
+import{render} from 'creditcardpayments/creditCardPayments';
  
 @Component({
   selector: 'app-facture-list',
@@ -21,7 +22,16 @@ export class FactureListComponent implements OnInit {
    showUpdate!:boolean;
   
   
-  constructor(private Formbuilder: FormBuilder,private api:ApiService) { }
+  constructor(private Formbuilder: FormBuilder,private api:ApiService) { 
+    render({
+      id:"#myPaypalButtons",
+      currency:"USD",
+      value:"100.00",
+      onApprove:(details)=>{
+        alert("transaction is successful");
+      }
+    });
+  }
    
   
   ngOnInit(): void {
