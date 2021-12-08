@@ -49,7 +49,7 @@ export class AddProductsComponent implements OnInit {
   }
 
   initProductForm() {
-    this.createProductForm = new FormGroup({
+      this.createProductForm = new FormGroup({
       code: new FormControl('', Validators.required),
       libelle:  new FormControl('', Validators.required),
       prixUnitaire: new FormControl('', Validators.required),

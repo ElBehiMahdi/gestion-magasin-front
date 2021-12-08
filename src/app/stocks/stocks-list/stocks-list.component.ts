@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { StocksService } from 'src/app/services/stocks.service';
+import { Stock } from 'src/model/Stock';
 
 @Component({
   selector: 'app-stocks-list',
@@ -6,10 +9,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stocks-list.component.css']
 })
 export class StocksListComponent implements OnInit {
+  
 
-  constructor() { }
+  stockList !: Stock[];
+  constructor(private stocksService : StocksService,private router : Router) { }
 
   ngOnInit(): void {
+    this.stocksService.getStockList().subscribe((data)=>{
+      this.stockList = data;
+    })
+  }
+
+  updateStock(id: number) {
+    this.router.navigate(['stocks/edits', id]);
+  }
+
+  deleteStock(id: number) {
+    if (confirm('Are you sure to delete this product ?')) {
+      this.stocksService.deleteStock(id)
+        .subscribe(
+          data => {
+            console.log(data);
+          },
+          error => console.log(error));
+    }
   }
 
 }

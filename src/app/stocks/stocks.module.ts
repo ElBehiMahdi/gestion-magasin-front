@@ -5,7 +5,16 @@ import { StocksComponent } from './stocks.component';
 import { StocksListComponent } from './stocks-list/stocks-list.component';
 import { StocksAddComponent } from './stocks-add/stocks-add.component';
 import { StocksEditComponent } from './stocks-edit/stocks-edit.component';
-import { StocksDeleteComponent } from './stocks-delete/stocks-delete.component';
+import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FlexModule } from '@angular/flex-layout';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
 
 
 const routes: Routes = [
@@ -15,7 +24,7 @@ const routes: Routes = [
   { path: 'adds', 
     component: StocksAddComponent,
   },
-  { path: 'edits', 
+  { path: 'edits/:id', 
     component: StocksEditComponent,
   },
   { path: 'lists', 
@@ -31,10 +40,22 @@ const routes: Routes = [
     StocksListComponent,
     StocksAddComponent,
     StocksEditComponent,
-    StocksDeleteComponent
+    
   ],
   imports: [
     CommonModule,
+    RouterModule.forChild(routes),
+    MatCardModule,
+    CommonModule,
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatInputModule,
+    MatButtonModule,
+    FlexModule,
+    MatSelectModule,
+    MatIconModule,
     RouterModule.forChild(routes)
   ]
 })
