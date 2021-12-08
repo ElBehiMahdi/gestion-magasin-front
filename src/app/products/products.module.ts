@@ -37,7 +37,7 @@ const routesp: Routes = [
     component: EditProductsComponent, // another child route component that the router renders
   },
   {
-    path: 'listp',
+    path: 'listp/:cat',
     component: ProductsListComponent, // another child route component that the router renders
   },
   {
