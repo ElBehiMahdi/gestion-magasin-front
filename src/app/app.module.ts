@@ -50,6 +50,7 @@ const routesf: Routes = [
   { path: 'facture', loadChildren: () => import('./facture/facture.module').then(m => m.FactureModule) },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'stocks', loadChildren: () => import('./stocks/stocks.module').then(m => m.StocksModule) },
+  { path: 'rayons', loadChildren: () => import('./rayons/rayons.module').then(m => m.RayonsModule) },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ]
 

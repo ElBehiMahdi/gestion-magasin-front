@@ -25,7 +25,7 @@ export class StocksAddComponent implements OnInit {
     this.stockForm = new FormGroup({
       qteMin: new FormControl('',[Validators.required,Validators.pattern("[0-9]")]),
       libelle:  new FormControl('', Validators.required),
-      //qte: new FormControl('',[Validators.required,Validators.pattern("[0-9]")])
+      qte: new FormControl('',[Validators.pattern("[0-9]")])
     })
   }
 
