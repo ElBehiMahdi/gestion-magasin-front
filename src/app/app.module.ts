@@ -22,7 +22,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatRadioModule } from "@angular/material/radio";
 import { AddFactureComponent } from './facture/add-facture/add-facture.component';
 import { EditFactureComponent } from './facture/edit-facture/edit-facture.component';
-import { FactureListComponent } from './facture/facture-list/facture-list.component';
+
 import { FactureModule } from './facture/facture.module';
 
 import { FormBuilder } from '@angular/forms';

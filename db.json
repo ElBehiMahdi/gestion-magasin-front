@@ -45,15 +45,15 @@
       "montantRemise": 8545
     },
     {
-      "id": 9,
-      "Nom": "rahma",
-      "idClient": 56,
-      "dateFacture": "10/09/06",
-      "active": "Oui",
-      "idProduit": 65,
+      "id": 10,
+      "Nom": "ben yeguerr",
+      "idClient": 12,
+      "dateFacture": "10/06/99",
+      "active": "Non",
+      "idProduit": 57858,
       "Quantité": null,
-      "montantFacture": 456,
-      "montantRemise": 50
+      "montantFacture": 2000.025,
+      "montantRemise": 445
     }
   ],
   "comments": [],

@@ -4,7 +4,7 @@ import { FactureComponent } from './facture.component';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AddFactureComponent } from './add-facture/add-facture.component';
-import { FactureListComponent } from './facture-list/facture-list.component';
+
 import { EditFactureComponent } from './edit-facture/edit-facture.component';
 import { FormsModule,FormBuilder,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,17 +22,13 @@ const routes: Routes = [
     path: 'editf',
     component: EditFactureComponent, // another child route component that the router renders
   },
-  {
-    path: 'listf',
-    component: FactureListComponent ,// another child route component that the router renders
-  },
-
+   
 ];
 @NgModule({
   declarations: [
     FactureComponent,
     AddFactureComponent,
-    FactureListComponent,
+     
     EditFactureComponent
   ],
   imports: [
