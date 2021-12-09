@@ -11,8 +11,6 @@ import { Product } from 'src/app/models/Products';
   providers: [ProductService]
 })
 export class ProductsListComponent implements OnInit {
-  //icons
-  faEye = faEye
   //List of emplyee objects created, initilaized to EMpty.
   productList!: Product[];
   constructor(

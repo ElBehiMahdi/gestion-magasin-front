@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ProductsComponent } from './products/products.component';
@@ -25,9 +24,9 @@ import { AddFactureComponent } from './facture/add-facture/add-facture.component
 import { EditFactureComponent } from './facture/edit-facture/edit-facture.component';
 
 import { FactureModule } from './facture/facture.module';
- 
- import { FormBuilder } from '@angular/forms'; 
- import{ToastrModule} from 'ngx-toastr';
+
+import { FormBuilder } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -43,13 +42,16 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { ProductService } from './services/product.service';
- 
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MatListModule } from '@angular/material/list';
+
 const routesf: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
   { path: 'facture', loadChildren: () => import('./facture/facture.module').then(m => m.FactureModule) },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'stocks', loadChildren: () => import('./stocks/stocks.module').then(m => m.StocksModule) },
+  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ]
 
@@ -58,12 +60,12 @@ const routesf: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent,
     FooterComponent,
     AboutusComponent,
     PageNotFoundComponent,
     FormComponent,
-    ResponsiveToolbarComponent
+    ResponsiveToolbarComponent,
+    SidebarComponent,
   ],
   imports: [
     HttpClientModule,
@@ -83,8 +85,9 @@ const routesf: Routes = [
     MatIconModule,
     MatSidenavModule,
     MatDividerModule,
-    MatMenuModule,
     FlexLayoutModule,
+    MatMenuModule,
+    MatListModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule
   ],
