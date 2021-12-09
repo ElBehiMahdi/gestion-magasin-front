@@ -41,7 +41,7 @@ const routesp: Routes = [
     component: ProductsListComponent, // another child route component that the router renders
   },
   {
-    path: 'admin-listp',
+    path: 'adminp',
     component: ProductsAdminListComponent, // another child route component that the router renders
   },
   {
