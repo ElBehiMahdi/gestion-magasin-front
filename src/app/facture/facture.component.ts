@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,ReactiveFormsModule } from '@angular/forms';
 import { Facture } from '../models/facture';
 import { FactureService } from './sh/facture.service';
-
+import{render} from 'creditcardpayments/creditCardPayments'
 
 @Component({
   selector: 'app-facture',
@@ -14,7 +14,16 @@ export class FactureComponent implements OnInit {
   factureForm!: FormGroup;
   listfacture!: Facture[];
  
-  constructor( private factureService: FactureService,private fb: FormBuilder) { }
+  constructor( private factureService: FactureService,private fb: FormBuilder) { 
+    render({
+      id:"#myPaypalButtons",
+      currency:"USD",
+      value:"100.00",
+      onApprove:(details)=>{
+        alert("transaction is successful");
+      }
+    });
+  }
   show = false;
  
 
