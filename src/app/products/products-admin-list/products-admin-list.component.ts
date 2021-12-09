@@ -21,7 +21,7 @@ export class ProductsAdminListComponent implements OnInit {
   }
 
   updateProduit(id: number) {
-    this.router.navigate(['detailp', id]);
+    this.router.navigate(['products/detailp', id]);
   }
 
   deleteProduit(id: number) {
