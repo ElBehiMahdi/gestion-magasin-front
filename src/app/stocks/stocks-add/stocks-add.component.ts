@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Stock } from 'src/app/models/Stock';
 import { StocksService } from 'src/app/services/stocks.service';
-import { Stock } from 'src/model/Stock';
+
 
 @Component({
   selector: 'app-stocks-add',
@@ -25,7 +26,7 @@ export class StocksAddComponent implements OnInit {
     this.stockForm = new FormGroup({
       qteMin: new FormControl('',[Validators.required,Validators.pattern("[0-9]")]),
       libelle:  new FormControl('', Validators.required),
-      //qte: new FormControl('',[Validators.required,Validators.pattern("[0-9]")])
+      qte: new FormControl('',[Validators.pattern("[0-9]")])
     })
   }
 
