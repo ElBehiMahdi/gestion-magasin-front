@@ -22,4 +22,7 @@ export class FactureService {
 
     return this.http.post<Facture>(this.url + 'add-facture', facture);
   }
+  public update(data:any,id:number) {
+    return this.http.put<Facture>(this.url + 'modify-facture/' + id,data);
+  }
 }

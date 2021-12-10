@@ -58,6 +58,10 @@ export class FactureComponent implements OnInit {
     this.factureService.delete(id).subscribe();
     this.ngOnInit();
   }
+  update(id: number,data:any) {
+    this.factureService.update(id,data).subscribe();
+    this.ngOnInit();
+  }
     //ajout
     handelSubmit() {
       this.factureService.addFacture(this.factureForm.value).subscribe();
