@@ -9,6 +9,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from "@angular/material/input";
 import { MatRadioModule } from "@angular/material/radio";
+import { MatListModule } from '@angular/material/list';
+import {MatRippleModule} from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { RouterModule, Routes } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -18,7 +20,7 @@ import { CartItemComponent } from './cart/cart-item/cart-item.component';
 import { CartComponent } from './cart/cart.component';
 import { DetailProductsComponent } from './detail-products/detail-products.component';
 import { EditProductsComponent } from './edit-products/edit-products.component';
-import { FiltersComponent } from './filters/filters.component';
+import { FiltersComponent } from './products-list/filters/filters.component';
 import { ProductImageListComponent } from './product-image-list/product-image-list.component';
 import { ProductsAdminListComponent } from './products-admin-list/products-admin-list.component';
 import { ProductItemComponent } from './products-list/product-item/product-item.component';
@@ -100,6 +102,8 @@ const routesp: Routes = [
     MatSelectModule,
     MatIconModule,
     MatChipsModule,
+    MatListModule,
+    MatRippleModule,
   ],
   exports: [RouterModule]
 })

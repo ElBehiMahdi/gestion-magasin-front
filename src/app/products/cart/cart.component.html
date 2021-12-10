@@ -1,10 +1,8 @@
 <div *ngIf="cartItems.length === 0 " class="alert alert-info">No items added</div>
 
-<ul *ngIf="cartItems.length > 0" class="list-group">
-    <li class="list-group-item" *ngFor="let item of cartItems">
-        <app-cart-item [cartItem]="item"></app-cart-item>
-    </li>
-    <li class="list-group-item active">
-        <strong>total: {{cartTotal | currency:'USD'}}</strong>
-    </li>
-</ul>
+<mat-list *ngIf="cartItems.length > 0" role="list">
+  <mat-list-item role="listitem" *ngFor="let item of cartItems">
+    <app-cart-item [cartItem]="item"></app-cart-item>
+  </mat-list-item>
+  <mat-list-item role="listitem"> <strong>total: {{cartTotal | currency:'USD'}}</strong></mat-list-item>
+</mat-list>
