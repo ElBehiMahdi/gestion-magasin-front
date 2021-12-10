@@ -87,10 +87,11 @@ export class AddProductsComponent implements OnInit {
       console.log("invalid");
       return 'invlalid credentials';
     } else {
-      return 'success'
       console.log(this.idRayon , this.idStock)
       this.save(this.idRayon,this.idStock);
       this.goToList();
+      return 'success'
+
     }
   }
 
