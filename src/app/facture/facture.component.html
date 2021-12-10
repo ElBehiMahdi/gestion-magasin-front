@@ -41,7 +41,7 @@
            <td>{{fac.active}}</td>
           
            
-        <td>   <a class="gg-edit-markup"  onClick="window.location.reload();"><i class="icon_close_alt2"></i></a>   </td>
+        <td>   <a class="gg-edit-markup"  (click)="update(fac.idFacture,fac)" onClick="window.location.reload();"><i class="icon_close_alt2"></i></a>   </td>
     <td>    <a class="gg-trash" (click)="delete(fac.idFacture)" onClick="window.location.reload();"><i class="icon_close_alt2"></i></a>
     </td>  
              
@@ -61,9 +61,9 @@
 </div>
 <div >
 <div class="card-body ">
-    <div class="card-title"><b> Ajouter Une Facture</b></div>
+    <div class="card-title   " style="padding-left: 42%;"><h1><b> Ajouter Une Facture</b></h1></div>
     <hr>
-    <form [formGroup]="factureForm" (ngSubmit)="handelSubmit() " style=" color: mintcream; background-color:#673ab7">
+    <form [formGroup]="factureForm" (ngSubmit)="handelSubmit() " style=" color: #f5fffafb; background-color:#673ab7">
     <div class="form-group">
      <label for="input-1"><b>Montant Remise</b></label>
      <input type="number" class="form-control"  formControlName="montantRemise" id="montantRemise" placeholder="Entrer votre montant remise">
@@ -93,4 +93,4 @@
    </form>
 </div>
 </div>
-<div class="d-flex align-center" id="myPaypalButtons" ></div> 
+<div style="padding-left: 20%" class="d-flex align-center" id="myPaypalButtons" ></div> 
