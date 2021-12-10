@@ -6,14 +6,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddFactureComponent } from './add-facture/add-facture.component';
 
 import { EditFactureComponent } from './edit-facture/edit-facture.component';
-import { FormsModule,FormBuilder,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { from } from 'rxjs';
 
- 
+
 const routes: Routes = [
-  {path :'',component:FactureComponent},
+  { path: '', component: FactureComponent },
   {
     path: 'addf', // child route path
     component: AddFactureComponent, // child route component that the router renders
@@ -22,13 +22,13 @@ const routes: Routes = [
     path: 'editf',
     component: EditFactureComponent, // another child route component that the router renders
   },
-   
+
 ];
 @NgModule({
   declarations: [
     FactureComponent,
     AddFactureComponent,
-     
+
     EditFactureComponent
   ],
   imports: [
@@ -39,7 +39,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     /*FormBuilder,*/
   ],
- 
+
   exports: [RouterModule]
 })
 export class FactureModule { }
