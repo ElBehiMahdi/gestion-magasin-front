@@ -1,7 +1,8 @@
-export interface cartItem {
-    productId: number
-    productCode: string
-    productLibelle: string
-    qty: number
-    price: number
+export class cartItem {
+    id!: number
+    productId!: number
+    productCode!: string
+    productLibelle!: string
+    qty!: number
+    price!: number
 }
