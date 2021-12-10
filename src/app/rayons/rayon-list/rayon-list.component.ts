@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Rayon } from 'src/app/models/Rayon';
+import { RayonsService } from 'src/app/services/rayons.service';
 
 @Component({
   selector: 'app-rayon-list',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rayon-list.component.css']
 })
 export class RayonListComponent implements OnInit {
-
-  constructor() { }
+  rayonList !: Rayon[];
+  constructor(private rayonService : RayonsService) { }
 
   ngOnInit(): void {
+    this.rayonService.getRayonList().subscribe((data)=>{this.rayonList = data});
   }
 
 }

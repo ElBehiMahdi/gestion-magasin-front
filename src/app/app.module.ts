@@ -56,7 +56,9 @@ const routesf: Routes = [
     import('./stocks/stocks.module').then(m => m.StocksModule) },
   { path: 'dashboard', loadChildren: () => 
     import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: 'rayons', loadChildren: () => import('./rayons/rayons.module').then(m => m.RayonsModule) },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
+  
 ]
 
 
