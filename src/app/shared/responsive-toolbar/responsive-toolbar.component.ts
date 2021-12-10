@@ -57,7 +57,7 @@ export class ResponsiveToolbarComponent implements OnInit {
     {
       label: 'Stocks',
       icon: 'inventory_2',
-      route: '',
+      route: 'stocks',
       showOnMobile: false,
       showOnTablet: false,
       showOnDesktop: false
