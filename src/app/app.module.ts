@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './shared/footer/footer.component';
 import { AboutusComponent } from './shared/aboutus/aboutus.component';
 import { ProductsComponent } from './products/products.component';
 import { FactureComponent } from './facture/facture.component';
@@ -46,12 +46,16 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
 
 const routesf: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
-  { path: 'facture', loadChildren: () => import('./facture/facture.module').then(m => m.FactureModule) },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'stocks', loadChildren: () => import('./stocks/stocks.module').then(m => m.StocksModule) },
-  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: 'home', component: HomeComponent },
+  { path: 'products', loadChildren: () => 
+    import('./products/products.module').then(m => m.ProductsModule) },
+  { path: 'facture', loadChildren: () => 
+    import('./facture/facture.module').then(m => m.FactureModule) },
+  { path: 'stocks', loadChildren: () => 
+    import('./stocks/stocks.module').then(m => m.StocksModule) },
+  { path: 'dashboard', loadChildren: () => 
+    import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 ]
 

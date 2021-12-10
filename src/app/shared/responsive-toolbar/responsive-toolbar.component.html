@@ -2,9 +2,10 @@
     
     <button mat-icon-button (click)="toggleSide()" *ngIf="condition"><mat-icon>menu</mat-icon></button> 
 
-    <button mat-button routerLink="/home" fxFlex>
-        <mat-icon>shopping_bag</mat-icon><b>Esprit-mag</b>
-    </button>
+    <span fxFlex>
+           <b>Esprit-mag <mat-icon>shopping_bag</mat-icon></b>
+    </span>
+    
     <button mat-button *ngFor="let item of menuItems" 
         [fxShow]="item.showOnDesktop" 
         [fxShow.xs]="item.showOnMobile"

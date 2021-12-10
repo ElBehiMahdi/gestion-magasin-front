@@ -21,6 +21,9 @@ import { ProductsAdminListComponent } from './products-admin-list/products-admin
 import { AddProductImageComponent } from './add-product-image/add-product-image.component';
 import { ProductImageListComponent } from './product-image-list/product-image-list.component';
 import { ShowProductImageComponent } from './show-product-image/show-product-image.component';
+import { FiltersComponent } from './filters/filters.component';
+import { CartComponent } from './cart/cart.component';
+import { CartItemComponent } from './cart/cart-item/cart-item.component';
 
 
 const routesp: Routes = [
@@ -74,6 +77,9 @@ const routesp: Routes = [
     AddProductImageComponent,
     ProductImageListComponent,
     ShowProductImageComponent,
+    FiltersComponent,
+    CartComponent,
+    CartItemComponent,
   ],
   imports: [
     CommonModule,
