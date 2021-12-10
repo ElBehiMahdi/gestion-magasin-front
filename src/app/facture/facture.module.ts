@@ -3,32 +3,32 @@ import { CommonModule } from '@angular/common';
 import { FactureComponent } from './facture.component';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AddFactureComponent } from './add-facture/add-facture.component';
+ 
 
 import { EditFactureComponent } from './edit-facture/edit-facture.component';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { from } from 'rxjs';
+import { FactureListComponent } from './facture-list/facture-list.component';
 
 
 const routes: Routes = [
   { path: '', component: FactureComponent },
-  {
-    path: 'addf', // child route path
-    component: AddFactureComponent, // child route component that the router renders
-  },
+   
   {
     path: 'editf',
     component: EditFactureComponent, // another child route component that the router renders
   },
-
+  {
+    path: 'listf',
+    component: FactureListComponent ,// another child route component that the router renders
+  },
 ];
 @NgModule({
   declarations: [
     FactureComponent,
-    AddFactureComponent,
-
+    FactureListComponent,
     EditFactureComponent
   ],
   imports: [

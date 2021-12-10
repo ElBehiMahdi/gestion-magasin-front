@@ -20,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatRadioModule } from "@angular/material/radio";
-import { AddFactureComponent } from './facture/add-facture/add-facture.component';
+ 
 import { EditFactureComponent } from './facture/edit-facture/edit-facture.component';
 
 import { FactureModule } from './facture/facture.module';
