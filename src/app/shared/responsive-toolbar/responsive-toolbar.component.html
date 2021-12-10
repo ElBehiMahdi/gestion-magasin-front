@@ -1,8 +1,11 @@
 <mat-toolbar fxLayout="row" color="primary">
     
-    <button mat-icon-button><mat-icon>menu</mat-icon></button> 
+    <button mat-icon-button (click)="toggleSide()" *ngIf="condition"><mat-icon>menu</mat-icon></button> 
 
-    <span fxFlex>Magasin-esprit</span>
+    <span fxFlex>
+           <b>Esprit-mag <mat-icon>shopping_bag</mat-icon></b>
+    </span>
+    
     <button mat-button *ngFor="let item of menuItems" 
         [fxShow]="item.showOnDesktop" 
         [fxShow.xs]="item.showOnMobile"

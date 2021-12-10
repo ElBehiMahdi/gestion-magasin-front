@@ -4,15 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FooterComponent } from './footer/footer.component';
-import { AboutusComponent } from './aboutus/aboutus.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { AboutusComponent } from './shared/aboutus/aboutus.component';
 import { ProductsComponent } from './products/products.component';
 import { FactureComponent } from './facture/facture.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { AddProductsComponent } from './products/add-products/add-products.component';
 import { EditProductsComponent } from './products/edit-products/edit-products.component';
 import { ProductsListComponent } from './products/products-list/products-list.component';
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './shared/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -33,7 +33,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider'
 import { MatMenuModule } from '@angular/material/menu';
-import { ResponsiveToolbarComponent } from './responsive-toolbar/responsive-toolbar.component'
+import { ResponsiveToolbarComponent } from './shared/responsive-toolbar/responsive-toolbar.component'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from "@angular/fire/compat";
@@ -42,17 +42,23 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { ProductService } from './services/product.service';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
 
 const routesf: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
-  { path: 'facture', loadChildren: () => import('./facture/facture.module').then(m => m.FactureModule) },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'stocks', loadChildren: () => import('./stocks/stocks.module').then(m => m.StocksModule) },
-  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: 'home', component: HomeComponent },
+  { path: 'products', loadChildren: () => 
+    import('./products/products.module').then(m => m.ProductsModule) },
+  { path: 'facture', loadChildren: () => 
+    import('./facture/facture.module').then(m => m.FactureModule) },
+  { path: 'stocks', loadChildren: () => 
+    import('./stocks/stocks.module').then(m => m.StocksModule) },
+  { path: 'dashboard', loadChildren: () => 
+    import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: 'rayons', loadChildren: () => import('./rayons/rayons.module').then(m => m.RayonsModule) },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
+  
 ]
 
 

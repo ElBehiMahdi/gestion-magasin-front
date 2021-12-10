@@ -1,7 +1,7 @@
-<app-responsive-toolbar></app-responsive-toolbar>
+<app-responsive-toolbar (toggleSidee)="sideBarToggler()"></app-responsive-toolbar>
 
 <mat-drawer-container>
-    <mat-drawer mode="side" opened *ngIf="condition">
+    <mat-drawer mode="side" [opened]="open">
         <app-sidebar></app-sidebar>
     </mat-drawer>
     <mat-drawer-content>
@@ -9,4 +9,4 @@
     </mat-drawer-content>
 </mat-drawer-container>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

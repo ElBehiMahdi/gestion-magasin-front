@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MenuItem } from 'src/app/models/menu-item';
 
 @Component({
@@ -7,6 +7,11 @@ import { MenuItem } from 'src/app/models/menu-item';
   styleUrls: ['./responsive-toolbar.component.css']
 })
 export class ResponsiveToolbarComponent implements OnInit {
+
+  @Output() toggleSidee: EventEmitter<any> = new EventEmitter();
+
+  //TODO change condition based on client role
+  condition = true;
 
   menuItems: MenuItem[] = [
     {
@@ -50,16 +55,16 @@ export class ResponsiveToolbarComponent implements OnInit {
       showOnDesktop: true
     },
     {
-      label: 'Showcase',
-      icon: 'slideshow',
-      route: '',
+      label: 'Stocks',
+      icon: 'inventory_2',
+      route: 'stocks',
       showOnMobile: false,
       showOnTablet: false,
       showOnDesktop: false
     },
     {
-      label: 'Blog',
-      icon: 'rss_feed',
+      label: 'Rayon',
+      icon: 'view_column',
       route: '',
       showOnMobile: false,
       showOnTablet: false,
@@ -70,6 +75,10 @@ export class ResponsiveToolbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleSide(){
+    this.toggleSidee.emit();
   }
 
 }
