@@ -1,30 +1,30 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
-import { ProductsComponent } from './products.component';
-import { AddProductsComponent } from './add-products/add-products.component';
-import { ProductsListComponent } from './products-list/products-list.component';
-import { EditProductsComponent } from './edit-products/edit-products.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ReactiveFormsModule } from "@angular/forms";
-import { MatCardModule } from "@angular/material/card";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatRadioModule } from "@angular/material/radio";
-import { MatInputModule } from "@angular/material/input";
-import { MatButtonModule } from "@angular/material/button";
+import { NgModule } from '@angular/core';
 import { FlexModule } from "@angular/flex-layout";
-import { MatSelectModule } from '@angular/material/select';
-import { DetailProductsComponent } from './detail-products/detail-products.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatButtonModule } from "@angular/material/button";
+import { MatCardModule } from "@angular/material/card";
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from '@angular/material/icon';
-import {MatChipsModule} from '@angular/material/chips';
-import { ProductsAdminListComponent } from './products-admin-list/products-admin-list.component';
+import { MatInputModule } from "@angular/material/input";
+import { MatRadioModule } from "@angular/material/radio";
+import { MatSelectModule } from '@angular/material/select';
+import { RouterModule, Routes } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddProductImageComponent } from './add-product-image/add-product-image.component';
-import { ProductImageListComponent } from './product-image-list/product-image-list.component';
-import { ShowProductImageComponent } from './show-product-image/show-product-image.component';
-import { FiltersComponent } from './filters/filters.component';
-import { CartComponent } from './cart/cart.component';
+import { AddProductsComponent } from './add-products/add-products.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
-
+import { CartComponent } from './cart/cart.component';
+import { DetailProductsComponent } from './detail-products/detail-products.component';
+import { EditProductsComponent } from './edit-products/edit-products.component';
+import { FiltersComponent } from './filters/filters.component';
+import { ProductImageListComponent } from './product-image-list/product-image-list.component';
+import { ProductsAdminListComponent } from './products-admin-list/products-admin-list.component';
+import { ProductItemComponent } from './products-list/product-item/product-item.component';
+import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductsComponent } from './products.component';
+import { ShowProductImageComponent } from './show-product-image/show-product-image.component';
 
 const routesp: Routes = [
   {
@@ -41,6 +41,10 @@ const routesp: Routes = [
   },
   {
     path: 'listp/:cat',
+    component: ProductsListComponent, // another child route component that the router renders
+  },
+  {
+    path: 'listp',
     component: ProductsListComponent, // another child route component that the router renders
   },
   {
@@ -80,6 +84,7 @@ const routesp: Routes = [
     FiltersComponent,
     CartComponent,
     CartItemComponent,
+    ProductItemComponent,
   ],
   imports: [
     CommonModule,
@@ -94,7 +99,7 @@ const routesp: Routes = [
     FlexModule,
     MatSelectModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
   ],
   exports: [RouterModule]
 })

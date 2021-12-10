@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/models/Products';
+import { MessengerService } from 'src/app/services/messenger.service';
 
 @Component({
   selector: 'app-products-list',
@@ -12,13 +13,19 @@ import { Product } from 'src/app/models/Products';
 })
 export class ProductsListComponent implements OnInit {
   //List of emplyee objects created, initilaized to EMpty.
-  productList!: Product[];
+  productList: Product[] = [];
+  product!: Product;
   constructor(
     private router: Router,
-    private productService: ProductService) { }
+    private productService: ProductService,
+    private msg: MessengerService) { }
 
   ngOnInit(): void {
     this.getProduct();
+  }
+
+  handleAddToCart(){
+    this.msg.sendMsg(this.product)
   }
 
   updateProduit(id: number) {

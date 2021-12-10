@@ -1,1 +1,13 @@
-<span>Item 1</span> x <span>4</span>:<span>: <strong>{{ 500 | currency:'USD'}}</strong> 
+<div class="cart-item">
+    <span>{{cartItem.productLibelle}}
+
+    </span> x 
+    
+    <span>{{cartItem.qty}}
+    </span>:
+    
+    <span>: 
+        <strong>{{ (cartItem.qty * cartItem.price) | currency:'USD'}}</strong> 
+    </span>
+</div>
+

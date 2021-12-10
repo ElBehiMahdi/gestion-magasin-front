@@ -1,49 +1,37 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from "@angular/material/card";
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from "@angular/material/radio";
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Routes } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ToastrModule } from 'ngx-toastr';
+import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { RouterModule, Routes } from '@angular/router';
-import { FooterComponent } from './shared/footer/footer.component';
-import { AboutusComponent } from './shared/aboutus/aboutus.component';
-import { ProductsComponent } from './products/products.component';
-import { FactureComponent } from './facture/facture.component';
-import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-import { AddProductsComponent } from './products/add-products/add-products.component';
-import { EditProductsComponent } from './products/edit-products/edit-products.component';
-import { ProductsListComponent } from './products/products-list/products-list.component';
-import { FormComponent } from './shared/form/form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule } from "@angular/material/card";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatRadioModule } from "@angular/material/radio";
-import { AddFactureComponent } from './facture/add-facture/add-facture.component';
-import { EditFactureComponent } from './facture/edit-facture/edit-facture.component';
-
-import { FactureModule } from './facture/facture.module';
-
-import { FormBuilder } from '@angular/forms';
-import { ToastrModule } from 'ngx-toastr';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatDividerModule } from '@angular/material/divider'
-import { MatMenuModule } from '@angular/material/menu';
-import { ResponsiveToolbarComponent } from './shared/responsive-toolbar/responsive-toolbar.component'
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { environment } from 'src/environments/environment';
-import { AngularFireModule } from "@angular/fire/compat";
-import { AngularFireAuthModule } from "@angular/fire/compat/auth";
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { ProductService } from './services/product.service';
+import { AboutusComponent } from './shared/aboutus/aboutus.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { FormComponent } from './shared/form/form.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { ResponsiveToolbarComponent } from './shared/responsive-toolbar/responsive-toolbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { MatListModule } from '@angular/material/list';
+
+
+
 
 const routesf: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

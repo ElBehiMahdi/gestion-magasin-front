@@ -4,7 +4,7 @@ import { Stock } from "./Stock";
 
 export class Product{
     idProduit !: number;
-    code !:string;
+    code !: string;
     libelle !:string;
     prixUnitaire !:number;
     categorieProduit !: string;
