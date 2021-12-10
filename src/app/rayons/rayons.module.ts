@@ -5,10 +5,29 @@ import { RayonsComponent } from './rayons.component';
 import { RayonAddComponent } from './rayon-add/rayon-add.component';
 import { RayonEditComponent } from './rayon-edit/rayon-edit.component';
 import { RayonListComponent } from './rayon-list/rayon-list.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { FlexModule } from '@angular/flex-layout';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 
 const routes: Routes = [
-  { path: '', component: RayonsComponent }
+  { path: '', 
+  component: RayonsComponent,
+  },
+  { path: 'add', 
+    component:RayonAddComponent,
+  },
+  { path: 'edit/:id', 
+    component: RayonEditComponent,
+  },
+  { path: 'list', 
+    component: RayonListComponent,
+  }
 ];
 
 @NgModule({
@@ -20,7 +39,15 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    FlexModule,
+    RouterModule.forChild(routes),
+    DragDropModule
   ]
 })
 export class RayonsModule { }
