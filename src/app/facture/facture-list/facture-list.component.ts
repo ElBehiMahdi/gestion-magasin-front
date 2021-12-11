@@ -15,12 +15,12 @@ export class FactureListComponent implements OnInit {
  
   factureForm!: FormGroup;
   listfacture!: Facture[];
-   
+  myAbgularxQrCode:any;
   
   
   constructor( private factureService: FactureService,private fb: FormBuilder) { 
     
-     
+     this.myAbgularxQrCode='Your QR code data string';
     render({
       id:"#myPaypalButtons",
       currency:"USD",

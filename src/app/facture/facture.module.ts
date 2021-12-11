@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
 import { FactureListComponent } from './facture-list/facture-list.component';
 import { FooterComponent } from './footer/footer.component';
+import { QRCodeModule } from 'angularx-qrcode';
  
  
 
@@ -34,6 +35,7 @@ const routes: Routes = [
     FactureListComponent,
     EditFactureComponent,
     FooterComponent,
+     
     
     
   ],
@@ -43,6 +45,7 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    QRCodeModule
     /*FormBuilder,*/
   ],
 
