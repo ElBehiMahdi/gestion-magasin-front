@@ -214,6 +214,33 @@
 </div>
 <div  id="myPaypalButtons"></div> 
  ------>
+
+ <head>
+  <meta charset="utf-8">
+  <title>Invoice</title>
+   
+  <link rel="license" href="https://www.opensource.org/licenses/mit-license/">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1 id='invoice'>Invoice</h1>
+    <h1 class="card-title"><b>Nos Factures</b></h1>
+  
+    <address contenteditable style="padding-left: 5%;">
+      <span> <p><img alt="" src="assets/store.jpg" width="10%"  ></p></span>
+        <p>   Magazin Esprit <br>
+      Rue Andre Ampére-Pole Technologique-El Ghazella<br>Tel:+216 70 250 000<br>
+      Fax:+216 70 685 454   </p> 
+    </address>
+ 
+      
+   
+
+ <div class="card-body">
+   
+   
+
  <div class="table-responsive">
        
   <br>
@@ -265,12 +292,12 @@
 
 
 
- 
+</div>
 <div >
 <div class="card-body ">
-<div class="card-title   " style="padding-left: 42%;"><h1><b> Ajouter Une Facture</b></h1></div>
+<div class="card-title   " style=""><h1><b> Ajouter Une Facture</b></h1></div>
 <hr>
-<form [formGroup]="factureForm" (ngSubmit)="handelSubmit() " style=" color: #f5fffafb; background-color:#673ab7">
+<form [formGroup]="factureForm" (ngSubmit)="handelSubmit() " style=" color: #f5fffafb; background-color:rgb(66, 63, 63)">
 <div class="form-group">
 <label for="input-1"><b>Montant Remise</b></label>
 <input type="number" class="form-control"  formControlName="montantRemise" id="montantRemise" placeholder="Entrer votre montant remise">
@@ -298,10 +325,25 @@
 </div>
 
 </form>
+
 </div>
 </div>
-<div style="padding-left: 20%" class="d-flex align-center" id="myPaypalButtons" ></div> 
-<a type="button"    routerlink="/facture/addf">Sign up today</a>
+     
+
+
+
+          <div style="padding-left: 20%" class="d-flex align-center" id="myPaypalButtons" > </div> 
+
+  
+
+          <aside>
+            <h1><span contenteditable>Additional Notes</span></h1>
+            <div contenteditable>
+              <p> Des frais financiers de 1,5% seront prélevés sur les soldes impayés après 30 jours.</p>
+            </div>
+          </aside>
+          <app-footer></app-footer>
+ 
 
 
  

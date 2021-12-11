@@ -4,13 +4,16 @@
 <link href='https://css.gg/add.css' rel='stylesheet'>
 <link href='https://css.gg/edit-markup.css' rel='stylesheet'>
 <div class="card-body">
-    <h1 class="card-title"><b>Gestion Factures</b></h1>
+    <h1 class="card-title" style=""><b>Gestion Factures</b></h1>
+    <header>
+      <h1 id='invoice'>Bienvenu a notre espace</h1>
+      </header>
    
 
 
 
 
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" >
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
             aria-label="Slide 1"></button>
@@ -29,9 +32,9 @@
               <div class="carousel-caption text-start">
                 
                 
-                <h1>Example headline.</h1>
-                <p>Some representative placeholder content for the first slide of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary"  routerlink="facture/listf">Sign up today</a></p>
+                <h1> </h1>
+                <p> </p>
+                <p><a class=" btn btn-lg btn-primary d-flex align-center"  href="#" routerLink="/facture/listf"> Acceder aux Factures et paiement</a></p>
               </div>
             </div>
           </div>
@@ -43,9 +46,9 @@
   
             <div class="container">
               <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Some representative placeholder content for the second slide of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" routerlink="/facture/addf">Learn more</a></p>
+                <h1> </h1>
+                <p> </p>
+                <p><a class=" btn btn-lg btn-primary d-flex align-center" href="#" routerLink="/facture/listf"> Acceder aux Factures et paiement</a></p>
               </div>
             </div>
           </div>
@@ -55,11 +58,11 @@
               <rect width="100%" height="100%" fill="#777" /></svg>
               <img src="assets/14.jpg" >
   
-            <div class="container">
-              <div class="carousel-caption text-end">
-                <h1>One more for good measure.</h1>
-                <p>Some representative placeholder content for the third slide of this carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+            <div class="container" style="background-color: moccasin;">
+              <div class="carousel-caption text-end" >
+                <h1> </h1>
+                <p> </p>
+                <p><a class="btn btn-lg btn-primary d-flex align-center " href="#" routerLink="/facture/listf" > Acceder aux Factures et paiement</a></p>
               </div>
             </div>
           </div>
@@ -82,7 +85,8 @@
 
 
 
-    <div class="table-responsive">
+
+   <!-------<div class="table-responsive">
        
        <br>
     <table id="datatableexample"  class="table table-striped table-dark" >
@@ -166,7 +170,40 @@
    </div>
    
    </form>
+   
 </div>
-</div>
-<div style="padding-left: 20%" class="d-flex align-center" id="myPaypalButtons" ></div> 
+</div>------>
+          
  
+
+<div style="font-size: large; background-color: moccasin; padding-left: 2%"> 
+<h1   ><b>Comment Box</b></h1>
+ 
+<div class="mb-3" >
+  <label for="exampleFormControlTextarea1" class="form-label">Ecrire un Commentaire</label>
+  <textarea [(ngModel)]="comment" class="form-control" id="exampleFormControlTextarea1"  rows="3"></textarea>
+</div>
+ 
+<button class="btn btn-success " (click)="send()" >Send</button>
+<hr>
+<div *ngFor="let comments of postComment">
+  <p>  {{comments}}</p></div>
+  </div>
+
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

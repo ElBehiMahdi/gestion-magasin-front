@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { from } from 'rxjs';
 import { FactureListComponent } from './facture-list/facture-list.component';
+import { FooterComponent } from './footer/footer.component';
+ 
+ 
 
 
 const routes: Routes = [
@@ -29,7 +32,10 @@ const routes: Routes = [
   declarations: [
     FactureComponent,
     FactureListComponent,
-    EditFactureComponent
+    EditFactureComponent,
+    FooterComponent,
+    
+    
   ],
   imports: [
     CommonModule,

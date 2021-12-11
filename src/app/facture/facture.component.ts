@@ -13,6 +13,14 @@ export class FactureComponent implements OnInit {
 
   factureForm!: FormGroup;
   listfacture!: Facture[];
+  comment="";
+  postComment=[""];
+  send(){
+
+    this.postComment.push(this.comment);
+    this.comment="";
+  }
+        
  
   constructor( private factureService: FactureService,private fb: FormBuilder) { 
     render({
@@ -53,7 +61,14 @@ export class FactureComponent implements OnInit {
      
 
 }
-       //delete
+ 
+
+
+
+
+
+
+//delete
   delete(id: number) {
     this.factureService.delete(id).subscribe();
     this.ngOnInit();
