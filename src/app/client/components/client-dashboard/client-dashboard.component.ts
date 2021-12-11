@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { ToastrService } from "ngx-toastr";
 import { Client } from 'src/app/models/Client';
-import { ApiService } from '../../shared/api.service';
+import { ApiCService } from 'src/app/client/components/shared/api-c.service';
 @Component({
   selector: 'app-client-dashboard',
   templateUrl: './client-dashboard.component.html',
@@ -20,7 +20,7 @@ export class ClientDashboardComponent implements OnInit {
  /* clients!: Client[];
   list:Client[]=[]*/
 
-  constructor(private formbuilder: FormBuilder, private api: ApiService, 
+  constructor(private formbuilder: FormBuilder, private api: ApiCService, 
     private router: Router, private route:ActivatedRoute, private toastr : ToastrService) { }
 
 
