@@ -4,6 +4,8 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/models/Products';
 import { MessengerService } from 'src/app/services/messenger.service';
+import { CartItemsService } from 'src/app/services/cart-items.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
   selector: 'app-products-list',
@@ -15,18 +17,30 @@ export class ProductsListComponent implements OnInit {
   //List of emplyee objects created, initilaized to EMpty.
   productList: Product[] = [];
   product!: Product;
+  wishlist: number[] = []
+  added: boolean = false;
+
   constructor(
     private router: Router,
     private productService: ProductService,
+    private wishlistService: WishlistService,
     private msg: MessengerService) { }
 
   ngOnInit(): void {
     this.getProduct();
+    this.loadWishlist();
   }
 
   handleAddToCart(){
-    this.msg.sendMsg(this.product)
+      this.msg.sendMsg(this.product)
   }
+
+  loadWishlist(){
+    this.wishlistService.getWishlist().subscribe((productIds) =>{
+      this.wishlist = productIds
+    })
+  }
+
 
   updateProduit(id: number) {
     this.router.navigate(['products/detailp', id]);

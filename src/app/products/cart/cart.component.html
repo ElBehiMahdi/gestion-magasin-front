@@ -3,6 +3,8 @@
 <mat-list *ngIf="cartItems.length > 0" role="list">
   <mat-list-item role="listitem" *ngFor="let item of cartItems">
     <app-cart-item [cartItem]="item"></app-cart-item>
+    
+
   </mat-list-item>
   <mat-list-item role="listitem"> <strong>total: {{cartTotal | currency:'USD'}}</strong></mat-list-item>
 </mat-list>
