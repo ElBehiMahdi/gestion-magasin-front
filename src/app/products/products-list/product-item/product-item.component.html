@@ -6,6 +6,18 @@
     </mat-card-title>
     <mat-card-subtitle>{{productItem.categorieProduit}}</mat-card-subtitle>
   </mat-card-header>
+  {{productItem.prixUnitaire | currency:'EUR'}}
+
+  <div>
+    <button *ngIf="added" mat-icon-button color="warn" (click)="handleRemoveFromWishlist()">
+      <mat-icon>favorite</mat-icon>
+    </button>
+
+    <button *ngIf="!added" mat-icon-button color="warn" (click)="handleAddToWishlist()">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
+
+  </div>
   <img mat-card-image src="assets/images/buffer.svg" alt="product-img">
   <mat-card-actions>
     <button mat-button (click)="handleAddToCart()">Add</button>
