@@ -12,4 +12,6 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //TODO add shortcut to all routes in admin sidebar
+
 }

@@ -63,4 +63,5 @@ export class ProductItemComponent implements OnInit {
 
   }
 
+  //TODO get the image using idProduit 
 }

@@ -75,5 +75,6 @@ export class ProductsListComponent implements OnInit {
     })
   }
 
-  
+  //TODO pay button when clicking on it ttzed facture fiha montant 
+   
 }
