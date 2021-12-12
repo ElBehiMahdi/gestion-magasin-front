@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/Products';
 import { CartItemsService } from 'src/app/services/cart-items.service';
 import { MessengerService } from 'src/app/services/messenger.service'
+import { StocksService } from 'src/app/services/stocks.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
@@ -18,12 +19,14 @@ export class ProductItemComponent implements OnInit {
 
   constructor(private msg: MessengerService,
     private cartService: CartItemsService,
-    private wishlistService: WishlistService,) { }
+    private wishlistService: WishlistService,
+    private stocksService : StocksService) { }
 
   ngOnInit(): void {
   }
 
   handleAddToCart() {
+    this.removeFromStock(this.productItem);
     this.cartService.addProductToCart(this.productItem).subscribe(() => {
       this.msg.sendMsg(this.productItem)
     })
@@ -39,6 +42,15 @@ export class ProductItemComponent implements OnInit {
     this.wishlistService.removeFromWishlist(this.productItem.idProduit).subscribe(() => {
       this.added = false;
     })
+  }
+
+  removeFromStock(p : Product){
+    p.stock.qte= p.stock.qte - 1;
+    p.stock.qteSold= p.stock.qteSold + 1;
+     
+    this.stocksService.updateStock(p.stock)
+      .subscribe(data => console.log(data));
+
   }
 
 }
