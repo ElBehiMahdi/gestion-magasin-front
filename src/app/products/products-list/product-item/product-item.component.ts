@@ -33,7 +33,6 @@ export class ProductItemComponent implements OnInit {
   handleAddToCart() {
     console.log(this.productItem)
     this.productService.getProduct(this.productItem.idProduit).subscribe(data => {
-      console.log(data)
       this.Product = data;
       this.removeFromStock(this.Product.stock);
     }, error => console.log(error));
@@ -56,7 +55,6 @@ export class ProductItemComponent implements OnInit {
   }
 
   removeFromStock(s : Stock){
-    console.log(s)
     s.qte= s.qte - 1;
     s.qteSold= s.qteSold + 1;
      

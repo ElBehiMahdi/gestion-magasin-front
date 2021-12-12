@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { productImage } from 'src/app/models/product-image'
 import { environment } from 'src/environments/environment';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -17,6 +17,8 @@ export class ProductService {
 
   formData!: productImage;
 
+  public search = new BehaviorSubject<string>("")
+
   constructor(private httpClient: HttpClient,
   private angularFirestore: AngularFirestore) { }
 
@@ -25,7 +27,11 @@ export class ProductService {
 
 
   getProductList(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.proxy + '/retrieve-all-produits')
+    return this.httpClient.get<Product[]>(this.proxy + '/retrieve-all-produits');
+  }
+
+  getProductListByCat(category:any): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.proxy + '/retrieve-all-produits-byCat/' + category);
   }
 
   createProduct(account: Object, idRayon: Number, idStock: Number): Observable<Object> {
