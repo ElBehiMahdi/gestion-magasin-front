@@ -9,19 +9,19 @@ import { MatCardModule } from "@angular/material/card";
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatRadioModule } from "@angular/material/radio";
- 
+
 import { EditFactureComponent } from './facture/edit-facture/edit-facture.component';
 
 import { FactureModule } from './facture/facture.module';
 
 import { FormBuilder } from '@angular/forms';
- 
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
- 
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
@@ -37,6 +37,7 @@ import { FormComponent } from './shared/form/form.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { ResponsiveToolbarComponent } from './shared/responsive-toolbar/responsive-toolbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { JwtClientService } from './client/components/shared/jwt-client.service';
 
 
 
@@ -44,17 +45,29 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 const routesf: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'products', loadChildren: () => 
-    import('./products/products.module').then(m => m.ProductsModule) },
-  { path: 'facture', loadChildren: () => 
-    import('./facture/facture.module').then(m => m.FactureModule) },
-  { path: 'stocks', loadChildren: () => 
-    import('./stocks/stocks.module').then(m => m.StocksModule) },
-  { path: 'dashboard', loadChildren: () => 
-    import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+  {
+    path: 'products', loadChildren: () =>
+      import('./products/products.module').then(m => m.ProductsModule)
+  },
+  {
+    path: 'facture', loadChildren: () =>
+      import('./facture/facture.module').then(m => m.FactureModule)
+  },
+  {
+    path: 'stocks', loadChildren: () =>
+      import('./stocks/stocks.module').then(m => m.StocksModule)
+  },
+  {
+    path: 'dashboard', loadChildren: () =>
+      import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
+  {
+    path: 'client', loadChildren: () =>
+      import('./client/client.module').then(m => m.ClientModule)
+  },
   { path: 'rayons', loadChildren: () => import('./rayons/rayons.module').then(m => m.RayonsModule) },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
-  
+
 ]
 
 
@@ -93,7 +106,7 @@ const routesf: Routes = [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, JwtClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
