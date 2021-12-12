@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { isNgTemplate } from '@angular/compiler';
+import { Component, IterableDiffers, OnInit } from '@angular/core';
 import { cartItem } from 'src/app/models/cart-item';
 import { Product } from 'src/app/models/Products';
+import { Stock } from 'src/app/models/Stock';
 import { CartItemsService } from 'src/app/services/cart-items.service';
 import { MessengerService } from 'src/app/services/messenger.service';
 
@@ -43,5 +45,7 @@ export class CartComponent implements OnInit {
       this.cartTotal += (item.qty * item.price)
     })
   }
+
+  
       
 }

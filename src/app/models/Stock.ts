@@ -3,4 +3,5 @@ export class Stock{
     qte !: number;
     qteMin !: number;
     libelle !: string;
+    qteSold !: number;
 }
