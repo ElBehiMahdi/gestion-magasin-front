@@ -15,14 +15,14 @@ export class CreateClientComponent implements OnInit {
   
     client:Client = new Client();
 
-  constructor(private formBuilder: FormBuilder, private api: ApiCService, private router: Router, private act : ActivatedRoute) { }
+  constructor(private formBuilder: FormBuilder, private apic: ApiCService, private router: Router, private act : ActivatedRoute) { }
 
   ngOnInit(): void {
      
       
 }
   onSubmit(){
-    this.api.addClient(this.signupForm.value).subscribe( data =>{
+    this.apic.addClient(this.signupForm.value).subscribe( data =>{
       console.log(data);
       this.goToClientList();
     },
