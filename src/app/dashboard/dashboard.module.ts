@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { ChartStockComponent } from './chart-stock/chart-stock.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    DashboardComponent,    
+    DashboardComponent,
+    ChartStockComponent,    
   ],
   imports: [
     CommonModule,
