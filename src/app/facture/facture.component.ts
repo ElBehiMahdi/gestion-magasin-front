@@ -10,7 +10,7 @@ import{render} from 'creditcardpayments/creditCardPayments'
   styleUrls: ['./facture.component.css']
 })
 export class FactureComponent implements OnInit {
-
+  public name="Magasin Esprit 2021";
   factureForm!: FormGroup;
   listfacture!: Facture[];
   comment="";

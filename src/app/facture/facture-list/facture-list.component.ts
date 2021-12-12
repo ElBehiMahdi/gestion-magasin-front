@@ -16,6 +16,8 @@ export class FactureListComponent implements OnInit {
   factureForm!: FormGroup;
   listfacture!: Facture[];
   myAbgularxQrCode:any;
+  public name="Magasin Esprit 2021";
+   message="";
   
   
   constructor( private factureService: FactureService,private fb: FormBuilder) { 
