@@ -9,4 +9,7 @@ export class Client {
     profession!: String;
     phone!: number;
     cin!: number;
+    username!: String;
+    password!: String;
+    role!: String;
 }

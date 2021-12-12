@@ -6,6 +6,7 @@ import { ClientDashboardComponent } from './components/client-dashboard/client-d
 import { CreateClientComponent } from './components/create-client/create-client.component';
 import { UpdateClientComponent } from './components/update-client/update-client.component';
 import { SharedComponent } from './components/shared/shared.component';
+import { SecurityComponent } from './security/security.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { SharedComponent } from './components/shared/shared.component';
     ClientDashboardComponent,
     CreateClientComponent,
     UpdateClientComponent,
+    SecurityComponent,
   
   ],
   imports: [
