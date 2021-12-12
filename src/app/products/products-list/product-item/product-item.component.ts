@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/Products';
+import { Stock } from 'src/app/models/Stock';
 import { CartItemsService } from 'src/app/services/cart-items.service';
 import { MessengerService } from 'src/app/services/messenger.service'
+import { ProductService } from 'src/app/services/product.service';
 import { StocksService } from 'src/app/services/stocks.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
 
@@ -12,6 +14,8 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 })
 export class ProductItemComponent implements OnInit {
 
+  Product!: any
+
   @Input()
   productItem!: Product;
 
@@ -20,13 +24,20 @@ export class ProductItemComponent implements OnInit {
   constructor(private msg: MessengerService,
     private cartService: CartItemsService,
     private wishlistService: WishlistService,
-    private stocksService : StocksService) { }
+    private stocksService : StocksService,
+    private productService : ProductService) { }
 
   ngOnInit(): void {
   }
 
   handleAddToCart() {
-    this.removeFromStock(this.productItem);
+    console.log(this.productItem)
+    this.productService.getProduct(this.productItem.idProduit).subscribe(data => {
+      console.log(data)
+      this.Product = data;
+      this.removeFromStock(this.Product.stock);
+    }, error => console.log(error));
+    
     this.cartService.addProductToCart(this.productItem).subscribe(() => {
       this.msg.sendMsg(this.productItem)
     })
@@ -44,11 +55,12 @@ export class ProductItemComponent implements OnInit {
     })
   }
 
-  removeFromStock(p : Product){
-    p.stock.qte= p.stock.qte - 1;
-    p.stock.qteSold= p.stock.qteSold + 1;
+  removeFromStock(s : Stock){
+    console.log(s)
+    s.qte= s.qte - 1;
+    s.qteSold= s.qteSold + 1;
      
-    this.stocksService.updateStock(p.stock)
+    this.stocksService.updateStock(s)
       .subscribe(data => console.log(data));
 
   }

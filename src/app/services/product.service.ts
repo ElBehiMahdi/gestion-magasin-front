@@ -29,7 +29,7 @@ export class ProductService {
   }
 
   createProduct(account: Object, idRayon: Number, idStock: Number): Observable<Object> {
-    return this.httpClient.post(this.proxy + '/add-produit/' + idRayon + '/' + idStock, account);
+    return this.httpClient.post(this.proxy + '/add-produit/' + idStock + '/' + idRayon, account);
   }
 
   getProduct(id: number): Observable<any> {

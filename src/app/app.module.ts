@@ -65,7 +65,10 @@ const routesf: Routes = [
     path: 'client', loadChildren: () =>
       import('./client/client.module').then(m => m.ClientModule)
   },
-  { path: 'rayons', loadChildren: () => import('./rayons/rayons.module').then(m => m.RayonsModule) },
+  {
+    path: 'rayons', loadChildren: () =>
+      import('./rayons/rayons.module').then(m => m.RayonsModule)
+  },
   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 
 ]
