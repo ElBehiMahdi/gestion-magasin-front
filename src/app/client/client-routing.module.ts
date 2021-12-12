@@ -10,6 +10,7 @@ const routes: Routes = [
   {path:'', redirectTo:'client', pathMatch:'full'},//pathMatch is recommended when we configure an empty path
   {path:'createClient', component: CreateClientComponent},
   {path: 'updateClient/:idClient', component: UpdateClientComponent},
+  
 
 
 ];

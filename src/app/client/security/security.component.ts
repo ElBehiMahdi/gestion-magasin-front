@@ -9,27 +9,27 @@ import { JwtClientService } from '../components/shared/jwt-client.service';
 })
 export class SecurityComponent implements OnInit {
 
-  authRequest:any={
-    "userName":"javatechie",
-    "password":"password"
+  authRequest: any = {
+    "userName": "admin",
+    "password": "admin"
   };
 
-  response:any;
+  response: any;
 
-  constructor(private service:JwtClientService) { }
+  constructor(private service: JwtClientService) { }
 
   ngOnInit() {
     this.getAccessToken(this.authRequest);
   }
 
-  public getAccessToken(authRequest: any){
-let resp=this.service.generateToken(authRequest);
-resp.subscribe(data=>this.accessApi(data));
+  public getAccessToken(authRequest: any) {
+    let resp = this.service.generateToken(authRequest);
+    resp.subscribe(data => this.accessApi(data));
   }
 
 
-  public accessApi(token:any){
-let resp=this.service.welcome(token);
-resp.subscribe(data=>this.response=data);
+  public accessApi(token: any) {
+    let resp = this.service.welcome(token);
+    resp.subscribe(data => this.response = data);
   }
 }
