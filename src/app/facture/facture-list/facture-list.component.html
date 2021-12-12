@@ -337,14 +337,13 @@
   <h1>QR CODE 
   <qrcode  [qrdata]="myAbgularxQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode></h1>
 
-          <aside>
-            <h1><span contenteditable>Additional Notes</span></h1>
-            <div contenteditable>
-              <p> Des frais financiers de 1,5% seront prélevés sur les soldes impayés après 30 jours.</p>
-            </div>
-          </aside>
-          <app-footer></app-footer>
- 
+           <app-remarque (childEvent)="message = $event"  ></app-remarque>
+           {{message}}
+            <app-footer [nameFromParent]="name"  >    </app-footer>
+             
+           
+          
+             
 
 
  

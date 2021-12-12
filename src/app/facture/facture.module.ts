@@ -13,6 +13,7 @@ import { from } from 'rxjs';
 import { FactureListComponent } from './facture-list/facture-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { QRCodeModule } from 'angularx-qrcode';
+import { RemarqueComponent } from './remarque/remarque.component';
  
  
 
@@ -35,6 +36,7 @@ const routes: Routes = [
     FactureListComponent,
     EditFactureComponent,
     FooterComponent,
+    RemarqueComponent,
      
     
     
