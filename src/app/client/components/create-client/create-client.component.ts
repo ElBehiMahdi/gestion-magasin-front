@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Client } from 'src/app/models/Client';
-import { ApiService } from '../../shared/api.service';
+import { ApiCService } from '../shared/api-c.service';
 
 
 
@@ -15,7 +15,7 @@ export class CreateClientComponent implements OnInit {
   
     client:Client = new Client();
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router, private act : ActivatedRoute) { }
+  constructor(private formBuilder: FormBuilder, private api: ApiCService, private router: Router, private act : ActivatedRoute) { }
 
   ngOnInit(): void {
      
