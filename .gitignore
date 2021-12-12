@@ -46,3 +46,4 @@ Thumbs.db
 
 # Others
 .angular/*
+db.json
