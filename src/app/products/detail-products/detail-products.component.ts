@@ -31,7 +31,6 @@ export class DetailProductsComponent implements OnInit {
 
     this.productService.getProduct(this.id)
       .subscribe(data => {
-        console.log(data)
         this.product = data;
       }, error => console.log(error));
 
@@ -64,7 +63,7 @@ export class DetailProductsComponent implements OnInit {
   }
 
   goToList(){
-    this.router.navigate(['/products/listp']);
+    this.router.navigate(['/products/adminp']);
   }
 
 }

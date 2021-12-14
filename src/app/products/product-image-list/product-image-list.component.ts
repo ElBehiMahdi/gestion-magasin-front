@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { productImage } from 'src/app/models/product-image';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -10,14 +11,11 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductImageListComponent implements OnInit {
   list?: productImage[];
   categorie!: string;
-  cat: any;
   route: any;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit() {
-    this.cat = this.route.snapshot.params['cat'];
-
     this.productService.getProductImageList().subscribe(actionArray => {
       this.list =actionArray.map(item =>{
         return {
@@ -25,10 +23,11 @@ export class ProductImageListComponent implements OnInit {
           ...item.payload.doc.data() as {}} as productImage
       })
       console.log(this.list)
-
     });
   }
 
   removeProductImage = (productImage: productImage) => this.productService.deleteProductImage(productImage);
-
+  showProductImage(id:any){
+    this.router.navigate(['products/showip', id]);
+  }
 }

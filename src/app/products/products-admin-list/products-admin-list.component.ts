@@ -10,6 +10,7 @@ import { Product } from 'src/app/models/Products';
 })
 export class ProductsAdminListComponent implements OnInit {
 
+  //TODO advanced datatable using material 
   //List of emplyee objects created, initilaized to EMpty.
   productList!: Product[];
   constructor(

@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { productImage } from 'src/app/models/product-image'
 import { environment } from 'src/environments/environment';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Product } from '../models/Products';
+import { prodImgUrl } from '../shared/config/api';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -17,6 +19,8 @@ export class ProductService {
 
   formData!: productImage;
 
+  public search = new BehaviorSubject<string>("")
+
   constructor(private httpClient: HttpClient,
   private angularFirestore: AngularFirestore) { }
 
@@ -25,11 +29,15 @@ export class ProductService {
 
 
   getProductList(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.proxy + '/retrieve-all-produits')
+    return this.httpClient.get<Product[]>(this.proxy + '/retrieve-all-produits');
+  }
+
+  getProductListByCat(category:any): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.proxy + '/retrieve-all-produits-byCat/' + category);
   }
 
   createProduct(account: Object, idRayon: Number, idStock: Number): Observable<Object> {
-    return this.httpClient.post(this.proxy + '/add-produit/' + idRayon + '/' + idStock, account);
+    return this.httpClient.post(this.proxy + '/add-produit/' + idStock + '/' + idRayon, account);
   }
 
   getProduct(id: number): Observable<any> {
@@ -44,9 +52,30 @@ export class ProductService {
     return this.httpClient.put(this.proxy + '/modify-produit', value);
   }
 
+  //product images with json web server
+  /*
+  getImg() {
+    return this.httpClient.get<any>(prodImgUrl).pipe(
+      map((result: any[]) => {
+        let imgIds: any[] = []
+        result.forEach(item => imgIds.push(item.id))
+        return imgIds;
+      })
+    )
+  }
 
+  addImg(productId: number) {
+    return this.httpClient.post(prodImgUrl, { id: productId })
+  }
 
+  removeImg(productId: number) {
+    return this.httpClient.delete(prodImgUrl + '/' + productId);
+  }
+  */
+  
+  
 
+  
   //product-images with firebase
   
   createProductImage(data:any) {

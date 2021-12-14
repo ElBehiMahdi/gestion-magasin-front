@@ -16,7 +16,8 @@ import { FactureModel } from './facture.model';
 @Component({
   selector: 'app-facture-list',
   templateUrl: './facture-list.component.html',
-  styleUrls: ['./facture-list.component.css']
+  styleUrls: ['./facture-list.component.css'],
+   
 })
 
 export class FactureListComponent implements OnInit {
@@ -37,10 +38,10 @@ export class FactureListComponent implements OnInit {
    
      this.myAbgularxQrCode='Your QR code data string';
     render({
-      id:"#myPaypalButtons",
-      currency:"USD",
-      value:"100.00",
-      onApprove:(details)=>{
+      id: "#myPaypalButtons",
+      currency: "USD",
+      value: "100.00",
+      onApprove: (details) => {
         alert("transaction is successful");
       }
     });

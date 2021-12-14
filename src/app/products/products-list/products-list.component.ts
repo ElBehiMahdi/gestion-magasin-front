@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/models/Products';
@@ -15,20 +15,36 @@ import { WishlistService } from 'src/app/services/wishlist.service';
 })
 export class ProductsListComponent implements OnInit {
   //List of emplyee objects created, initilaized to EMpty.
+  searchKey:string = "";
   productList: Product[] = [];
   product!: Product;
   wishlist: number[] = []
   added: boolean = false;
+  category: any;
 
   constructor(
-    private router: Router,
+    private route: ActivatedRoute,
+    private router: Router,    
     private productService: ProductService,
     private wishlistService: WishlistService,
     private msg: MessengerService) { }
 
   ngOnInit(): void {
-    this.getProduct();
+
+    this.category = this.route.snapshot.params['cat'];
+    console.log(this.category)
+    if(this.category){
+      this.getProductByCat();
+    }else{
+      this.getProduct()
+    }
+    
+    
     this.loadWishlist();
+
+    this.productService.search.subscribe((val:any)=>{
+      this.searchKey = val;
+    })
   }
 
   handleAddToCart(){
@@ -63,4 +79,10 @@ export class ProductsListComponent implements OnInit {
       this.productList = data;
     })
   }
+
+  getProductByCat(){
+    return this.productService.getProductListByCat(this.category).subscribe((data)=>{
+      this.productList = data;
+    })
+  }   
 }

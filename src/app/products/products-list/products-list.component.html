@@ -4,7 +4,7 @@
   </div>
   <div class="col-md-8">
 
-    <div *ngFor="let product of productList">
+    <div *ngFor="let product of productList | filterProd:searchKey:'libelle'">
         <app-product-item [productItem]="product" [added]="wishlist.indexOf(product.idProduit) >= 0"></app-product-item>
     </div>
 

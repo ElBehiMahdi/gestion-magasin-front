@@ -16,16 +16,102 @@
   "product": [],
   "wishlist": [
     {
-      "id": 2
-    },
-    {
       "id": 3
     },
     {
       "id": 1
     }
   ],
-  "cart-item": [],
+  "cart-item": [
+    {
+      "product": {
+        "idProduit": 1,
+        "code": "product",
+        "libelle": "product",
+        "prixUnitaire": 11,
+        "categorieProduit": "Alimentaire",
+        "rayon": {
+          "idRayon": 1,
+          "code": "code",
+          "libelle": "code"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": 1,
+          "qteMin": 0,
+          "libelle": "lib",
+          "qteSold": 1
+        }
+      },
+      "id": 1
+    },
+    {
+      "product": {
+        "idProduit": 1,
+        "code": "product",
+        "libelle": "product",
+        "prixUnitaire": 11,
+        "categorieProduit": "Alimentaire",
+        "rayon": {
+          "idRayon": 1,
+          "code": "code",
+          "libelle": "code"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": 1,
+          "qteMin": 0,
+          "libelle": "lib",
+          "qteSold": 1
+        }
+      },
+      "id": 2
+    },
+    {
+      "product": {
+        "idProduit": 1,
+        "code": "product",
+        "libelle": "product",
+        "prixUnitaire": 11,
+        "categorieProduit": "Alimentaire",
+        "rayon": {
+          "idRayon": 1,
+          "code": "code",
+          "libelle": "code"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": 1,
+          "qteMin": 0,
+          "libelle": "lib",
+          "qteSold": 1
+        }
+      },
+      "id": 3
+    },
+    {
+      "product": {
+        "idProduit": 1,
+        "code": "product",
+        "libelle": "product",
+        "prixUnitaire": 11,
+        "categorieProduit": "Alimentaire",
+        "rayon": {
+          "idRayon": 1,
+          "code": "code",
+          "libelle": "code"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": 1,
+          "qteMin": 0,
+          "libelle": "lib",
+          "qteSold": 1
+        }
+      },
+      "id": 4
+    }
+  ],
   "profile": {
     "name": "typicode"
   }

@@ -9,6 +9,98 @@
   </mat-card>
   <br>
 
+  <h2 matSubheader>Advanced navigation</h2>
+
+  <mat-list>
+    <mat-list-item [matMenuTriggerFor]="menuc" aria-label="Example icon-button with a menu">
+      <mat-icon mat-list-icon >folder</mat-icon>
+      <mat-menu #menuc="matMenu">
+        <button mat-menu-item routerLink="client/client">
+          <mat-icon>list</mat-icon>
+          <span>list</span>
+        </button>
+        <button mat-menu-item routerLink="client/createClient">
+          <mat-icon>add</mat-icon>
+          <span>add</span>
+        </button>
+      </mat-menu>
+      <div mat-line>Clients</div>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-list>
+    <mat-list-item [matMenuTriggerFor]="menuf" aria-label="Example icon-button with a menu">
+      <mat-icon mat-list-icon>folder</mat-icon>
+      <mat-menu #menuf="matMenu">
+        <button mat-menu-item routerLink="facture/listf">
+          <mat-icon>list</mat-icon>
+          <span>list</span>
+        </button>
+    
+      </mat-menu>
+      <div mat-line>Factures</div>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-list>
+    <mat-list-item [matMenuTriggerFor]="menus" aria-label="Example icon-button with a menu">
+      <mat-icon mat-list-icon>folder</mat-icon>
+      <mat-menu #menus="matMenu">
+        <button mat-menu-item routerLink="stocks/lists">
+          <mat-icon>list</mat-icon>
+          <span>list</span>
+        </button>
+        <button mat-menu-item routerLink="stocks/adds">
+          <mat-icon>add</mat-icon>
+          <span>add</span>
+        </button>
+      </mat-menu>
+      <div mat-line>Stocks</div>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-list>
+    <mat-list-item [matMenuTriggerFor]="menur" aria-label="Example icon-button with a menu">
+      <mat-icon mat-list-icon>folder</mat-icon>
+      <mat-menu #menur="matMenu">
+        <button mat-menu-item routerLink="rayons/list">
+          <mat-icon>list</mat-icon>
+          <span>list</span>
+        </button>
+        <button mat-menu-item routerLink="rayons/add">
+          <mat-icon>add</mat-icon>
+          <span>add</span>
+        </button>
+      </mat-menu>
+      <div mat-line>Rayons</div>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-list>
+    <mat-list-item [matMenuTriggerFor]="menup" aria-label="Example icon-button with a menu">
+      <mat-icon mat-list-icon>folder</mat-icon>
+      <mat-menu #menup="matMenu">
+        <button mat-menu-item routerLink="products/adminp">
+          <mat-icon>list</mat-icon>
+          <span>list</span>
+        </button>
+        <button mat-menu-item routerLink="products/listip">
+          <mat-icon>list</mat-icon>
+          <span>img-list</span>
+        </button>
+        <button mat-menu-item routerLink="products/addp">
+          <mat-icon>add</mat-icon>
+          <span>add</span>
+        </button>
+        <button mat-menu-item routerLink="products/addip">
+          <mat-icon>add</mat-icon>
+          <span>img-add</span>
+        </button>
+      </mat-menu>
+      <div mat-line>Produits</div>
+    </mat-list-item>
+  </mat-list>
+
   <h2 matSubheader>Pages</h2>
 
   <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
