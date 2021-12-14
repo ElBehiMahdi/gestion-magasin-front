@@ -105,3 +105,8 @@ body {
       font-size: 3.5rem;
     }
   }
+  #invoice{
+    background: #000; border-radius: 0.25em; color: #FFF; margin: 0 0 1em; padding: 0.5em 0;
+}
+h1 { font: bold 100% sans-serif; letter-spacing: 0.5em; text-align: center; text-transform: uppercase; }
+header h1 {   border-radius: 0.25em ; margin: 0 0 1em; padding: 0.5em 0; }

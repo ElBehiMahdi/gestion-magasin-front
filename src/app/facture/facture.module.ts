@@ -3,17 +3,17 @@ import { CommonModule } from '@angular/common';
 import { FactureComponent } from './facture.component';
 import { RouterModule, Routes } from '@angular/router';
 
- 
-
+ import { NgxPaginationModule } from 'ngx-pagination';
 import { EditFactureComponent } from './edit-facture/edit-facture.component';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { from } from 'rxjs';
 import { FactureListComponent } from './facture-list/facture-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { RemarqueComponent } from './remarque/remarque.component';
+ import { FactureService } from './sh/facture.service';
+  
  
  
 
@@ -47,10 +47,12 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    QRCodeModule
+    QRCodeModule,
+    NgxPaginationModule,
+     
     /*FormBuilder,*/
   ],
-
+   
   exports: [RouterModule]
 })
 export class FactureModule { }
