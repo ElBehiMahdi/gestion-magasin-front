@@ -15,6 +15,10 @@ export class StocksService {
       return this.httpClient.get<Stock[]>(this.proxy + '/retrieve-all-stocks')
     }
 
+    getStockWarn(): Observable<Stock[]>{
+      return this.httpClient.get<Stock[]>(this.proxy + '/warn')
+    }
+
     createStock(account:Object): Observable<Object> {
       return this.httpClient.post(this.proxy + '/add-stock/', account);
     }
