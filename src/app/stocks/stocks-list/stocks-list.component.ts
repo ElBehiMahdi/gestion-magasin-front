@@ -12,11 +12,17 @@ export class StocksListComponent implements OnInit {
   
 
   stockList !: Stock[];
+  warnstockList !: Stock[];
+
   constructor(private stocksService : StocksService,private router : Router) { }
 
   ngOnInit(): void {
     this.stocksService.getStockList().subscribe((data)=>{
       this.stockList = data;
+    })
+
+    this.stocksService.getStockWarn().subscribe((data)=>{
+      this.warnstockList = data;
     })
   }
 
