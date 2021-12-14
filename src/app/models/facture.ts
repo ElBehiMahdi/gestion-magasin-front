@@ -2,7 +2,7 @@ import { Client } from "./Client";
 
 
 export class Facture {
-  idFacture!: number;
+  idDetailProduit!: number;
   montantRemise!: number;
   montantFacture!: number;
   dateFacture!: Date;

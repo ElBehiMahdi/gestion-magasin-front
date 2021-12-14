@@ -16,8 +16,7 @@ import { FactureModel } from './facture.model';
 @Component({
   selector: 'app-facture-list',
   templateUrl: './facture-list.component.html',
-  styleUrls: ['./facture-list.component.css'],
-   
+  styleUrls: ['./facture-list.component.css']
 })
 
 export class FactureListComponent implements OnInit {
@@ -27,6 +26,7 @@ export class FactureListComponent implements OnInit {
   myAbgularxQrCode:any;
   factureModelObj : FactureModel =new FactureModel();
   factureData !:any;
+  fact:Facture []=[];
   totalRecords: number=5;
   
   
@@ -38,10 +38,10 @@ export class FactureListComponent implements OnInit {
    
      this.myAbgularxQrCode='Your QR code data string';
     render({
-      id: "#myPaypalButtons",
-      currency: "USD",
-      value: "100.00",
-      onApprove: (details) => {
+      id:"#myPaypalButtons",
+      currency:"USD",
+      value:"100.00",
+      onApprove:(details)=>{
         alert("transaction is successful");
       }
     });
@@ -49,7 +49,12 @@ export class FactureListComponent implements OnInit {
   showSuccess() {
     this.toastr.success('Hello world!', 'Toastr fun!');
   }
-
+colorier(t:any){
+  if(t%2==0)
+    return  "red";
+  return "blue";
+   
+}
 totalLength:any ;
 page:number=1;
 
@@ -93,12 +98,19 @@ Search(){
   if(this.dateFacture==""){
     this.ngOnInit();
   }else{
-    this.listfacture=this.listfacture.filter(res=>{
-      return res.dateFacture.toLocaleDateString().match(this.dateFacture.toLocaleDateString()) ;
-       })
+    this.fact =this.fact.filter(res=>{
+      return res.dateFacture.toLocaleDateString().match(this.dateFacture.toLocaleLowerCase());
+    });
   }
 }
-sort(){}
+key:string='idDetailProduit';
+reverse:boolean = false ;
+sort(key:any){
+  this.key=key;
+ this.reverse=!this.reverse;
+
+
+}
        //delete
   delete(id: number) {
     this.factureService.delete(id).subscribe(res=>{
@@ -168,7 +180,9 @@ sort(){}
         console.log(res);
         alert('facture Ajoutée')
       },
-      )
+      err=>{
+        alert('erreur');
+      })
     }
 
     getAll(){
