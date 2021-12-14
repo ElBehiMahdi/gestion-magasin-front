@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { productImage } from 'src/app/models/product-image';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class ShowProductImageComponent implements OnInit {
 
   public productImageForm: FormGroup;
   imageRef: any
+  list?: productImage[];
 
   constructor(
     public ps: ProductService,
@@ -26,10 +28,9 @@ export class ShowProductImageComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.act.snapshot.paramMap.get('id');
-
+    
     this.ps.getProductImage(id).subscribe(res => {
-      this.imageRef = res.payload.data();
-      console.log(this.imageRef)
+      this.imageRef = res
       this.productImageForm = this.fb.group({
         Link: [this.imageRef.Link],
       })      

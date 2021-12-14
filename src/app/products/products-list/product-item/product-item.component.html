@@ -1,13 +1,12 @@
 <br>
 <mat-card class="example-card">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{productItem.libelle}}
     </mat-card-title>
-    <mat-card-subtitle>{{productItem.categorieProduit}}</mat-card-subtitle>
+    <mat-card-subtitle>{{productItem.categorieProduit}}
+    </mat-card-subtitle>
   </mat-card-header>
   {{productItem.prixUnitaire | currency:'EUR'}}
-
   <div>
     <button *ngIf="added" mat-icon-button color="warn" (click)="handleRemoveFromWishlist()">
       <mat-icon>favorite</mat-icon>
@@ -16,7 +15,6 @@
     <button *ngIf="!added" mat-icon-button color="warn" (click)="handleAddToWishlist()">
       <mat-icon>favorite_border</mat-icon>
     </button>
-
   </div>
   <img mat-card-image src="assets/images/buffer.svg" alt="product-img">
   <mat-card-actions>
