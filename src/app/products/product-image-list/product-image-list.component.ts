@@ -25,7 +25,6 @@ export class ProductImageListComponent implements OnInit {
           ...item.payload.doc.data() as {}} as productImage
       })
       console.log(this.list)
-
     });
   }
 

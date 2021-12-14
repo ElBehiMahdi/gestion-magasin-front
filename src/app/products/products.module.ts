@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexModule } from "@angular/flex-layout";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from "@angular/material/card";
 import { MatChipsModule } from '@angular/material/chips';
@@ -27,6 +27,7 @@ import { ProductItemComponent } from './products-list/product-item/product-item.
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductsComponent } from './products.component';
 import { ShowProductImageComponent } from './show-product-image/show-product-image.component';
+import { FilterProdPipe } from './filter-prod.pipe';
 
 const routesp: Routes = [
   {
@@ -87,6 +88,7 @@ const routesp: Routes = [
     CartComponent,
     CartItemComponent,
     ProductItemComponent,
+    FilterProdPipe,
   ],
   imports: [
     CommonModule,
@@ -104,6 +106,7 @@ const routesp: Routes = [
     MatChipsModule,
     MatListModule,
     MatRippleModule,
+    FormsModule,
   ],
   exports: [RouterModule]
 })

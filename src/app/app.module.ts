@@ -38,6 +38,7 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 import { ResponsiveToolbarComponent } from './shared/responsive-toolbar/responsive-toolbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { JwtClientService } from './client/components/shared/jwt-client.service';
+import { FilterProdPipe } from './products/filter-prod.pipe';
 
 
 

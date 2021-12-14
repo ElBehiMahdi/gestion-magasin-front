@@ -16,9 +16,6 @@
   "product": [],
   "wishlist": [
     {
-      "id": 2
-    },
-    {
       "id": 3
     },
     {
@@ -32,7 +29,19 @@
         "code": "code",
         "libelle": "lib",
         "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
+        "categorieProduit": "Electromenager",
+        "rayon": {
+          "idRayon": 2,
+          "code": "rayon1",
+          "libelle": "rayon1"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": -1,
+          "qteMin": 1,
+          "libelle": "ssss",
+          "qteSold": 2
+        }
       },
       "id": 1
     },
@@ -42,7 +51,19 @@
         "code": "code",
         "libelle": "lib",
         "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
+        "categorieProduit": "Electromenager",
+        "rayon": {
+          "idRayon": 2,
+          "code": "rayon1",
+          "libelle": "rayon1"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": -2,
+          "qteMin": 1,
+          "libelle": "ssss",
+          "qteSold": 3
+        }
       },
       "id": 2
     },
@@ -52,7 +73,19 @@
         "code": "code",
         "libelle": "lib",
         "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
+        "categorieProduit": "Electromenager",
+        "rayon": {
+          "idRayon": 2,
+          "code": "rayon1",
+          "libelle": "rayon1"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": -2,
+          "qteMin": 1,
+          "libelle": "ssss",
+          "qteSold": 3
+        }
       },
       "id": 3
     },
@@ -62,7 +95,19 @@
         "code": "code",
         "libelle": "lib",
         "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
+        "categorieProduit": "Electromenager",
+        "rayon": {
+          "idRayon": 2,
+          "code": "rayon1",
+          "libelle": "rayon1"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": -2,
+          "qteMin": 1,
+          "libelle": "ssss",
+          "qteSold": 3
+        }
       },
       "id": 4
     },
@@ -72,7 +117,19 @@
         "code": "code",
         "libelle": "lib",
         "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
+        "categorieProduit": "Electromenager",
+        "rayon": {
+          "idRayon": 2,
+          "code": "rayon1",
+          "libelle": "rayon1"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": -5,
+          "qteMin": 1,
+          "libelle": "ssss",
+          "qteSold": 6
+        }
       },
       "id": 5
     },
@@ -82,397 +139,109 @@
         "code": "code",
         "libelle": "lib",
         "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
+        "categorieProduit": "Electromenager",
+        "rayon": {
+          "idRayon": 2,
+          "code": "rayon1",
+          "libelle": "rayon1"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": -6,
+          "qteMin": 1,
+          "libelle": "ssss",
+          "qteSold": 7
+        }
       },
       "id": 6
     },
     {
       "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
+        "idProduit": 2,
+        "code": "ddd",
+        "libelle": "ddd",
+        "prixUnitaire": 111,
+        "categorieProduit": "Quincaillerie",
+        "rayon": {
+          "idRayon": 1,
+          "code": "ddd",
+          "libelle": "dddd"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": -7,
+          "qteMin": 1,
+          "libelle": "ssss",
+          "qteSold": 8
+        }
       },
       "id": 7
     },
     {
       "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
+        "idProduit": 2,
+        "code": "ddd",
+        "libelle": "ddd",
+        "prixUnitaire": 111,
+        "categorieProduit": "Quincaillerie",
+        "rayon": {
+          "idRayon": 1,
+          "code": "ddd",
+          "libelle": "dddd"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": -7,
+          "qteMin": 1,
+          "libelle": "ssss",
+          "qteSold": 8
+        }
       },
       "id": 8
     },
     {
       "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
+        "idProduit": 2,
+        "code": "ddd",
+        "libelle": "ddd",
+        "prixUnitaire": 111,
+        "categorieProduit": "Quincaillerie",
+        "rayon": {
+          "idRayon": 1,
+          "code": "ddd",
+          "libelle": "dddd"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": -7,
+          "qteMin": 1,
+          "libelle": "ssss",
+          "qteSold": 8
+        }
       },
       "id": 9
     },
     {
       "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
+        "idProduit": 2,
+        "code": "ddd",
+        "libelle": "ddd",
+        "prixUnitaire": 111,
+        "categorieProduit": "Quincaillerie",
+        "rayon": {
+          "idRayon": 1,
+          "code": "ddd",
+          "libelle": "dddd"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": -10,
+          "qteMin": 1,
+          "libelle": "ssss",
+          "qteSold": 11
+        }
       },
       "id": 10
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
-      },
-      "id": 11
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
-      },
-      "id": 12
-    },
-    {
-      "product": {
-        "idProduit": 2,
-        "code": "ddd",
-        "libelle": "ddd",
-        "prixUnitaire": 111,
-        "categorieProduit": "Quincaillerie"
-      },
-      "id": 13
-    },
-    {
-      "product": {
-        "idProduit": 2,
-        "code": "ddd",
-        "libelle": "ddd",
-        "prixUnitaire": 111,
-        "categorieProduit": "Quincaillerie"
-      },
-      "id": 14
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager"
-      },
-      "id": 15
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 16
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 17
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "rayon": {
-          "idRayon": 2,
-          "code": "rayon1",
-          "libelle": "rayon1"
-        },
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 18
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "rayon": {
-          "idRayon": 2,
-          "code": "rayon1",
-          "libelle": "rayon1"
-        },
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 19
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "rayon": {
-          "idRayon": 2,
-          "code": "rayon1",
-          "libelle": "rayon1"
-        },
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 20
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "rayon": {
-          "idRayon": 2,
-          "code": "rayon1",
-          "libelle": "rayon1"
-        },
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 21
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "rayon": {
-          "idRayon": 2,
-          "code": "rayon1",
-          "libelle": "rayon1"
-        },
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 22
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "rayon": {
-          "idRayon": 2,
-          "code": "rayon1",
-          "libelle": "rayon1"
-        },
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 23
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "rayon": {
-          "idRayon": 2,
-          "code": "rayon1",
-          "libelle": "rayon1"
-        },
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 24
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "rayon": {
-          "idRayon": 2,
-          "code": "rayon1",
-          "libelle": "rayon1"
-        },
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 25
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "rayon": {
-          "idRayon": 2,
-          "code": "rayon1",
-          "libelle": "rayon1"
-        },
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 26
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "rayon": {
-          "idRayon": 2,
-          "code": "rayon1",
-          "libelle": "rayon1"
-        },
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 27
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "rayon": {
-          "idRayon": 2,
-          "code": "rayon1",
-          "libelle": "rayon1"
-        },
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 28
-    },
-    {
-      "product": {
-        "idProduit": 1,
-        "code": "code",
-        "libelle": "lib",
-        "prixUnitaire": 1,
-        "categorieProduit": "Electromenager",
-        "rayon": {
-          "idRayon": 2,
-          "code": "rayon1",
-          "libelle": "rayon1"
-        },
-        "stock": {
-          "idStock": 1,
-          "qte": 2,
-          "qteMin": 1,
-          "libelle": "testing",
-          "qteSold": 0
-        }
-      },
-      "id": 29
     }
   ],
   "profile": {

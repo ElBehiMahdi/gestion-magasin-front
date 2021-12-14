@@ -31,7 +31,6 @@ export class DetailProductsComponent implements OnInit {
 
     this.productService.getProduct(this.id)
       .subscribe(data => {
-        console.log(data)
         this.product = data;
       }, error => console.log(error));
 
