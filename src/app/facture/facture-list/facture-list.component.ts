@@ -168,9 +168,7 @@ sort(){}
         console.log(res);
         alert('facture Ajoutée')
       },
-      err=>{
-        alert('erreur');
-      })
+      )
     }
 
     getAll(){

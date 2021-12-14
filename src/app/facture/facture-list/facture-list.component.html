@@ -239,7 +239,7 @@
 
  <div class="card-body">
    
-  <p>Today is {{ dateToday | date: "shortDate" }}</p>
+  
 
 
  <div class="table-responsive">
@@ -330,7 +330,7 @@
 
 
 <div class="form-group">
-<button type="submit" class="btn btn-success" onClick="window.location.reload();"><i class="icon-lock" (click)='showToastr()'></i> Register</button>
+<button type="submit" class="btn btn-success" onClick="window.location.reload();"(click)="postFactureDetails()"><i class="icon-lock" (click)='showToastr()'></i> Register</button>
 </div>
 
 </form>
