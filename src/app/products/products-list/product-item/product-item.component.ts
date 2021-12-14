@@ -42,6 +42,14 @@ export class ProductItemComponent implements OnInit {
     })
   }
 
+  handleRemoveToCart() {
+    console.log(this.productItem)
+    
+    /*this.cartService.deleteCartItem().subscribe(() => {
+      this.msg.sendMsg(this.productItem)
+    })*/
+  }
+
   handleAddToWishlist(){
     this.wishlistService.addToWishlist(this.productItem.idProduit).subscribe(() => {
       this.added = true;

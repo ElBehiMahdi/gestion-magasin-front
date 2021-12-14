@@ -35,6 +35,7 @@ export class ProductsListComponent implements OnInit {
     console.log(this.category)
     
     this.getProduct();
+    
     this.loadWishlist();
 
     this.productService.search.subscribe((val:any)=>{
