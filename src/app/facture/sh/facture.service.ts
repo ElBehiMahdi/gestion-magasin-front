@@ -22,7 +22,7 @@ export class FactureService {
     }))
   }
   public delete(id: number) {
-    return this.http.delete<Facture>(this.url + 'cancel-facture/' + id)
+    return this.http.get<Facture>(this.url + 'cancel-facture/' + id)
     .pipe(map((res:any)=>{
       return res ;
     }));

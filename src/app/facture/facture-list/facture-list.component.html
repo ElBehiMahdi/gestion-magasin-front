@@ -273,7 +273,7 @@
 
   
        <tr *ngFor="let fac of listfacture  " >
-        <td >{{fac.idFacture}}</td>
+        <td >{{fac.idDetailProduit}}</td>
        <td >{{fac.montantRemise}}</td>
        <td>{{fac.montantFacture}}</td>
        <td>{{fac.dateFacture | date:'MM/dd/yyyy'}}</td>
@@ -281,8 +281,8 @@
        
      
       
-   <td>   <button  class="gg-edit-markup" class=" btn btn-primary" (click)="update(fac.idFacture,fac)" onClick="window.location.reload();"><i class="icon_close_alt2"></i>modifier</button>  </td>
-<td>    <button class="gg-trash" class=" btn btn-danger" (click)="delete(fac.idFacture)" onClick="window.location.reload();"><i class="icon_close_alt2"></i>supprimer</button>
+   <td>   <button  class="gg-edit-markup" class=" btn btn-primary" (click)="update(fac.idDetailProduit,fac)" onClick="window.location.reload();"><i class="icon_close_alt2"></i>modifier</button>  </td>
+<td>    <button class="gg-trash" class=" btn btn-danger" (click)="deleteFacture(fac.idDetailProduit)"><i class="icon_close_alt2"></i>Cancel</button>
 </td>  
         
       
