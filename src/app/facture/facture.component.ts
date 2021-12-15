@@ -11,6 +11,7 @@ import{render} from 'creditcardpayments/creditCardPayments'
 })
 export class FactureComponent implements OnInit {
   public name="Magasin Esprit 2021";
+  dateFacture: any ;
   factureForm!: FormGroup;
   listfacture!: Facture[];
   comment="";
@@ -34,7 +35,14 @@ export class FactureComponent implements OnInit {
   }
   show = false;
  
-
+ Search(){
+   if(this.dateFacture==""){
+     this.ngOnInit();
+   }else{
+     this.listfacture=this.listfacture.filter(res=>{
+       return res.dateFacture.toLocaleDateString().match(this.dateFacture.toLocaleDateString()) ;  })
+   }
+ }
 
   ngOnInit(): void {
    //ajout

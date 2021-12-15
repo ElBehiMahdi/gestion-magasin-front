@@ -9,15 +9,21 @@ import { StocksService } from 'src/app/services/stocks.service';
   styleUrls: ['./stocks-list.component.css']
 })
 export class StocksListComponent implements OnInit {
-  
+  [x: string]: any;
 
   stockList !: Stock[];
+  
+
   constructor(private stocksService : StocksService,private router : Router) { }
 
   ngOnInit(): void {
     this.stocksService.getStockList().subscribe((data)=>{
       this.stockList = data;
+     
+    
     })
+
+    
   }
 
   updateStock(id: number) {
@@ -25,7 +31,7 @@ export class StocksListComponent implements OnInit {
   }
 
   deleteStock(id: number) {
-    if (confirm('Are you sure to delete this product ?')) {
+    if (confirm('Are you sure to delete this ?')) {
       this.stocksService.deleteStock(id)
         .subscribe(
           data => {
@@ -34,5 +40,6 @@ export class StocksListComponent implements OnInit {
           error => console.log(error));
     }
   }
-
+  
+  
 }

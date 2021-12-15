@@ -11,4 +11,29 @@
     </div>
   
 </div>-->
-  
+<div class="container" *ngFor="let r of rayonList">
+  <h2>{{r.code}}</h2>
+  <div *ngFor="let p of productList">
+    <div cdkDropList (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let l of list">
+          <div *ngIf="p.rayon.code==r.code" >
+            <div cdkDrag class="box" *ngIf="l==p.libelle">
+              {{l}}
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div> 
+
+
+
+
+<!--<div cdkDropList [cdkDropListData]="productList" #productList="cdkDropList"
+  class="example-list" (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let p of productList" >
+      <div cdkDrag class="box" *ngIf="p.rayon.code==r.code" >
+        {{p.libelle}}
+      </div>
+    </div>
+  </div>-->

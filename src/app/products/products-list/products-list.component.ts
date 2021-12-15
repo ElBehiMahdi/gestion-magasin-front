@@ -33,8 +33,13 @@ export class ProductsListComponent implements OnInit {
 
     this.category = this.route.snapshot.params['cat'];
     console.log(this.category)
+    if(this.category){
+      this.getProductByCat();
+    }else{
+      this.getProduct()
+    }
     
-    this.getProduct();
+    
     this.loadWishlist();
 
     this.productService.search.subscribe((val:any)=>{
@@ -70,11 +75,14 @@ export class ProductsListComponent implements OnInit {
   }
 
   getProduct(){
-    return this.productService.getProductListByCat(this.category).subscribe((data)=>{
+    return this.productService.getProductList().subscribe((data)=>{
       this.productList = data;
     })
   }
 
-  //TODO pay button when clicking on it ttzed facture fiha montant 
-   
+  getProductByCat(){
+    return this.productService.getProductListByCat(this.category).subscribe((data)=>{
+      this.productList = data;
+    })
+  }   
 }

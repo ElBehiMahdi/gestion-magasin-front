@@ -7,3 +7,5 @@ export const cartUrl = baseUrl + '/cart-item'
 export const productUrl = baseUrl + '/product'
 
 export const wishlistUrl = baseUrl + '/wishlist'
+
+export const prodImgUrl = baseUrl + '/prodImg'

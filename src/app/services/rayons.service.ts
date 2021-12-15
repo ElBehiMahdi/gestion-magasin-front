@@ -21,5 +21,13 @@ export class RayonsService {
     getRayon(id: number): Observable<any> {
       return this.httpClient.get(this.proxy + '/retrieve-rayon/' + id);
     }
+
+    /*deleteRayon(id: number): Observable<any> {
+      return this.httpClient.delete(this.proxy + '/remove-rayon/' + id);
+    }*/
+  
+    updateRayon(value: any): Observable<Object> {
+      return this.httpClient.put(this.proxy + '/modify-rayon', value);
+    }
    
 }

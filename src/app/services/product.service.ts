@@ -6,6 +6,8 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Product } from '../models/Products';
+import { prodImgUrl } from '../shared/config/api';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -26,7 +28,7 @@ export class ProductService {
 
 
 
-  getProductList(): Observable<Product[]> {
+  getProductList(): Observable<any> {
     return this.httpClient.get<Product[]>(this.proxy + '/retrieve-all-produits');
   }
 
@@ -50,9 +52,30 @@ export class ProductService {
     return this.httpClient.put(this.proxy + '/modify-produit', value);
   }
 
+  //product images with json web server
+  /*
+  getImg() {
+    return this.httpClient.get<any>(prodImgUrl).pipe(
+      map((result: any[]) => {
+        let imgIds: any[] = []
+        result.forEach(item => imgIds.push(item.id))
+        return imgIds;
+      })
+    )
+  }
 
+  addImg(productId: number) {
+    return this.httpClient.post(prodImgUrl, { id: productId })
+  }
 
+  removeImg(productId: number) {
+    return this.httpClient.delete(prodImgUrl + '/' + productId);
+  }
+  */
+  
+  
 
+  
   //product-images with firebase
   
   createProductImage(data:any) {
