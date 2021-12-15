@@ -1,0 +1,134 @@
+<div class="container pt-5">
+    <div class="row justify-content-sm-center pt-5">
+        <div class="col-sm-6 shadow round pb-3">
+          <h1 class="text-center pt-3 text-secondary">Add Client</h1>
+    <form [formGroup]="signupForm" (ngSubmit) = "onSubmit()" >
+        
+        <div class="form-group">
+            <label class="col-form-label">idClient</label>
+            <input type="number" formControlName="idClient" class="form-control">
+            <small *ngIf="idClient?.invalid && idClient?.touched" class="text-danger">
+                <small *ngIf="idClient?.errors?.['required']">
+                    required
+                </small>
+            </small>
+        </div>
+        
+        <div class="form-group">    
+            <label class="col-form-label">Nom : *</label>
+            <input type="text" name="nom" formControlName="nom" class="form-control">
+            <small *ngIf="nom?.invalid && nom?.touched" class="text-danger">
+                <div *ngIf="nom?.errors?.['required']">
+                    * The nom field is required !
+                </div>
+                <div *ngIf="nom?.errors?.['minlength']">
+                    * The nom must contains at least 4 characters !
+                </div>
+                <div *ngIf="nom?.errors?.['pattern']">
+                    * Wrong format for the nom field ! it must contain alphabatic characters only.
+                </div>
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label">Prenom : *</label>
+            <input type="text" name="prenom" formControlName="prenom" class="form-control">
+            <small *ngIf="prenom!.invalid && prenom!.touched" class="text-danger">
+                <div *ngIf="prenom!.errors?.['required']">
+                    * The nom field is required !
+                </div>
+                <div *ngIf="prenom!.errors?.['minlength']">
+                    * The nom must contains at least 4 characters !
+                </div>
+                <div *ngIf="prenom!.errors?.['pattern']">
+                    * Wrong format for the prenom field ! it must contain alphabatic characters only.
+                </div>
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label">Date of Birth : *</label>
+            <input type="date" name="dateNaissance" formControlName="dateNaissance" class="form-control">
+            <small *ngIf="dateNaissance!.invalid && dateNaissance!.touched" class="text-danger">
+                <div *ngIf="dateNaissance!.errors?.['required']">
+                    * The dateNaissance field is required !
+                </div>
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label">Email : *</label>
+            <input type="email" name="email" formControlName="email" class="form-control">
+            <small *ngIf="email!.invalid && email!.touched" class="text-danger">
+                <div *ngIf="email!.errors?.['required']">
+                    * The email field is required !
+                </div>
+                <div *ngIf="email!.errors?.['pattern']">
+                    * Wrong email format !
+                </div>
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label">Categorie Client : *</label>
+                <select class="form-select form-select-sm" aria-label=".form-select-lg example"
+                    name="categorieclient" formControlName="categorieclient" class="form-control">
+                    <option selected>ordinaire</option>
+                    <option value="fidele">fidele</option>
+                    <option value="premium">premium</option>
+                </select>
+                <small *ngIf="categorieclient!.invalid && categorieclient!.touched" class="text-danger">
+                    <small *ngIf="categorieclient!.errors?.['required']">
+                        * The categorie field is required ! Pick one!
+                    </small>
+                </small>
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label">Profession : *</label>
+            <select class="form-select form-select-sm" aria-label=".form-select-lg example"
+               name="profession" formControlName="profession" class="form-control">
+                <option selected>docteur</option>
+                <option value="ingenieur">ingenieur</option>
+                <option value="etudiant">etudiant</option>
+                <option value="commercial">commercial</option>
+                <option value="cadre">cadre</option>
+                <option value="autre">autre</option>
+            </select>
+            <small *ngIf="profession!.invalid && profession!.touched" class="text-danger">
+                <small *ngIf="profession!.errors?.['required']">
+                   * The profession field is required ! Pick one!
+                </small>
+            </small>
+        </div>
+        <div class="form-group">
+            <label class="col-form-label">Phone : *</label>
+            <input type="phone" name="phone" formControlName="phone" class="form-control">
+            <small *ngIf="phone!.invalid && phone!.touched" class="text-danger">
+                <small *ngIf="phone!.errors?.['required']">
+                    * The phone field is required !
+                </small>
+                <small *ngIf="phone!.errors?.['pattern']">
+                    * Wrong format for the phone field ! it must contain numbers only.
+                </small>
+            </small> 
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label">CIN : *</label>
+            <input type="number" name="cin" formControlName="cin" class="form-control">
+            <small *ngIf="cin?.invalid && cin!.touched" class="text-danger">
+                <small *ngIf="cin?.errors?.['required']">
+                    * The cin field is required !
+                </small>
+            </small>
+        </div>
+        <div style="margin-top: 10px;">
+            <div class="text-center">
+                <button class="btn btn-success" [disabled]="!signupForm.valid" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>

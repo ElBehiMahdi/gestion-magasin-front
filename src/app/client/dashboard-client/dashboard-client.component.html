@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+    integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+<div class="card-body">
+    <h1 class="card-title" style="text-align: center;"><b><em>Bienvenu à notre espace de gestion des clients</em></b>
+    </h1>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- <div class="carousel-item active">
+                <img src="https://cdn.pixabay.com/photo/2021/11/22/20/20/online-6817350_960_720.jpg" class="d-block w-100" width= "672" alt="NOTFOUND">
+            </div> -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a routerLink="statClient" routerLinkActive="active" class="nav-link">Clients Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="createClient" routerLinkActive="active" class="nav-link">Add Client</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <table class="table table-striped sm">
+                        <thead>
+                            <tr>
+
+                                <th scope="col">Id client</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Prenom</th>
+                                <th scope="col">Date de Naissance</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Categorie Client</th>
+                                <th scope="col">Profession</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">CIN</th>
+                                <th scope="col">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let client of list">
+                            <tr>
+                                <td>{{client.idClient}}</td>
+                                <td>{{client.nom}}</td>
+                                <td>{{client.prenom}}</td>
+                                <td>{{client.dateNaissance}}</td>
+                                <td>{{client.email}}</td>
+                                <td>{{client.categorieclient}}</td>
+                                <td>{{client.profession}}</td>
+                                <td>{{client.phone}}</td>
+                                <td>{{client.cin}}</td>
+                                <td>
+                                    <a class="btn text-primary" routerLink="/client/updateClient/{{client.idClient}}"
+                                        routerLinkActive="router-link-active">
+                                        <i class="fa fa-pencil fa-lg"></i>
+                                    </a>
+                                    <a class="btn text-danger" (click)="onDelete(client.idClient)">
+                                        <i class="fa fa-trash fa-lg"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <app-footer-client [nameFromParent]="name"></app-footer-client>
+        </div>
+    </div>

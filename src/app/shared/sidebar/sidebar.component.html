@@ -15,7 +15,7 @@
     <mat-list-item [matMenuTriggerFor]="menuc" aria-label="Example icon-button with a menu">
       <mat-icon mat-list-icon >folder</mat-icon>
       <mat-menu #menuc="matMenu">
-        <button mat-menu-item routerLink="client/client">
+        <button mat-menu-item routerLink="/client">
           <mat-icon>list</mat-icon>
           <span>list</span>
         </button>
@@ -105,6 +105,9 @@
 
   <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
     <mat-icon>dashboard</mat-icon>Dashboard
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+    <mat-icon>account_circle</mat-icon>Client
   </a>
   <a mat-list-item routerLinkActive="list-item-active" routerLink="/products">
     <mat-icon>shop</mat-icon>Products
