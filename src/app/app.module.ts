@@ -37,7 +37,6 @@ import { FormComponent } from './shared/form/form.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { ResponsiveToolbarComponent } from './shared/responsive-toolbar/responsive-toolbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { JwtClientService } from './client/components/shared/jwt-client.service';
 import { FilterProdPipe } from './products/filter-prod.pipe';
 
 
@@ -85,6 +84,9 @@ const routesf: Routes = [
     FormComponent,
     ResponsiveToolbarComponent,
     SidebarComponent,
+    
+
+
   ],
   imports: [
     HttpClientModule,
@@ -110,7 +112,7 @@ const routesf: Routes = [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule
   ],
-  providers: [ProductService, JwtClientService],
+  providers: [ProductService],//, JwtClientService in providers
   bootstrap: [AppComponent]
 })
 export class AppModule { }

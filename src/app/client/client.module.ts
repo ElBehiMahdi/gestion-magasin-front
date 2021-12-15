@@ -1,47 +1,68 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ClientRoutingModule } from './client-routing.module';
-import { ClientDashboardComponent } from './components/client-dashboard/client-dashboard.component';
-import { CreateClientComponent } from './components/create-client/create-client.component';
-import { UpdateClientComponent } from './components/update-client/update-client.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SecurityComponent } from './security/security.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { GoogleChartsModule } from 'angular-google-charts';
+
+import { DashboardClientComponent } from './dashboard-client/dashboard-client.component';
+import { AddClientComponent } from './add-client/add-client.component';
+import { EditClientComponent } from './edit-client/edit-client.component';
+import { ClientComponent } from './client.component';
+import { FooterClientComponent } from './footer-client/footer-client.component';
+import { StatClientComponent } from './stat-client/stat-client.component';
 
 
-const routes: Routes=[
-  
-  { path: '', 
-    redirectTo: 'client', 
-    pathMatch: 'full'
+const routesc: Routes = [
+
+  {
+    path: '',
+    component: DashboardClientComponent
   },
 
-  { path: 'client',
-    component: ClientDashboardComponent
+  {
+    path: 'createClient',
+    component: AddClientComponent
   },
-
-  { path: 'createClient',
-    component: CreateClientComponent
+  {
+    path: 'updateClient/:id',
+    component: EditClientComponent
   },
-  { path: 'updateClient/:idClient', 
-    component: UpdateClientComponent
+  {
+      path:'statClient',
+      component: StatClientComponent
   }
 ];
 
 @NgModule({
   declarations: [
-    ClientDashboardComponent,
-    CreateClientComponent,
-    UpdateClientComponent,
-    SecurityComponent,
-  
+    ClientComponent,
+    AddClientComponent,
+    EditClientComponent,
+    FooterClientComponent,
+    DashboardClientComponent
+
   ],
   imports: [
     CommonModule,
-    ClientRoutingModule,
+    RouterModule.forChild(routesc),
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
-  ]
+    HttpClientModule,
+    GoogleChartsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule
+  ],
+  exports: [RouterModule]
 })
 export class ClientModule { }

@@ -23,9 +23,9 @@ export class ResponsiveToolbarComponent implements OnInit {
       showOnDesktop: true
     },
     {
-      label: 'Sign Up',
-      icon: 'login',
-      route: 'login',
+      label: 'Client',
+      icon: 'face',
+      route: 'client',
       showOnMobile: true,
       showOnTablet: true,
       showOnDesktop: true

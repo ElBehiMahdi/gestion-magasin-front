@@ -1,0 +1,83 @@
+<div class="container pt-5">
+    <div class="row justify-content-sm-center pt-5">
+        <div class="col-sm-6 shadow round pb-3">
+            <div class="row d-flex justify-content-center my-5">
+                <div class="col-md-6 my-3">
+                    <form [formGroup]="clientForm" autocomplete="off" novalidate fxLayout="column wrap"
+                        fxLayoutGap="10px">
+                        <!-- <form #f="ngForm"> -->
+                        <mat-card-content fxLayout="column" fxLayoutAlign="space-between center">
+                            <mat-card-title>Edit Client</mat-card-title>
+                            <mat-form-field>
+                                <mat-label>Nom : *</mat-label>
+                                <input matInput type="text" name="nom" formControlName="nom" [(ngModel)]="client.nom">
+                                <mat-error *ngIf="clientForm.errors?.['invalid']">Required field</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Prenom : </mat-label>
+                                <input matInput type="text" name="prenom" formControlName="prenom"
+                                    [(ngModel)]="client.prenom">
+                                <mat-error *ngIf="clientForm.errors?.['invalid']">Required field</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Date de Naissance : *</mat-label>
+                                <input matInput type="date" name="dateNaissance" formControlName="dateNaissance"
+                                    [(ngModel)]="client.dateNaissance">
+                                <mat-error *ngIf="clientForm.errors?.['invalid']">Required field</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Email : *</mat-label>
+                                <input matInput type="text" name="email" formControlName="email"
+                                    [(ngModel)]="client.email">
+                                <mat-error *ngIf="clientForm.errors?.['invalid']">Required field</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Categorie Client: *</mat-label>
+                                <mat-select class="form-select form-select-sm" aria-label=".form-select-lg example"
+                                    name="categorieclient" formControlName="categorieclient"
+                                    [(ngModel)]="client.categorieclient">
+                                    <mat-option selected>ordinaire</mat-option>
+                                    <mat-option value="fidele">fidele</mat-option>
+                                    <mat-option value="premium">premium</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="clientForm.errors?.['invalid']">Required field</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Profession :</mat-label>
+                                <mat-select class="form-select form-select-sm" aria-label=".form-select-lg example"
+                                    name="profession" formControlName="profession" [(ngModel)]="client.profession">
+                                    <mat-option selected>docteur</mat-option>
+                                    <mat-option value="ingenieur">ingenieur</mat-option>
+                                    <mat-option value="etudiant">etudiant</mat-option>
+                                    <mat-option value="cadre">cadre</mat-option>
+                                    <mat-option value="autre">autre</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="clientForm.errors?.['invalid']">Required field</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Phone Number :</mat-label>
+                                <input matInput type="number" name="phone" formControlName="phone"
+                                    [(ngModel)]="client.phone">
+                                <mat-error *ngIf="clientForm.errors?.['invalid']">Required field</mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>CIN : *</mat-label>
+                                <input matInput type="number" name="cin" formControlName="cin" [(ngModel)]="client.cin">
+                                <mat-error *ngIf="clientForm.errors?.['invalid']">Required field</mat-error>
+                            </mat-form-field>
+                        </mat-card-content>
+                        <mat-card-actions fxLayoutAlign="center" fxLayoutGap="10px">
+                            <button type="button" mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+                            <button type="button" mat-raised-button color="primary"
+                                (click)="updateClient()">Edit</button>
+                        </mat-card-actions>
+                    </form>
+                </div>
+            </div>
