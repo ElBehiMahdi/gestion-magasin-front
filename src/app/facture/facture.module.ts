@@ -13,6 +13,8 @@ import { FooterComponent } from './footer/footer.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { RemarqueComponent } from './remarque/remarque.component';
 import { FactureService } from './sh/facture.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 
 
@@ -48,7 +50,8 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     QRCodeModule,
-    NgxPaginationModule,
+     Ng2SearchPipeModule,
+     Ng2OrderModule
 
     /*FormBuilder,*/
   ],

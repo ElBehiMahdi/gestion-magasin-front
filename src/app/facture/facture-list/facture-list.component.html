@@ -239,7 +239,7 @@
 
  <div class="card-body">
    
-  <p>Today is {{ dateToday | date: "shortDate" }}</p>
+  
 
 
  <div class="table-responsive">
@@ -253,7 +253,7 @@
 
 
    <tr >
-       <th >Id</th>
+       <th  >Id  </th>
        <th >Montant Remise</th>
        <th >Montant Facture</th>
        <th >  Date </th>
@@ -272,10 +272,10 @@
 <tbody>
 
   
-       <tr *ngFor="let fac of listfacture  " >
-        <td >{{fac.idDetailProduit}}</td>
+       <tr *ngFor="let fac of listfacture   "  >
+        <td [ngStyle]="{ color : colorier(fac.idDetailProduit)}" >{{fac.idDetailProduit}}</td>
        <td >{{fac.montantRemise}}</td>
-       <td>{{fac.montantFacture}}</td>
+       <td [ngClass]="{ 'text-danger' :fac.montantFacture >500}">{{fac.montantFacture}}</td>
        <td>{{fac.dateFacture | date:'MM/dd/yyyy'}}</td>
       <td>{{fac.active}}</td>
        
@@ -330,7 +330,7 @@
 
 
 <div class="form-group">
-<button type="submit" class="btn btn-success" onClick="window.location.reload();"><i class="icon-lock" (click)='showToastr()'></i> Register</button>
+<button type="submit" class="btn btn-success" onClick="window.location.reload();"(click)="postFactureDetails()"><i class="icon-lock" (click)='showToastr()'></i> Register</button>
 </div>
 
 </form>
