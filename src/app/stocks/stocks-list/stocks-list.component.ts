@@ -19,8 +19,6 @@ export class StocksListComponent implements OnInit {
   ngOnInit(): void {
     this.stocksService.getStockList().subscribe((data)=>{
       this.stockList = data;
-     
-    
     })
 
     

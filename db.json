@@ -22,7 +22,30 @@
       "id": 1
     }
   ],
-  "cart-item": [],
+  "cart-item": [
+    {
+      "product": {
+        "idProduit": 1,
+        "code": "dddd",
+        "libelle": "dddd",
+        "prixUnitaire": 1,
+        "categorieProduit": null,
+        "rayon": {
+          "idRayon": 1,
+          "code": "ssssss",
+          "libelle": "ssss"
+        },
+        "stock": {
+          "idStock": 1,
+          "qte": 4,
+          "qteMin": 0,
+          "libelle": "stock",
+          "qteSold": 0
+        }
+      },
+      "id": 1
+    }
+  ],
   "profile": {
     "name": "typicode"
   }

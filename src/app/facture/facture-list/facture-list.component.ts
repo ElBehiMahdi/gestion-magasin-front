@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup,ReactiveFormsModule } from '@angular/forms';
-import{render} from 'creditcardpayments/creditCardPayments'
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { render } from 'creditcardpayments/creditCardPayments'
 import { ToastrService } from 'ngx-toastr';
 import { Facture } from 'src/app/models/facture';
 import { FactureService } from '../sh/facture.service';
 import { FactureModel } from './facture.model';
+import { DatePipe } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
- 
+
 
 
 
@@ -16,32 +18,34 @@ import { FactureModel } from './facture.model';
 @Component({
   selector: 'app-facture-list',
   templateUrl: './facture-list.component.html',
-  styleUrls: ['./facture-list.component.css']
+  styleUrls: ['./facture-list.component.css'],
+  providers: [DatePipe]
 })
 
 export class FactureListComponent implements OnInit {
-  dateFacture: any ;
+  dateFacture: any;
   factureForm!: FormGroup;
   listfacture!: Facture[];
-  myAbgularxQrCode:any;
-  factureModelObj : FactureModel =new FactureModel();
-  factureData !:any;
-  fact:Facture []=[];
-  totalRecords: number=5;
-  
-  
-  public name="Magasin Esprit 2021";
-   message="";
-  
-  
-  constructor( private factureService: FactureService,private fb: FormBuilder, private toastr:ToastrService) { 
-   
-     this.myAbgularxQrCode='Your QR code data string';
+  myAbgularxQrCode: any;
+  factureModelObj: FactureModel = new FactureModel();
+  factureData !: any;
+  fact: Facture[] = [];
+  totalRecords: number = 5;
+  dateToday: number | undefined;
+  total: any;
+
+  public name = "Magasin Esprit 2021";
+  message = "";
+
+
+  constructor(private factureService: FactureService, private fb: FormBuilder, private toastr: ToastrService,private route: ActivatedRoute,private datePipe: DatePipe) {
+
+    this.myAbgularxQrCode = 'Your QR code data string';
     render({
-      id:"#myPaypalButtons",
-      currency:"USD",
-      value:"100.00",
-      onApprove:(details)=>{
+      id: "#myPaypalButtons",
+      currency: "USD",
+      value: "100.00",
+      onApprove: (details) => {
         alert("transaction is successful");
       }
     });
@@ -49,19 +53,19 @@ export class FactureListComponent implements OnInit {
   showSuccess() {
     this.toastr.success('Hello world!', 'Toastr fun!');
   }
-colorier(t:any){
-  if(t%2==0)
-    return  "red";
-  return "blue";
-   
-}
-totalLength:any ;
-page:number=1;
+  colorier(t: any) {
+    if (t % 2 == 0)
+      return "red";
+    return "blue";
+
+  }
+  totalLength: any;
+  page: number = 1;
 
 
   show = false;
- 
-  showToastr(){
+
+  showToastr() {
     this.toastr.success('Some messages', 'title');
   }
 
@@ -70,50 +74,73 @@ page:number=1;
 
 
 
-   //ajout
-   this.factureForm = this.fb.group({
-   
-   
-    montantRemise :[''],
-    montantFacture : [''],
-    dateFacture : [''],
-    active :['']
-   
-   
-   
-     
-    });
-    this.getAll();
-   
+    this.route.queryParams.subscribe(params => {
+      this.total = params['cartTotal']
+    })
+
+    this.dateToday = Date.now();
+
+
+    if (this.total) {
+      console.log(this.total)
+      //ajout bil checkout 
+      this.factureForm = this.fb.group({
+        raison: [''],
+
+        montantRemise: [0],
+        montantFacture: [this.total],
+        dateFacture: [this.dateToday],
+        active: [true],
+
+
+
+
+      });
+    } else {
+      //ajout adiya 
+      this.factureForm = this.fb.group({
+        raison: [''],
+
+        montantRemise: [''],
+        montantFacture: [''],
+        dateFacture: [''],
+        active: [''],
+
+
+
+
+      });
+    }
+
     //affichage facture
     this.factureService.AllFacture().subscribe(facture => this.listfacture = facture);
-     
-     
-    
-     
-     
 
-}
-Search(){
-  if(this.dateFacture==""){
-    this.ngOnInit();
-  }else{
-    this.fact =this.fact.filter(res=>{
-      return res.dateFacture.toLocaleDateString().match(this.dateFacture.toLocaleLowerCase());
-    });
+
+
+
+
+
   }
-}
-key:string='idDetailProduit';
-reverse:boolean = false ;
-sort(key:any){
-  this.key=key;
- this.reverse=!this.reverse;
+  Search() {
+    if (this.dateFacture == "") {
+      this.ngOnInit();
+    } else {
+      this.fact = this.fact.filter(res => {
+        return res.dateFacture.toLocaleDateString().match(this.dateFacture.toLocaleLowerCase());
+      });
+    }
+  }
+  key: string = 'idDetailProduit';
+  reverse: boolean = false;
+  sort(key: any) {
+    this.key = key;
+    this.reverse = !this.reverse;
 
 
-}
-       //delete
+  }
+  //delete
   delete(id: number) {
-    this.factureService.delete(id).subscribe(res=>{
+    this.factureService.delete(id).subscribe(res => {
       alert("Facture Supprimée")
     });
     this.ngOnInit();
@@ -129,7 +156,7 @@ sort(key:any){
           error => console.log(error));
     }
   }
-   
+
   getFacture() {
     return this.factureService.AllFacture().subscribe((data) => {
       this.listfacture = data;
@@ -139,20 +166,20 @@ sort(key:any){
 
 
 
-  update(id: number,data:any) {
-    this.factureService.update(id,data).subscribe();
+  update(id: number, data: any) {
+    this.factureService.update(id, data).subscribe();
     this.ngOnInit();
   }
-    //ajout
-    handelSubmit() {
-      this.factureService.addFacture(this.factureForm.value).subscribe(res=>{
-        console.log(res);
-        alert('facture Ajouté')
-      });
-      
-      this.ngOnInit();
-      window.location.reload();
-    }
+  //ajout
+  handelSubmit() {
+    this.factureService.addFacture(this.factureForm.value).subscribe(res => {
+      console.log(res);
+      alert('facture Ajouté')
+    });
+
+    this.ngOnInit();
+    window.location.reload();
+  }
 
 
 
@@ -166,38 +193,32 @@ sort(key:any){
 
 
 
-    postFactureDetails(){
+  postFactureDetails() {
 
+
+
+
+    this.factureModelObj.montantRemise = this.factureForm.value.montantRemise;
+    this.factureModelObj.montantFacture = this.factureForm.value.montantFacture;
+    this.factureModelObj.dateFacture = this.factureForm.value.dateFacture;
+    this.factureModelObj.active = this.factureForm.value.active;
+    this.factureService.postFacture(this.factureModelObj)
+    alert('facture Ajoutée')
     
+  }
 
-
-  this.factureModelObj.montantRemise=this.factureForm.value.montantRemise;
-  this.factureModelObj.montantFacture=this.factureForm.value.montantFacture;
-  this.factureModelObj.dateFacture =this.factureForm.value.dateFacture;
-  this.factureModelObj. active =this.factureForm.value. active;
-      this.factureService.postFacture(this.factureModelObj)
-      .subscribe(res=>{
-        console.log(res);
-        alert('facture Ajoutée')
-      },
-      err=>{
-        alert('erreur');
+  getAll() {
+    this.factureService.getFacture()
+      .subscribe(res => {
+        this.factureData = res;
       })
-    }
-
-    getAll(){
-      this.factureService.getFacture()
-      .subscribe(res=>{
-        this.factureData=res;
-      })
-    }
-    deleteFact(fac:any){
-      this.factureService.deleteFacture(fac.id).subscribe(res=>{
-        alert("facture effacee")
-      })
-    }
+  }
+  deleteFact(fac: any) {
+    this.factureService.deleteFacture(fac.id).subscribe(res => {
+      alert("facture effacee")
+    })
+  }
 }
 
 
 
- 
