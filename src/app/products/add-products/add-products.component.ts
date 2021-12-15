@@ -101,6 +101,6 @@ export class AddProductsComponent implements OnInit {
   }
 
   goToList() {
-    this.router.navigate(['/products/listp'])
+    this.router.navigate(['/products/adminp'])
   }
 }

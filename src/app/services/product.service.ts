@@ -28,7 +28,7 @@ export class ProductService {
 
 
 
-  getProductList(): Observable<Product[]> {
+  getProductList(): Observable<any> {
     return this.httpClient.get<Product[]>(this.proxy + '/retrieve-all-produits');
   }
 
