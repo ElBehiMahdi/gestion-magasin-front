@@ -12,6 +12,7 @@ import { RayonsService } from 'src/app/services/rayons.service';
   styleUrls: ['./rayon-list.component.css']
 })
 export class RayonListComponent implements OnInit {
+  [x: string]: any;
   rayonList : Rayon[] =[];
   productList : Product[]=[];
   list : string[] = [];
@@ -69,15 +70,4 @@ export class RayonListComponent implements OnInit {
       );
     }
   }
-
-  /*deleteStock(id: number) {
-    if (confirm('Are you sure to delete this ?')) {
-      this.rayonService.delete(id)
-        .subscribe(
-          data => {
-            console.log(data);
-          },
-          error => console.log(error));
-    }
-  }*/
 }

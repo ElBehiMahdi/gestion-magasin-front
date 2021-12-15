@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
       <div class="col-10 mx-auto">
-        <h2 class="text-center">Stocks</h2>
+        <h2 class="text-center" [ngStyle]="{'font-weight': bold, 'font-style': italic}">Stocks</h2>
         <!-- <p> </p> -->
       </div>
       <br />
@@ -37,44 +37,9 @@
       </div>
     </div>
   </div>
-
-
-
-  <div class="card">
-    <div class="card-body">
-      <div class="col-10 mx-auto">
-        <h2 class="text-center">Warning stock under </h2>
-        <!-- <p> </p> -->
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-10 mx-auto">
-          <table id="example" class="table table-striped table-bordered" style="width: 100%">
-            <thead>
-              <tr>
-                <th scope="col">libelle</th>
-                <th scope="col">Quantite minimale</th>
-                <th scope="col">Quantite </th>
-              </tr>
-            </thead>
-            <tbody>
   
-              <tr *ngFor="let sw of warnstockList">
-                <td>{{sw.libelle}}  </td>
 
-                <td>
-                  <button mat-icon-button (click)="deleteStock(sw.idStock)" color="warn">
-                    <mat-icon>delete_outline</mat-icon>
-                  </button>
-                </td>
-                <td>
-                  <button class="btn btn-primary" (click)="updateStock(sw.idStock)">Modifier </button> <span>&nbsp;</span>
-                </td>
-              </tr>
+  <app-warning>[nbre]="nbre"</app-warning>
+
+
   
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>

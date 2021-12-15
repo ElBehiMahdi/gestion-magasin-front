@@ -14,6 +14,7 @@ import { FlexModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { WarningComponent } from './warning/warning.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
     StocksListComponent,
     StocksAddComponent,
     StocksEditComponent,
+    WarningComponent,
     
   ],
   imports: [
