@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/models/Products';
+import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-products-admin-list',
@@ -10,15 +13,28 @@ import { Product } from 'src/app/models/Products';
 })
 export class ProductsAdminListComponent implements OnInit {
 
-  //TODO advanced datatable using material 
   //List of emplyee objects created, initilaized to EMpty.
-  productList!: Product[];
+  productList!: Observable<Product[]>;
   constructor(
     private router: Router,
-    private productService: ProductService) { }
+    private productService: ProductService,
+    private dialog: MatDialog) { }
+
+  dataSource!: MatTableDataSource<any>
+  displayedColumns: string[] = ['code', 'libelle', 'prixUnitaire', 'categorieProduit','Actions'];
 
   ngOnInit(): void {
     this.getProduct();
+    console.log(this.dataSource)
+  }
+
+  addProduct() {
+    this.router.navigate(['products/addp']);
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   updateProduit(id: number) {
@@ -38,8 +54,11 @@ export class ProductsAdminListComponent implements OnInit {
   }
 
   getProduct() {
-    return this.productService.getProductList().subscribe((data) => {
-      this.productList = data;
+    return this.productService.getProductList().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+      console.log(this.dataSource.data.length);
+      console.log(this.dataSource);
+      return this.dataSource
     })
   }
 

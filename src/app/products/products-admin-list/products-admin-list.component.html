@@ -1,43 +1,62 @@
-<div class="card">
-  <div class="card-body">
-    <div class="col-10 mx-auto">
-      <h2 class="text-center">Product List Client</h2>
-      <!-- <p> </p> -->
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-10 mx-auto">
-        <table id="example" class="table table-striped table-bordered" style="width: 100%">
-          <thead>
-            <tr>
-              <th scope="col">code</th>
-              <th scope="col">libelle</th>
-              <th scope="col">prixUnitaire</th>
-              <th scope="col">categorieProduit</th>
-            </tr>
-          </thead>
-          <tbody>
-
-            <tr *ngFor="let product of productList">
-              <td>{{product.code}} </td>
-              <td>{{product.libelle}} </td>
-              <td>{{product.prixUnitaire}} </td>
-              <td>{{product.categorieProduit}} </td>
-              <td>
-                <button mat-icon-button (click)="updateProduit(product.idProduit)">
-                  <mat-icon>launch</mat-icon>
-                </button>
-              </td>
-              <td>
-                <button mat-icon-button (click)="deleteProduit(product.idProduit)" color="warn">
-                  <mat-icon>delete_outline</mat-icon>
-                </button>
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+<div class="col-md-10">
+  <mat-card-title>Gestion des produits</mat-card-title>
 </div>
+<div fxLayout="row" fxLayoutAlign="end none" fxLayoutGap="10px">
+  
+  <button mat-raised-button (click)="addProduct()">
+    <mat-icon>add</mat-icon>Create
+  </button>
+
+  <button mat-raised-button (click)="getProduct()">
+    <mat-icon>refresh</mat-icon>Refresh
+  </button>
+
+</div>
+
+<mat-form-field>
+  <mat-label>Filter by libelle</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. mahdi">
+</mat-form-field>
+
+<mat-table mat-table #table [dataSource]="dataSource">
+
+  <ng-container matColumnDef="code">
+    <mat-header-cell *matHeaderCellDef>Code</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.code}}</mat-cell>
+  </ng-container>
+
+
+  <ng-container matColumnDef="libelle">
+    <mat-header-cell *matHeaderCellDef>Libelle</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.libelle}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="prixUnitaire">
+    <mat-header-cell *matHeaderCellDef>Prix Unitaire</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.prixUnitaire}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="categorieProduit">
+    <mat-header-cell *matHeaderCellDef>Categorie Produit</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.categorieProduit}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Actions">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button mat-icon-button (click)="updateProduit(row.idProduit)">
+        <mat-icon>launch</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="deleteProduit(row.idProduit)" color="warn">
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</mat-table>

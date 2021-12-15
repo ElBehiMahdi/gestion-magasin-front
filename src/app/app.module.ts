@@ -39,6 +39,7 @@ import { ResponsiveToolbarComponent } from './shared/responsive-toolbar/responsi
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { JwtClientService } from './client/components/shared/jwt-client.service';
 import { FilterProdPipe } from './products/filter-prod.pipe';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -107,6 +108,7 @@ const routesf: Routes = [
     FlexLayoutModule,
     MatMenuModule,
     MatListModule,
+    MatTableModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule
   ],

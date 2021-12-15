@@ -28,6 +28,8 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductsComponent } from './products.component';
 import { ShowProductImageComponent } from './show-product-image/show-product-image.component';
 import { FilterProdPipe } from './filter-prod.pipe';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const routesp: Routes = [
   {
@@ -107,6 +109,8 @@ const routesp: Routes = [
     MatListModule,
     MatRippleModule,
     FormsModule,
+    MatTableModule,
+    MatDialogModule,
   ],
   exports: [RouterModule]
 })
